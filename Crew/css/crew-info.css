@@ -1,25 +1,10 @@
-.crew-head-img1, .crew-head-img2 {
-  height:25em;
-  width: 100%;
-  opacity:0.8;
+.crew-header{
+  background:url("../images/crew-header.jpg");
 }
-@media(min-width:767px){
-     .crew-head-img1 {
-         display: block!important;
-     }
-     .crew-head-img2 {
-         display: none !important;
-     }
- }
 
-@media(max-width:767px){
-     .crew-head-img2 {
-         display: block!important;
-     }
-     .crew-head-img1 {
-         display: none !important;
-     }
- }
+.crew-head-img {
+  height:25em;
+}
 
 .splide a:focus{
   -webkit-filter: grayscale(70%);

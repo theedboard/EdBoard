@@ -5,6 +5,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
     rewind : true,
     focus  : 'center',
     height : '13rem',
+    lazyLoad: 'nearby',
     cover  : true,
     breakpoints: {
       '1030': {
