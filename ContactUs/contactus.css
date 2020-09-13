@@ -1,10 +1,23 @@
 
+:root {
+--polkacolor: #FFC6B6;
+--bgcolor: white;
+--mainpink: #FFD9CE; /*main pink color of form and jumbotron*/
+--colorShadeA: #FA8072; /*lightest pink*/
+--colorShadeB: #FE9688;
+--colorShadeC: #FFC0B6;
+--colorShadeD: rgb(255, 217, 206,0.8);
+--colorShadeE: #FFEAE6; /*darkest pink*/
+--dashcolor: red; /*color of the dashes*/
+--colorshadow: #FA8072; /*color of the shadows*/
+
+}
 
 body {
 padding:0;
 margin:0;
-background-color:white;
-background-image: radial-gradient(#FFC6B6 2px, transparent 2px);
+background-color:var(--bgcolor);
+background-image: radial-gradient(var(--polkacolor) 2px, transparent 2px);
 background-size:20px 20px;
 background-attachment: fixed;
 
@@ -30,8 +43,9 @@ h2.contact-form-heading{
 }
 
 .contact-us-jumbotron{
-  background-image: radial-gradient(#FFD9CE,white);
-  box-shadow: 5px 10px 18px #FA8072;
+  background-image: radial-gradient(var(--mainpink),white);
+box-shadow: 5px 10px 18px var(--colorshadow);
+
 }
 .contact-form-heart{
   color: red;
@@ -39,7 +53,7 @@ h2.contact-form-heading{
 }
 
 hr.after-heading-border{
-  border-top: 4px dashed red;
+  border-top: 4px dashed var(--dashcolor);
 }
 
 .contact-form-desc{
@@ -48,27 +62,27 @@ hr.after-heading-border{
 }
 
 .contact-us-form{
-  background-color: #FFC6B6;
+  background-color: var(--mainpink);
   padding:7px;
   border-radius: 10px;
-  border-color: #FA8072;
+  border-color: var(--colorShadeA);
   border-style: solid;
   border-width: 5px;
 }
 
 input#contact-us-email{
-  border-color: #FA8072;
+  border-color: var(--colorShadeA);
   border-style: solid;
   border-width: 3px;}
 
 input#contact-us-name {
-    border-color: #FA8072;
+    border-color: var(--colorShadeA);
     border-style: solid;
     border-width: 3px;
 }
 
 textarea#contact-us-message{
-  border-color: #FA8072;
+  border-color: var(--colorShadeA);
   border-style: solid;
   border-width: 3px;
 }
@@ -76,14 +90,7 @@ textarea{
   resize:none;
 }
 
-:root {
---backgroundColor: #FFF;
---colorShadeA: #FA8072;
---colorShadeB: #FE9688;
---colorShadeC: #FFC0B6;
---colorShadeD: #FFF;
---colorShadeE: #FFEAE6;
-}
+
 .form-button{
   text-align: center;
 }
@@ -114,7 +121,7 @@ transform: translate3d(0, 0.75em, -1em);
 
 
 button.big-button:hover {
-background: var(--colorShadeD);
+background: #FFF;
 transform: translate(0, 0.375em);
 }
 
@@ -134,7 +141,7 @@ transform: translate3d(0, 0, -1em);
 }
 
 hr.after-form-line{
-  border-top-color: red;
+  border-top-color: var(--dashcolor);
   border-top-style: dashed;
   border-top-width: 2px;
 }
@@ -147,25 +154,25 @@ hr.after-form-line{
   border-radius: 5px;
   text-align: center;
   padding:7px;
-  background-color: rgb(255, 217, 206,0.8);
+  background-color: var(--colorShadeD);
   height:100%;
-  box-shadow: 5px 10px 18px #FA8072;
+  box-shadow: 5px 10px 18px var(--colorshadow);
 }
 
 .contact-us-number{
   border-radius: 5px;
   text-align: center;
   padding:7px;
-  background-color: rgb(255, 217, 206,0.8);
+  background-color: var(--colorShadeD);
   height:100%;
-  box-shadow: 5px 10px 18px #FA8072;
+box-shadow: 5px 10px 18px var(--colorshadow);
 }
 
 .contact-us-icons{
-  color: #FA8072;
+  color: var(--colorShadeA);
   margin-top: 10px;
   font-size: 20px;
-  border-bottom:red dashed 2px;
+  border-bottom:var(--dashcolor) dashed 2px;
 }
 
 p.contact-us-directly-text{
@@ -337,3 +344,4 @@ animation-delay: 2.5s;
     -webkit-animation-name: fadeIn;
 	animation-name: fadeIn;
 }
+
