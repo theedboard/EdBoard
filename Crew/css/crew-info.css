@@ -1,9 +1,26 @@
+/*Page has little to no styling, but here we go*/
+:root {
+    --bg-color-1: white;
+    --text-color-1: black;
+    --underline-color-1: black;
+    --progress-color-even: crimson;
+    --progress-color-odd: black;
+}
+
 .crew-header{
   background:url("../images/crew-header.jpg");
 }
 
 .crew-head-img {
-  height:25em;
+  height: 25em;
+}
+
+.progress .odd{
+  background-color: var(--progress-color-even);
+}
+
+.progress .even{
+  background-color: var(--progress-color-odd);
 }
 
 .splide a:focus{
@@ -15,7 +32,7 @@
 .splide .is-active img{
   -webkit-filter: grayscale(70%);
   filter: grayscale(70%);
-  border-top: 6px solid red;
+  border-top: 5px solid var(--underline-color-1);
 }
 
 @media only screen and (min-width: 770px) {
