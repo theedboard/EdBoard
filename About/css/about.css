@@ -1,0 +1,25 @@
+:root {
+    --bg-color-1: white;
+    --bg-color-2: gray;
+    --text-color-1: black;
+    --underline-color-1: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  max-width: 100%;
+}
+
+body{
+  background-color: var(--bg-color-1);
+}
+
+.card-img-top{
+  width:70%;
+}
