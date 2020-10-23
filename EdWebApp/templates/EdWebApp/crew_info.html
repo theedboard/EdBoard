@@ -1,0 +1,128 @@
+{% extends 'EdWebApp/base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.10/dist/css/splide.min.css">
+<link rel="stylesheet" href="{% static 'EdWebApp/CSSFiles/crew_info.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="container-fluid pt-2">
+  <div class="d-flex crew-header justify-content-center justify-content-md-end">
+    <img src="{{member_details.thumbnail_image.url}}" class="crew-head-img img-fluid" alt="{{member_details.name}}">
+  </div>
+</div>
+<div class="container mb-5 pt-0">
+  <div class="row crew-head py-3">
+    <div class="col-md-12">
+
+      <div class="crew-header-text px-5">
+        <div class="d-flex justify-content-center justify-content-md-start"><h2>{{member_details.name}}</h2></div>
+        <div class="d-flex justify-content-center justify-content-md-start"><h5>{{member_details.tagline}}</h5></div>
+        <div class="d-flex justify-content-center justify-content-md-start"><h6>{{member_details.information|linebreaks|urlize}}</h6></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="row crew-belt">
+    <div class="col-md-7 pl-5">
+      {{member_details.belt|linebreaks}}
+    </div><hr>
+    <div class="offset-md-1 col-md-3 pl-5">
+
+      <h6 class="text-uppercase font-weight-bold pt-5">Character Stats </h6>
+      <div class="row">
+        <div class="col-3">Text</div>
+        <div class="col-9">
+          <div class="progress my-1">
+            <div class="progress-bar bg-danger" style="width:{{member_details.stat1}}%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3">Text</div>
+        <div class="col-9">
+          <div class="progress my-1">
+            <div class="progress-bar bg-dark" style="width:{{member_details.stat2}}%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3">Text</div>
+        <div class="col-9">
+          <div class="progress my-1">
+            <div class="progress-bar bg-danger" style="width:{{member_details.stat3}}%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3">Text</div>
+        <div class="col-9">
+          <div class="progress my-1">
+            <div class="progress-bar bg-dark" style="width:{{member_details.stat4}}%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3">Text</div>
+        <div class="col-9">
+          <div class="progress my-1">
+            <div class="progress-bar bg-danger" style="width:{{member_details.stat5}}%"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="row d-flex justify-content-center"><h4 class="text-center">The Rest of the Crew</h4></div>
+<div class="splide bottom-nav my-2 d-flex justify-content-center">
+  <div class="splide__track">
+    <ul class="splide__list">
+      {% for slide_image in slide_images %}
+      <li class="splide__slide" data-splide-hash="{{forloop.counter}}">
+        <a href="{% url 'EdWebApp:crew_info' slide_image.pk %}"><img class="headshot" src="/media/{{slide_image.thumbnail_image}}" alt="{{slide_image.name}}"></a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.addEventListener( 'DOMContentLoaded', function () {
+  new Splide( '.splide', {
+    perPage: 6,
+    perMove: 1,
+    rewind : true,
+    focus  : 'center',
+    height : '13rem',
+    lazyLoad: 'nearby',
+    cover  : true,
+    breakpoints: {
+      '1030': {
+  			perPage: 5,
+  			gap    : '1rem',
+  		},
+  		'770': {
+  			perPage: 3,
+  			gap    : '1rem',
+  		},
+  		'480': {
+  			perPage: 2,
+  			gap    : '1rem',
+  		},
+	}
+  } ).mount(window.splide.Extensions );
+} );
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.10/dist/js/splide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-url-hash@0.1.5/dist/js/splide-extension-url-hash.min.js"></script>
+{% endblock %}

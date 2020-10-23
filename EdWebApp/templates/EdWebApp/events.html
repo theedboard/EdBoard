@@ -1,0 +1,45 @@
+{% extends 'EdWebApp/base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'EdWebApp/CSSFiles/events.css' %}">
+{% endblock %}
+
+{% block main %}
+    <h1 class="mt-5">Events</h1>
+
+
+    <div class="container">
+      {% for event in events %}
+        <div class="row">
+            <div class="{% cycle 'order-2 first col-8 col-md-9' 'order-1 first col-8 col-md-9' %}">
+                <a href="{% url 'EdWebApp:event_info_view' event.pk %}">
+                {{event.title}}
+            </a>
+            </div>
+
+            <div class="{% cycle 'order-1 second col-4 col-md-3' 'order-2 first col-4 col-md-3' %}" onclick="change_order(this)">
+                <img src="{{event.preview_image.url}}">
+            </div>
+        </div>
+      {% endfor %}
+
+    </div>
+
+{% endblock %}
+
+
+{% block scripts %}
+  <script>
+    function change_order(arg){
+        var clname=arg.className;
+        if(clname[6]=="1"){
+            clname_new=clname.replace("1","2")
+        }
+        else{
+            clname_new=clname.replace("2","1");
+        }
+        arg.className=clname_new;
+    }
+  </script>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% load static %}
+<header>
+  <nav id="navbar">
+    <div class="logos">
+      <a href="#Link1"><img src="{% static 'EdWebApp/images/logo.svg' %}" style="height: 70px; width: 70px;"></a>
+    </div>
+    <input type="checkbox" id="click">
+    <label for="click" class="menu-btn">
+      <div onclick="myFunction(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    </label>
+    <ul>
+      <li><a class="active" href="{% url 'EdWebApp:home' %}" onClick="ul(0)">Home</a></li>
+      <li><a href="" onClick="ul(1)">Jayzine</a></li>
+      <li><a href="{% url 'EdWebApp:shabd_info' %}" onClick="ul(2)">||SHABD||</a></li>
+      <li><a href="{% url 'EdWebApp:event_view' %}" onClick="ul(2)">Events</a></li>
+      <li><a href="{% url 'EdWebApp:history' %}" onClick="ul(3)">History</a></li>
+      <li><a href="{% url 'EdWebApp:about' %}" onClick="ul(4)">About Us</a></li>
+      <li><a href="{% url 'EdWebApp:crew' %}" onClick="ul(5)">Crew</a></li>
+      <li><a href="{% url 'EdWebApp:contact' %}" onClick="ul(5)">Contact us</a></li>
+    </ul>
+  </nav>
+</header>

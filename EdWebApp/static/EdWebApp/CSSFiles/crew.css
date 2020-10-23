@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.crew a{
+  text-decoration:none;
+  color:black;
+  position: relative;
+}
+
+.crew-photo-div:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.crew .name{
+  text-align:center;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+
+.crew .job-title {
+  text-align:center;
+  font-weight:bold;
+}
+
+.crew .theme-title {
+  text-align:center;
+}
+
+.crew .headshot{
+  align:center;
+}
+
+@media only screen and (min-width: 770px) {
+  .crew-photo-div:before{
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    bottom: 0;
+    left: 10;
+    background-color: #000;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (min-width: 770px) {
+  .crew .headshot{
+    opacity:0.9;
+  }
+
+  .crew .headshot:hover{
+    opacity:1;
+  }
+}

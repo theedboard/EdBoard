@@ -1,0 +1,97 @@
+{% extends 'EdWebApp/base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'EdWebApp/CSSFiles/contact.css' %}">
+{% endblock %}
+
+{% block main %}
+<br>
+  {% for msg in messages %}
+    <div class="alert alert-info alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      {{msg.message}}
+    </div>
+  {% endfor %}
+<div class="contact-form">
+  <div class="container contact-us-container">
+
+    <div class="jumbotron contact-us-jumbotron animate fadeInDown one">
+      <strong>
+        <h2 class="contact-form-heading lead">We'd
+          <span class="contact-form-heart">&hearts;</span>
+          to hear from you
+        </h2>
+
+        <hr class="after-heading-border">
+        <div class="contact-form-desc">
+         <h3 class="lead">When we're not busy trying to come up with footers, we love checking our mail. Help keep our inbox full by writing to us! Pitch us your ideas, give valuable feedback or just say hi!</h3>
+       </div>
+     </div>
+
+     <div class="contact-form-content">
+       <form action="" class="contact-us-form animate fadeIn two" method="post">
+         {% csrf_token %}
+         <div class="row">
+           <div class="col-sm-6">
+             <div class="form-group">
+               <label for="name"></label>
+               <input type="name" class="form-control input-lg" id="name" name="name" placeholder="name" required>
+               {{form.name.errors}}
+             </div>
+           </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="email"></label>
+              <input type="email" class="form-control input-lg" id="email" name="email" placeholder="email" required>
+              {{form.email.errors}}
+            </div>
+          </div>
+         </div>
+
+         <div class="form-group">
+           <div class="contact-us-textarea">
+             <label for="message"></label>
+             <textarea class="form-control input-lg" id="message" rows="4" name="message" placeholder="message" required></textarea>
+             {{form.message.errors}}
+           </div>
+         </div>
+         <br>
+         <div class="form-button">
+           <button class="big-button" type="submit">SEND AT THE SPEED OF LIGHT</button>
+         </div>
+         <br><br>
+       </form>
+     </div>
+     <br>
+
+     <hr class="after-form-line animate fadeInDown three">
+     <br>
+
+     <div class="contact-form-bottom">
+       <div class="row contact-form-bottom-row">
+         <div class="col-xs-6">
+           <div class="contact-us-directly animate fadeInLeft four">
+             <p class="contact-us-icons"><span class="glyphicon glyphicon-envelope"></span></p>
+             <p class="contact-us-directly-text">You could also write to us directly at sjce.jayzine@gmail.com</p>
+           </div>
+         </div>
+
+         <div class="col-xs-6">
+           <div class="contact-us-number animate fadeInRight four">
+             <p class="contact-us-icons"><span class="glyphicon glyphicon-earphone"></span></p>
+             <p class="contact-us-number-text">Hey, we just met you and this is crazy. But here's our number, so call us maybe: XXXXXXXXXX</p>
+           </div>
+         </div>
+       </div>
+
+
+     </div>
+     <br>
+     <br>
+   </div>
+ </div>
+ {% endblock %}
+{% block scripts %}
+{% endblock %}

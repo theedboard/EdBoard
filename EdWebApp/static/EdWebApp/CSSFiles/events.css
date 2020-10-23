@@ -1,0 +1,47 @@
+ body{
+     background-color: rgb(245, 237, 191);
+ }
+ h1{
+     font-size: 10vw;
+     text-align: center;
+     font-variant-caps: all-petite-caps;
+ }
+ .container{
+    max-width: 100%; 
+}  
+.first a{
+    text-decoration: none;
+    color: red;
+}
+.row{
+    width: auto;
+    height: 30%;
+    margin: 0px 0px 5px 0px;
+    /* border-bottom: 1px solid; */
+    border-top: 1px solid rgb(107, 93, 13);;
+    border-radius: 50vh;
+}
+.first{
+    font-size: 4vw;
+    text-align: center;
+    /* color: aliceblue; */
+    /* padding: 10%; */
+    margin:auto;
+    /* background-color: #f00; */
+}
+.second{
+    margin:auto;
+    transition-property: outline-offset ;
+    transition-duration: 3s;
+    transition-timing-function: ease-out;
+    /* padding: 10vh; */
+    /* background-color: #00f; */
+}
+body{
+    padding: 5px;
+}
+/* .second:onclick{
+    
+    transition-duration: 3s;
+    
+} */
