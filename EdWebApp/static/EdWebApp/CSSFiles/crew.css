@@ -10,6 +10,11 @@ html {
   overflow-x: hidden;
 }
 
+.crew img{
+  height: 300px;
+  width: 300px;
+}
+
 .crew a{
   text-decoration:none;
   color:black;
