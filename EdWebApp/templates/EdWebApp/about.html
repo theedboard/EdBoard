@@ -22,8 +22,8 @@
 </div>
 
 <div class="container about-container my-5 px-3">
-  <div class="row pt-5">
-    <div class="col-md-5 d-flex justify-content-center">
+  <div class="row py-3">
+    <div class="col-md-5 d-flex justify-content-center py-3">
       <img src="{% static 'EdWebApp/images/logo.svg' %}" class="img-responsive" alt="logo">
     </div>
     <div class="col-md-7">
@@ -32,14 +32,40 @@
       <p>Nulla malesuada rhoncus viverra. Fusce elementum imperdiet neque, ac finibus enim vulputate at. Curabitur varius ante tellus. Nam sit amet urna placerat, tempor dui sit amet, ultricies felis. Vestibulum semper velit odio, nec iaculis nisi porta at. Sed tempor sapien at arcu tincidunt, et suscipit velit consequat.</p>
     </div>
   </div>
-  <div class="row pt-5">
-    <div class="col-md-7 order-12 order-md-1">
+  <div class="row py-3">
+    <div class="col-md-7 order-12 order-md-1 py-3">
       <p>Nulla malesuada rhoncus viverra. Fusce elementum imperdiet neque, ac finibus enim vulputate at. Curabitur varius ante tellus. Nam sit amet urna placerat, tempor dui sit amet, ultricies felis. Vestibulum semper velit odio, nec iaculis nisi porta at. Sed tempor sapien at arcu tincidunt, et suscipit velit consequat.</p>
       <p> Quisque sollicitudin ex sed rutrum porttitor. Duis nec ultricies nunc, sit amet mollis dui. Mauris hendrerit sollicitudin libero eget interdum. Pellentesque volutpat sagittis auctor. Proin massa tortor, consequat nec lacus ut, ornare rhoncus tortor.</p>
       <p>Nulla malesuada rhoncus viverra. Fusce elementum imperdiet neque, ac finibus enim vulputate at. Curabitur varius ante tellus. Nam sit amet urna placerat, tempor dui sit amet, ultricies felis. Vestibulum semper velit odio, nec iaculis nisi porta at. Sed tempor sapien at arcu tincidunt, et suscipit velit consequat.</p>
     </div>
     <div class="col-md-5 d-flex justify-content-center order-1 order-md-12">
       <img src="{% static 'EdWebApp/images/logo.svg' %}" class="img-responsive" alt="logo">
+    </div>
+  </div>
+</div>
+
+<div class="bg-secondary">
+  <div class="container py-5 px-3">
+    <div class="row about-history">
+      <div class="col-md-12 text-center d-flex justify-content-center">
+        <div class="card mb-3 p-3" style="max-width: 760px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="{% static 'EdWebApp/images/logo.svg' %}" class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3 class="card-title">HISTORY</h3>
+                <p class="card-text m-3">
+                  This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                  This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                </p>
+                <p class="card-text"> <a class="btn btn-secondary btn-lg mb-5" href="{% url 'EdWebApp:contact' %}">Contact Us</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -68,14 +94,14 @@
     </div>
   </div>
   <div class="row staff-row px-5 d-flex justify-content-center">
-    <div class="card col-md-3 m-lg-3 my-5">
+    <div class="card col-xl-3 col-lg-4 col-md-5 m-lg-3 my-5">
       <img class="card-img-top mx-auto" src="{% static 'EdWebApp/images/logo.svg' %}" alt="Card image cap">
       <div class="card-body text-center">
         <h5 class="card-title">Advisor Name</h5>
         <p class="card-text">Nulla malesuada rhoncus viverra. Fusce elementum imperdiet neque, ac finibus enim vulputate at. Curabitur varius ante tellus. Nam sit amet urna placerat, tempor dui sit amet, ultricies felis. Vestibulum semper velit odio, nec iaculis nisi porta at. Sed tempor sapien at arcu tincidunt, et suscipit velit consequat.</p>
       </div>
     </div>
-    <div class="card col-md-3 m-lg-3 my-5">
+    <div class="card col-xl-3 col-lg-4 col-md-5 m-lg-3 my-5">
       <img class="card-img-top mx-auto" src="{% static 'EdWebApp/images/logo.svg' %}" alt="Card image cap">
       <div class="card-body text-center">
         <h5 class="card-title">Advisor Name</h5>
