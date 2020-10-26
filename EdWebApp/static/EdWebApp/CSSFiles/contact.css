@@ -2,10 +2,10 @@
 --polkacolor: #FFC6B6;
 --bgcolor: white;
 --mainpink: #FFD9CE; /*main pink color of form and jumbotron*/
---colorShadeA: #FA8072; /*lightest pink*/
+--colorShadeA: #FA8072;
 --colorShadeB: #FE9688;
 --colorShadeC: #FFC0B6;
---colorShadeD: rgb(255, 217, 206,0.8);
+--colorShadeD: rgb(255, 217, 206);
 --colorShadeE: #FFEAE6; /*darkest pink*/
 --dashcolor: red; /*color of the dashes*/
 --colorshadow: #FA8072; /*color of the shadows*/
@@ -46,6 +46,14 @@ h2.contact-form-heading{
 box-shadow: 5px 10px 18px var(--colorshadow);
 
 }
+
+.alert{
+  background-color: var(--colorShadeE);
+  border-top: 1px dashed var(--dashcolor);
+  border-bottom: 1px dashed var(--dashcolor);
+  color:#E85B51;
+}
+
 .contact-form-heart{
   color: red;
   font-size: 37px;
@@ -69,18 +77,18 @@ hr.after-heading-border{
   border-width: 5px;
 }
 
-input#contact-us-email{
+input#email{
   border-color: var(--colorShadeA);
   border-style: solid;
   border-width: 3px;}
 
-input#contact-us-name {
+input#name {
     border-color: var(--colorShadeA);
     border-style: solid;
     border-width: 3px;
 }
 
-textarea#contact-us-message{
+textarea#message{
   border-color: var(--colorShadeA);
   border-style: solid;
   border-width: 3px;
@@ -153,7 +161,7 @@ hr.after-form-line{
   border-radius: 5px;
   text-align: center;
   padding:7px;
-  background-color: var(--colorShadeD);
+  background-color: var(--colorShadeE);
   height:100%;
   box-shadow: 5px 10px 18px var(--colorshadow);
 }
@@ -162,7 +170,7 @@ hr.after-form-line{
   border-radius: 5px;
   text-align: center;
   padding:7px;
-  background-color: var(--colorShadeD);
+  background-color: var(--colorShadeE);
   height:100%;
 box-shadow: 5px 10px 18px var(--colorshadow);
 }
@@ -342,4 +350,6 @@ animation-delay: 2.5s;
 .fadeIn {
     -webkit-animation-name: fadeIn;
 	animation-name: fadeIn;
+}
+
 }
