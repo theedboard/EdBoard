@@ -51,7 +51,6 @@ input[type="checkbox"]{
 }
 @media (max-width: 1500px){
   nav{
-    overflow-y: auto;
     padding: 0 40px 0 20px;
   }
   nav ul{
@@ -60,6 +59,9 @@ input[type="checkbox"]{
   align-items: center;
 }
 @media (max-width: 920px) {
+  nav{
+    overflow-y: auto;
+  }
 nav .menu-btn i{
   display: block;
 }
