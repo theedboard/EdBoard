@@ -9,10 +9,17 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 from datetime import date
 import os
+import cloudinary.uploader
+from cloudinary.models import CloudinaryField
 
 class news(models.Model):
     news_title = models.CharField(max_length=30)
-    poster = models.ImageField(upload_to='EdWebApp/news/')
+    poster = CloudinaryField("Image",
+    overwrite=True,
+    resource_type="image",
+    transformation={'dpr' : "auto", 'responsive' : True, "quality": 'auto:low', 'height': 400, 'crop': "scale"},
+    format="jpeg",)
+    #poster = models.ImageField(upload_to='EdWebApp/news/')
     description = models.TextField()
     display = models.BooleanField(default=True)
     def file_fields(self):
@@ -72,7 +79,8 @@ class eventimage(models.Model):
 def submission_delete(sender, instance, **kwargs):
     try:
         for field in instance.file_fields():
-            field.delete(False)
+            #field.delete(False)
+            cloudinary.uploader.destroy(field.public_id)
     except:
         return False
 
@@ -85,7 +93,8 @@ def auto_delete_file_on_change(sender, instance, **kwargs):
         new_files = instance.file_fields()
         for i in range(len(old_files)):
             if not old_files[i] == new_files[i]:
-                if os.path.isfile(old_files[i].path):
-                    os.remove(old_files[i].path)
+                cloudinary.uploader.destroy(old_files[i].public_id)
+                #if os.path.isfile(old_files[i].path):
+                #    os.remove(old_files[i].path)
     except:
         return False

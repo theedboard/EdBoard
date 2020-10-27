@@ -87,6 +87,7 @@ body{
 }
 .about {
 	align-self: center;
+	text-align: center;
 	padding: 10vw;
 	font-size: 3vh;/****/
 	color: var(--text-color-1);/******/
@@ -296,7 +297,7 @@ body{
 	}
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 500px) {
 	.logo {
 		top: calc(50vh - 30vmin);
 	}

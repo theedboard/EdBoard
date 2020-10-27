@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 
-import os##################
+import os
+import cloudinary
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -27,7 +28,7 @@ SECRET_KEY = "UBvFpnvALbi<vUa*ePgit&nWHN&6h^ZFPYr_A4Qx+~|<i$)22>"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True  #########################
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', '192.168.43.197']
 
 
 # Application definition
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary',
     'EdWebApp'
 ]
 
@@ -120,6 +122,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
+cloudinary.config(
+    cloud_name = 'dc1a3qfpb',
+    api_key = '847317748266871',
+    api_secret = 'oeoCsaUL5Ji4DOwdntVZYp3FPZc'
+)
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')######################
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
