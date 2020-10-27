@@ -59,9 +59,6 @@ input[type="checkbox"]{
   align-items: center;
 }
 @media (max-width: 920px) {
-  nav{
-    overflow-y: auto;
-  }
 nav .menu-btn i{
   display: block;
 }
@@ -80,6 +77,7 @@ nav ul{
   display: block;
   transition: all 0.3s ease;
   align-items: center;
+  overflow-y: auto;
 }
 #click:checked ~ ul{
   right: 0;
