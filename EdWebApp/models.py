@@ -17,7 +17,7 @@ class news(models.Model):
     poster = CloudinaryField("Image",
     overwrite=True,
     resource_type="image",
-    transformation={'dpr' : "auto", 'responsive' : True, "quality": 'auto:low', 'height': 400, 'crop': "scale"},
+    transformation={"quality": 'auto:low', 'height': 400, 'crop': "scale"},
     format="jpeg",)
     #poster = models.ImageField(upload_to='EdWebApp/news/')
     description = models.TextField()
