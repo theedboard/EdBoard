@@ -3,6 +3,7 @@ from django.core.files.storage import Storage
 # Create your views here.
 from .models import news, member, event, eventimage
 from django import forms
+from django.conf import settings
 from django.core.mail import send_mail
 from django.contrib import messages
 
@@ -71,11 +72,18 @@ def contact(request):
             name = form.cleaned_data['name']
             message = form.cleaned_data['message']
             email = form.cleaned_data['email']
-            #recipients = ['rajath642000@gmail.com']
-            #if cc_myself:
-            #    recipients.append(sender)
-            messages.add_message(request, messages.INFO, 'message sent')
-            #send_mail(sub, message, sender, recipients)
+
+            subject = 'EdBoard message from '+name
+            message = 'Name: '+name+'\nemail: '+email+'\nMessage: '+message
+            email_from = settings.EMAIL_HOST_USER
+            recipient_list = ['rajath642000@gmail.com', ]
+            try:
+                send_mail( subject, message, email_from, recipient_list )
+                messages.add_message(request, messages.INFO, 'Thankyou for contacting us.. We will reply you soon.')
+            except:
+                messages.add_message(request, messages.INFO, 'There was some problem in sending message. Try again')
+        else:
+            messages.add_message(request, messages.INFO, 'The form fields are invalid.')
     else:
         form = ContactForm()
     context = {

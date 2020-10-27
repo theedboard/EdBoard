@@ -128,6 +128,13 @@ cloudinary.config(
     api_secret = 'oeoCsaUL5Ji4DOwdntVZYp3FPZc'
 )
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'rajath642000@gmail.com'
+EMAIL_HOST_PASSWORD = 'rajath 6'
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')######################
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
