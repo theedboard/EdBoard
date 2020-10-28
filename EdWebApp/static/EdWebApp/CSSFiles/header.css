@@ -78,6 +78,7 @@ nav ul{
   display: block;
   transition: all 0.3s ease;
   align-items: center;
+  overflow-y: auto;
 }
 #click:checked ~ ul{
   right: 0;
