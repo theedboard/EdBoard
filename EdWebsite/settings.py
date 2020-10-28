@@ -28,7 +28,7 @@ SECRET_KEY = "UBvFpnvALbi<vUa*ePgit&nWHN&6h^ZFPYr_A4Qx+~|<i$)22>"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True  #########################
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', '192.168.43.197']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
@@ -123,17 +123,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 cloudinary.config(
-    cloud_name = 'dc1a3qfpb',
-    api_key = '847317748266871',
-    api_secret = 'oeoCsaUL5Ji4DOwdntVZYp3FPZc'
+    cloud_name = 'edboard',
+    api_key = '789386227872941',
+    api_secret = 'qghVHqyL4KPESBJkWD_KQsVsSUg'
 )
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'rajath642000@gmail.com'
-EMAIL_HOST_PASSWORD = 'rajath 6'
+EMAIL_HOST_USER = 'edboard.assist@gmail.com'
+EMAIL_HOST_PASSWORD = 'Binod(69)'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')######################
 STATIC_URL = '/static/'

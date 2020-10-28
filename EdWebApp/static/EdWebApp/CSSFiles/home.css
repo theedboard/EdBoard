@@ -79,7 +79,7 @@ body{
 	text-shadow: 0 0 1vmin var(--bg-color-1);
 	top: calc(50vh + 15vmin);
 	font-size: 6vw;/******/
-	font-family: 'Sansita';/*****/
+	font-family: 'Cinzel', serif;/*****/
 	cursor: default;
 }
 .about-us {

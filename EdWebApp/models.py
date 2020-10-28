@@ -36,8 +36,15 @@ CHOICES = (
 )
 
 class member(models.Model):
-    profile_image = models.ImageField(upload_to='EdWebApp/crew/')
-    thumbnail_image = models.ImageField(upload_to='EdWebApp/crew/')
+    profile_image = CloudinaryField("Image", overwrite=True, resource_type="image",
+    transformation= [
+        {"quality": 'auto:low', 'width':300, 'height': 300, 'gravity': "face", 'radius': "max", 'crop': "crop"},
+        {'crop': "scale", 'effect': "grayscale"}
+    ],
+    format="jpeg",)
+    thumbnail_image = CloudinaryField("Image", overwrite=True, resource_type="image",
+    transformation={"quality": 'auto:low', 'height': 400, 'crop': "scale"},
+    format="jpeg",)
     name = models.CharField(max_length=40)
     title = models.CharField(max_length=20, default='Editor')
     sections = models.CharField(max_length=25)
@@ -61,7 +68,12 @@ class member(models.Model):
 class event(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
-    preview_image = models.FileField(upload_to = 'EdWebApp/events')
+    preview_image = CloudinaryField("Image",
+    overwrite=True,
+    resource_type="image",
+    transformation={"quality": 'auto:low', 'height': 400, 'crop': "scale"},
+    format="jpeg",)
+    #preview_image = models.FileField(upload_to = 'EdWebApp/events')
     def file_fields(self):
         return [self.preview_image]
     def __str__(self):
@@ -69,7 +81,12 @@ class event(models.Model):
 
 class eventimage(models.Model):
     event = models.ForeignKey(event, default=None, on_delete=models.CASCADE)
-    images = models.FileField(upload_to = 'EdWebApp/events')
+    images = CloudinaryField("Image",
+    overwrite=True,
+    resource_type="image",
+    transformation={"quality": 'auto:low', 'height': 400, 'crop': "scale"},
+    format="jpeg",)
+    #images = models.FileField(upload_to = 'EdWebApp/events')
     def file_fields(self):
         return [self.images]
     def __str__(self):

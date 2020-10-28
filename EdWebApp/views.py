@@ -16,6 +16,7 @@ def home(request):
     latest_news = news.objects.filter(display=True)
     context={
         'latest_news': latest_news,
+        'home': 'active',
     }
     return render(request, 'EdWebApp/home.html', context)
 
@@ -27,6 +28,7 @@ def crew(request):
         'editor_in_chiefs': editor_in_chiefs,
         'section_chiefs': section_chiefs,
         'editors': editors,
+        'crew': 'active',
     }
     return render(request, 'EdWebApp/crew.html', context)
 
@@ -40,11 +42,15 @@ def crew_info(request, id):
     return render(request, 'EdWebApp/crew_info.html', context)
 
 def shabd_info(request):
-    context = {}
+    context = {
+        'shabd': 'active'
+    }
     return render(request, 'EdWebApp/shabd.html', context)
 
 def about(request):
-    context = {}
+    context = {
+        'about': 'active',
+    }
     return render(request, 'EdWebApp/about.html', context)
 
 def history(request):
@@ -53,7 +59,10 @@ def history(request):
 
 def event_view(request):
     events = event.objects.all()
-    context={'events':events}
+    context={
+        'events': events,
+        'event': 'active',
+    }
     return render(request, 'EdWebApp/events.html', context)
 
 def event_info_view(request, id):
@@ -73,10 +82,10 @@ def contact(request):
             message = form.cleaned_data['message']
             email = form.cleaned_data['email']
 
-            subject = 'EdBoard message from '+name
-            message = 'Name: '+name+'\nemail: '+email+'\nMessage: '+message
+            subject = 'Message from '+name
+            message = 'Name: '+name+'\nemail: '+email+'\nMessage:\n'+message
             email_from = settings.EMAIL_HOST_USER
-            recipient_list = ['rajath642000@gmail.com', ]
+            recipient_list = ['edboard.assist@gmail.com', ]
             try:
                 send_mail( subject, message, email_from, recipient_list )
                 messages.add_message(request, messages.INFO, 'Thankyou for contacting us.. We will reply you soon.')
