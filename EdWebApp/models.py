@@ -14,12 +14,9 @@ from cloudinary.models import CloudinaryField
 
 class news(models.Model):
     news_title = models.CharField(max_length=30)
-    poster = CloudinaryField("Image",
-    overwrite=True,
-    resource_type="image",
+    poster = CloudinaryField("Image", overwrite=True, resource_type="image", use_filename=True, unique_filename=True,
     transformation={"quality": 'auto:low', 'height': 400, 'crop': "scale"},
-    format="jpeg",)
-    #poster = models.ImageField(upload_to='EdWebApp/news/')
+    format="jpeg", )
     description = models.TextField()
     display = models.BooleanField(default=True)
     def file_fields(self):
@@ -36,13 +33,10 @@ CHOICES = (
 )
 
 class member(models.Model):
-    profile_image = CloudinaryField("Image", overwrite=True, resource_type="image",
-    transformation= [
-        {"quality": 'auto:low', 'width':300, 'height': 300, 'gravity': "face", 'radius': "max", 'crop': "crop"},
-        {'crop': "scale", 'effect': "grayscale"}
-    ],
+    profile_image = CloudinaryField("Image", overwrite=True, resource_type="image", use_filename=True, unique_filename=True,
+    transformation={"quality": 'auto:low', 'width':300, 'height': 300, 'crop': "scale", 'effect': "grayscale"},
     format="jpeg",)
-    thumbnail_image = CloudinaryField("Image", overwrite=True, resource_type="image",
+    thumbnail_image = CloudinaryField("Image", overwrite=True, resource_type="image", use_filename=True, unique_filename=True,
     transformation={"quality": 'auto:low', 'height': 400, 'crop': "scale"},
     format="jpeg",)
     name = models.CharField(max_length=40)
@@ -68,9 +62,7 @@ class member(models.Model):
 class event(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
-    preview_image = CloudinaryField("Image",
-    overwrite=True,
-    resource_type="image",
+    preview_image = CloudinaryField("Image", overwrite=True, resource_type="image", use_filename=True, unique_filename=True,
     transformation={"quality": 'auto:low', 'height': 400, 'crop': "scale"},
     format="jpeg",)
     #preview_image = models.FileField(upload_to = 'EdWebApp/events')
@@ -81,9 +73,7 @@ class event(models.Model):
 
 class eventimage(models.Model):
     event = models.ForeignKey(event, default=None, on_delete=models.CASCADE)
-    images = CloudinaryField("Image",
-    overwrite=True,
-    resource_type="image",
+    images = CloudinaryField("Image", overwrite=True, resource_type="image", use_filename=True, unique_filename=True,
     transformation={"quality": 'auto:low', 'height': 400, 'crop': "scale"},
     format="jpeg",)
     #images = models.FileField(upload_to = 'EdWebApp/events')

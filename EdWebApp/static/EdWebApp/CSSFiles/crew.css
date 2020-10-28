@@ -1,3 +1,8 @@
+:root {
+  --bg-color-2: #333;
+  --text-color-1: #fff;
+  --red: #ec3132;
+}
 * {
   margin: 0;
   padding: 0;
@@ -10,14 +15,21 @@ html {
   overflow-x: hidden;
 }
 
+body {
+  background-color: var(--bg-color-2);
+  color: var(--text-color-1);
+}
+
 .crew img{
   height: 300px;
   width: 300px;
+  border-radius: 50%;
+  border: 3px solid #fff;
 }
 
 .crew a{
   text-decoration:none;
-  color:black;
+  color: var(--text-color-1);
   position: relative;
 }
 
@@ -53,7 +65,7 @@ html {
     height: 2px;
     bottom: 0;
     left: 10;
-    background-color: #000;
+    background-color: var(--text-color-1);
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out 0s;

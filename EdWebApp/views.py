@@ -34,7 +34,7 @@ def crew(request):
 
 def crew_info(request, id):
     member_details = get_object_or_404(member, pk=id)
-    slide_images = member.objects.values('pk','name','thumbnail_image')
+    slide_images = member.objects.only('pk','name','profile_image')
     context={
         'member_details': member_details,
         'slide_images': slide_images,

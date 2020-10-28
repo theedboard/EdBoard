@@ -1,12 +1,21 @@
-.crew-header{
-  background:url("../images/crew-header.jpg");
-  background-color: #51713a;
-background-image: linear-gradient(-90deg, #51713a 0%, #000e21 74%);
+:root {
+  --bg-color-2: #333;
+  --bg-color-1: #1c1d1e;
+  --text-color-1: #fff;
+}
 
+body {
+  background-color: var(--bg-color-2);
+  color: var(--text-color-1);
+}
+.crew-header{
+  background-color: var(--bg-color-1);
+  /*background-image: linear-gradient(-90deg, #6f0000 0%, #200122 74%);*/
+  border: 5px solid #9a2a29;
 }
 
 .crew-head-img {
-  height:25em;
+  height:20em;
 }
 
 .splide a:focus{
@@ -33,4 +42,11 @@ background-image: linear-gradient(-90deg, #51713a 0%, #000e21 74%);
     color: rgba(225,225,225,0.9);
     padding: 10px;
   }
+}
+
+.red {
+  background-color: #ec3132;
+}
+.maroon {
+  background-color: #9a2a29;
 }

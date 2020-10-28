@@ -1,17 +1,28 @@
 :root {
---polkacolor: #FFC6B6;
---bgcolor: white;
---mainpink: #FFD9CE; /*main pink color of form and jumbotron*/
---colorShadeA: #FA8072;
---colorShadeB: #FE9688;
---colorShadeC: #FFC0B6;
---colorShadeD: rgb(255, 217, 206);
---colorShadeE: #FFEAE6; /*darkest pink*/
---dashcolor: red; /*color of the dashes*/
---colorshadow: #FA8072; /*color of the shadows*/
-
+--polkacolor: #666;
+--bgcolor: #333;
+--mainpink: #1c1d1e; /*main pink color of form and jumbotron*/
+--colorShadeA: #000;
+--colorShadeB: #222;
+--colorShadeC: #111;
+--colorShadeD: #000;
+--colorShadeE: #1c1d1e; /*darkest pink*/
+--dashcolor: #ddd; /*color of the dashes*/
+--text-color: #fff;
+--fadecolor: #1c1d1e;
 }
-
+.light {
+  --polkacolor: #FFC6B6;
+  --bgcolor: white;
+  --mainpink: #FFD9CE; /*main pink color of form and jumbotron*/
+  --colorShadeA: #FA8072;
+  --colorShadeB: #FE9688;
+  --colorShadeC: #FFC0B6;
+  --colorShadeD: rgb(255, 217, 206);
+  --colorShadeE: #FFEAE6; /*darkest pink*/
+  --dashcolor: red; /*color of the dashes*/
+  --colorshadow: #FA8072; /*color of the shadows*/
+}
 body {
 padding:0;
 margin:0;
@@ -19,7 +30,7 @@ background-color:var(--bgcolor);
 background-image: radial-gradient(var(--polkacolor) 2px, transparent 2px);
 background-size:20px 20px;
 background-attachment: fixed;
-
+color: var(--text-color);
 }
 
 @media (min-width: 1200px) {
@@ -42,7 +53,7 @@ h2.contact-form-heading{
 }
 
 .contact-us-jumbotron{
-  background-image: radial-gradient(var(--mainpink),white);
+  background-image: radial-gradient(var(--mainpink),var(--fadecolor));
 box-shadow: 5px 10px 18px var(--colorshadow);
 
 }
@@ -51,9 +62,11 @@ box-shadow: 5px 10px 18px var(--colorshadow);
   background-color: var(--colorShadeE);
   border-top: 1px dashed var(--dashcolor);
   border-bottom: 1px dashed var(--dashcolor);
-  color:#E85B51;
+  color: var(--text-color);
 }
-
+.close {
+  color: var(--text-color);
+}
 .contact-form-heart{
   color: red;
   font-size: 37px;
@@ -80,18 +93,25 @@ hr.after-heading-border{
 input#email{
   border-color: var(--colorShadeA);
   border-style: solid;
-  border-width: 3px;}
+  border-width: 3px;
+  background-color: var(--bgcolor);
+  color: var(--text-color);
+}
 
 input#name {
     border-color: var(--colorShadeA);
     border-style: solid;
     border-width: 3px;
+    background-color: var(--bgcolor);
+    color: var(--text-color);
 }
 
 textarea#message{
   border-color: var(--colorShadeA);
   border-style: solid;
   border-width: 3px;
+  background-color: var(--bgcolor);
+  color: var(--text-color);
 }
 textarea{
   resize:none;
@@ -102,7 +122,7 @@ textarea{
   text-align: center;
 }
 button.big-button {
-
+color: var(--text-color);
  padding: 1em 2em;
  border: 2px solid var(--colorShadeA);
 border-radius: 1em;
@@ -128,7 +148,6 @@ transform: translate3d(0, 0.75em, -1em);
 
 
 button.big-button:hover {
-background: #FFF;
 transform: translate(0, 0.375em);
 }
 
@@ -176,7 +195,7 @@ box-shadow: 5px 10px 18px var(--colorshadow);
 }
 
 .contact-us-icons{
-  color: var(--colorShadeA);
+  color: var(--text-color);
   margin-top: 10px;
   font-size: 20px;
   border-bottom:var(--dashcolor) dashed 2px;
