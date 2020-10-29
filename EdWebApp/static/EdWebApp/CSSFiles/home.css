@@ -129,7 +129,7 @@ body{
 .poster img {
 	max-height: 55vh;
 }
-.card {
+.news .card {
 	max-height: 25vh;
 	overflow: auto;
 	background: transparent;
@@ -271,7 +271,7 @@ body{
 	.poster img {
 		max-height: 70vh;
 	}
-	.card  {
+	.news .card  {
 		max-height: 65vh;
 	}
 }
@@ -301,4 +301,10 @@ body{
 	.logo {
 		top: calc(50vh - 30vmin);
 	}
+}
+
+.home-contact-us .card{
+	background-color: #fff;
+	color:#000;
+	min-height: 30vh !important;
 }
