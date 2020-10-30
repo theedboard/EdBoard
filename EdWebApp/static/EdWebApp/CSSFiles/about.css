@@ -33,6 +33,10 @@ hr {
   border-color: var(--underline-color-1);
 }
 /*Edit if required*/
-.jumbotron img, .staff-row img, .about-container img, .more-event-container img, .card-img-top, .about-history img{
+.jumbotron img, .about-container img, .more-event-container img, .card-img-top, .about-history img{
   width:16rem;
+}
+
+.staff-row img{
+  max-width:16rem !important;
 }
