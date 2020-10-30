@@ -304,7 +304,16 @@ body{
 }
 
 .home-contact-us .card{
-	background-color: #fff;
-	color:#000;
-	min-height: 30vh !important;
+	background-color: #ec3132;
+	color:#fff;
+	min-height: 20vh !important;
+}
+
+.maroon {
+	background-color: #9a2a29;
+	color: #fff;
+}
+
+hr {
+	border-color: #fff;
 }

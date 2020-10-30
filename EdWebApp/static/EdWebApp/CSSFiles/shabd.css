@@ -3,9 +3,19 @@
  * Copyright 2013-2020 Start Bootstrap
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-one-page-wonder/blob/master/LICENSE)
  */
-
-body {
-  /*font-family: 'Lato';*/
+:root {
+  --bg-1: #9a2a29;
+  --bg-2: #1c1d1e;
+  --circle-1: #9a2a29;
+  --circle-2: #1c1d1e;
+  --bg: #1c1d1e;
+  --text-color: #fff;
+}
+.light {
+  --circle-1: #ee0979;
+  --circle-2: #ff6a00;
+  --bg-1: #ee0979;
+  --bg-2: #ff6a00;
 }
 
 h1,
@@ -16,6 +26,10 @@ h5,
 h6 {
   /*font-family: 'Catamaran';*/
   font-weight: 800 !important;
+}
+body {
+    background-color: var(--bg);
+    color: var(--text-color);
 }
 
 .btn-xl {
@@ -57,9 +71,9 @@ h6 {
 .header-masthead {
   position: relative;
   overflow: hidden;
-  padding-top: calc(7rem + 72px);
+  padding-top: 7rem;
   padding-bottom: 7rem;
-  background: linear-gradient(0deg, #ff6a00 0%, #ee0979 100%);
+  background: linear-gradient(0deg, var(--bg-2) 0%, var(--bg-1) 100%);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll;
@@ -83,7 +97,7 @@ h6 {
   z-index: 0;
   position: absolute;
   border-radius: 100%;
-  background: linear-gradient(0deg, #ee0979 0%, #ff6a00 100%);
+  background: linear-gradient(0deg, var(--circle-1) 0%, var(--circle-2) 100%);
 }
 
 .header-masthead .bg-circle-1 {

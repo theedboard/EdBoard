@@ -1,15 +1,16 @@
 :root {
 --polkacolor: #666;
 --bgcolor: #333;
---mainpink: #1c1d1e; /*main pink color of form and jumbotron*/
+--mainpink: #9a2a29; /*main pink color of form and jumbotron*/
 --colorShadeA: #000;
 --colorShadeB: #222;
 --colorShadeC: #111;
 --colorShadeD: #000;
---colorShadeE: #1c1d1e; /*darkest pink*/
+--colorShadeE: #ec3132; /*darkest pink*/
 --dashcolor: #ddd; /*color of the dashes*/
 --text-color: #fff;
 --fadecolor: #1c1d1e;
+--form-bg: #1c1d1e;
 }
 .light {
   --polkacolor: #FFC6B6;
@@ -82,7 +83,7 @@ hr.after-heading-border{
 }
 
 .contact-us-form{
-  background-color: var(--mainpink);
+  background-color: var(--form-bg);
   padding:7px;
   border-radius: 10px;
   border-color: var(--colorShadeA);
@@ -180,7 +181,7 @@ hr.after-form-line{
   border-radius: 5px;
   text-align: center;
   padding:7px;
-  background-color: var(--colorShadeE);
+  background-color: var(--mainpink);
   height:100%;
   box-shadow: 5px 10px 18px var(--colorshadow);
 }
@@ -189,7 +190,7 @@ hr.after-form-line{
   border-radius: 5px;
   text-align: center;
   padding:7px;
-  background-color: var(--colorShadeE);
+  background-color: var(--mainpink);
   height:100%;
 box-shadow: 5px 10px 18px var(--colorshadow);
 }

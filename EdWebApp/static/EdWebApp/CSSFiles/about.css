@@ -28,15 +28,21 @@ body{
 .card {
     background-color: #ec3132;
     box-shadow: 5px 5px 8px #000;
+    color: #fff;
 }
 hr {
   border-color: var(--underline-color-1);
 }
 /*Edit if required*/
 .jumbotron img, .about-container img, .more-event-container img, .card-img-top, .about-history img{
-  width:16rem;
+  max-width:100%;
 }
 
 .staff-row img{
-  max-width:16rem !important;
+  max-width:100% !important;
+}
+
+.maroon {
+  background-color: #9a2a29;
+  color: #fff;
 }
