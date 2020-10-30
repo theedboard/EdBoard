@@ -1,35 +1,42 @@
 :root{
-    --bg_color1:#ffffff;
-    --font_color1:#000000; 
-    
+    --bg-1:#333;
+    --text_color-1:#fff;
 }
 
 .light_mode{
     --bg_color1:#000000;
-    --font_color1:#ffffff; 
+    --font_color1:#ffffff;
 }
-.body{
-    background-color: var(--bg_color1);
+body{
+    background-color: var(--bg-1);
 }
 .carousel_row{
    padding-left: 5vw;
    padding-right: 5vw;
    padding-top: 2vw;
-} 
+}
 .logo_circle{
     position: relative;
     top: -7.5vw;
 }
 .logo_row{
     height: 10vw;
-    color: var(--bg_color2);
+    color: var(--text_color-1);
 }
 .headings_event{
     font-size: 6vw;
     font-variant-caps: all-petite-caps;
-} 
+}
 .content_card{
-    background-color: #00f7ff;
+    background-color: #ec3132;
+    color: #fff;
+}
+.carousel_row {
+  width: 100%;
+}
+.row {
+  margin-right: 0;
+  margin-left: 0;
 }
 .group_img{
     height: 60vh;

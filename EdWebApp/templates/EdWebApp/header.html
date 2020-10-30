@@ -1,8 +1,8 @@
 {% load static %}
 <header>
   <nav id="navbar">
-    <div class="logos">
-      <a href="{% url 'EdWebApp:home' %}"><img src="{% static 'EdWebApp/images/logo_2.svg' %}" style="height: 60px; width: 70px;"></a>
+    <div class="logos px-3">
+      <a href="{% url 'EdWebApp:home' %}"><img src="{% static 'EdWebApp/images/logo_2.svg' %}"></a>
     </div>
     <input type="checkbox" id="click">
     <label for="click" class="menu-btn">
@@ -14,10 +14,10 @@
     </label>
     <ul>
       <li><a class="{{ home }}" href="{% url 'EdWebApp:home' %}">Home</a></li>
-      <li><a href="">Jayzine</a></li>
+      <li><a class="{{ about }}" href="{% url 'EdWebApp:about' %}">About Us</a></li>
+      <!--<li><a href="">Jayzine</a></li>-->
       <li><a class="{{ shabd }}" href="{% url 'EdWebApp:shabd_info' %}">||SHABD||</a></li>
       <li><a class="{{ event }}" href="{% url 'EdWebApp:event_view' %}">Events</a></li>
-      <li><a class="{{ about }}" href="{% url 'EdWebApp:about' %}">About Us</a></li>
       <li><a class="{{ crew }}" href="{% url 'EdWebApp:crew' %}">Crew</a></li>
     </ul>
   </nav>
