@@ -65,7 +65,7 @@ box-shadow: 5px 10px 18px var(--colorshadow);
   color: var(--text-color);
 }
 .close {
-  color: var(--text-color);
+  color: var(--text)
 }
 .contact-form-heart{
   color: red;

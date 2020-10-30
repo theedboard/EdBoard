@@ -32,17 +32,16 @@
   </div>
 </div>
 
-<div class="bg-light">
+<div>
   <div class="container py-5 px-3">
     <div class="row px-5 d-flex justify-content-center">
       <div class="col-md-8">
         <div class="card text-center">
           <div class="card-body">
-            <h2 class="card-title">History</h2>
+            <h2 class="card-title">Our Journey</h2>
             <hr class="my-4">
             <p class="card-text">Quisque sollicitudin ex sed rutrum porttitor. Duis nec ultricies nunc, sit amet mollis dui. Mauris hendrerit sollicitudin libero eget interdum.</p>
-            <a class="btn btn-secondary btn-lg mb-5" href="{% url 'EdWebApp:crew' %}">Our Backstory</a>
-            <a href="{% url 'EdWebApp:crew' %}" class="stretched-link"></a>
+            <a href="{% url 'EdWebApp:history' %}" class="stretched-link"></a>
           </div>
         </div>
       </div>
@@ -50,25 +49,7 @@
   </div>
 </div>
 
-<div class="bg-secondary">
-  <div class="container py-5 px-3">
-    <div class="row px-5 d-flex justify-content-center">
-      <div class="col-md-8">
-        <div class="card text-center">
-          <div class="card-body">
-            <h2 class="card-title">Meet the Crew</h2>
-            <hr class="my-4">
-            <p class="card-text">Quisque sollicitudin ex sed rutrum porttitor. Duis nec ultricies nunc, sit amet mollis dui. Mauris hendrerit sollicitudin libero eget interdum.</p>
-            <a class="btn btn-secondary btn-lg mb-5" href="{% url 'EdWebApp:crew' %}">Contact Us</a>
-            <a href="{% url 'EdWebApp:crew' %}" class="stretched-link"></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="bg-dark">
+<div>
   <div class="container py-5 px-3">
     <div class="row px-5 d-flex justify-content-center">
       <div class="col-md-8">
@@ -77,7 +58,6 @@
             <h2 class="card-title">Events</h2>
             <hr class="my-4">
             <p class="card-text">Quisque sollicitudin ex sed rutrum porttitor. Duis nec ultricies nunc, sit amet mollis dui. Mauris hendrerit sollicitudin libero eget interdum.</p>
-            <a class="btn btn-secondary btn-lg mb-5" href="">Events</a>
             <a href="" class="stretched-link"></a>
           </div>
         </div>
@@ -86,8 +66,24 @@
   </div>
 </div>
 
+<div>
+  <div class="container py-5 px-3">
+    <div class="row px-5 d-flex justify-content-center">
+      <div class="col-md-8">
+        <div class="card text-center">
+          <div class="card-body">
+            <h2 class="card-title">Meet the Crew</h2>
+            <hr class="my-4">
+            <p class="card-text">Quisque sollicitudin ex sed rutrum porttitor. Duis nec ultricies nunc, sit amet mollis dui. Mauris hendrerit sollicitudin libero eget interdum.</p>
+            <a href="{% url 'EdWebApp:crew' %}" class="stretched-link"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<div class="bg-light">
+<div>
   <div class="container more-event-container py-5 px-5">
     <div class="row px-5 d-flex justify-content-center">
       <div class="col-md-8 text-center">
@@ -116,24 +112,7 @@
   </div>
 </div>
 
-<div class="container py-5 px-3">
-  <div class="row px-5 d-flex justify-content-center">
-    <div class="col-md-8">
-      <div class="card text-center">
-        <div class="card-body">
-          <h2 class="card-title">Link to Contact Page</h2>
-          <hr class="my-4">
-          <p class="card-text">Quisque sollicitudin ex sed rutrum porttitor. Duis nec ultricies nunc, sit amet mollis dui. Mauris hendrerit sollicitudin libero eget interdum.</p>
-          <a class="btn btn-secondary btn-lg mb-5" href="{% url 'EdWebApp:contact' %}">Contact Us</a>
-          <a href="{% url 'EdWebApp:contact' %}" class="stretched-link"></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="container-fluid bg-secondary py-5 px-3">
+<div class="container-fluid py-5 px-3">
   <div class="row px-5 d-flex justify-content-center">
     <div class="col-md-8 text-center">
       <h2>Our Staff Advisors</h2>
@@ -165,6 +144,21 @@
 
   </div>
 
+</div>
+
+<div class="container py-5 px-3">
+  <div class="row px-5 d-flex justify-content-center">
+    <div class="col-md-8">
+      <div class="card text-center">
+        <div class="card-body">
+          <h2 class="card-title">Link to Contact Page</h2>
+          <hr class="my-4">
+          <p class="card-text">Quisque sollicitudin ex sed rutrum porttitor. Duis nec ultricies nunc, sit amet mollis dui. Mauris hendrerit sollicitudin libero eget interdum.</p>
+          <a href="{% url 'EdWebApp:contact' %}" class="stretched-link"></a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 {% endblock %}
