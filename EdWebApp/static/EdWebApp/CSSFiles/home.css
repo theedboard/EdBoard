@@ -79,7 +79,7 @@ body{
 	text-shadow: 0 0 1vmin var(--bg-color-1);
 	top: calc(50vh + 15vmin);
 	font-size: 6vw;/******/
-	font-family: 'Sansita';/*****/
+	font-family: 'Cinzel', serif;/*****/
 	cursor: default;
 }
 .about-us {
@@ -87,6 +87,7 @@ body{
 }
 .about {
 	align-self: center;
+	text-align: center;
 	padding: 10vw;
 	font-size: 3vh;/****/
 	color: var(--text-color-1);/******/
@@ -128,7 +129,7 @@ body{
 .poster img {
 	max-height: 55vh;
 }
-.card {
+.news .card {
 	max-height: 25vh;
 	overflow: auto;
 	background: transparent;
@@ -270,7 +271,7 @@ body{
 	.poster img {
 		max-height: 70vh;
 	}
-	.card  {
+	.news .card  {
 		max-height: 65vh;
 	}
 }
@@ -296,8 +297,14 @@ body{
 	}
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 500px) {
 	.logo {
 		top: calc(50vh - 30vmin);
 	}
+}
+
+.home-contact-us .card{
+	background-color: #fff;
+	color:#000;
+	min-height: 30vh !important;
 }

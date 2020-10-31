@@ -3,6 +3,7 @@ from django.core.files.storage import Storage
 # Create your views here.
 from .models import news, member, event, eventimage
 from django import forms
+from django.conf import settings
 from django.core.mail import send_mail
 from django.contrib import messages
 
@@ -15,6 +16,7 @@ def home(request):
     latest_news = news.objects.filter(display=True)
     context={
         'latest_news': latest_news,
+        'home': 'active',
     }
     return render(request, 'EdWebApp/home.html', context)
 
@@ -26,12 +28,13 @@ def crew(request):
         'editor_in_chiefs': editor_in_chiefs,
         'section_chiefs': section_chiefs,
         'editors': editors,
+        'crew': 'active',
     }
     return render(request, 'EdWebApp/crew.html', context)
 
 def crew_info(request, id):
     member_details = get_object_or_404(member, pk=id)
-    slide_images = member.objects.values('pk','name','thumbnail_image')
+    slide_images = member.objects.only('pk','name','profile_image')
     context={
         'member_details': member_details,
         'slide_images': slide_images,
@@ -39,11 +42,15 @@ def crew_info(request, id):
     return render(request, 'EdWebApp/crew_info.html', context)
 
 def shabd_info(request):
-    context = {}
+    context = {
+        'shabd': 'active'
+    }
     return render(request, 'EdWebApp/shabd.html', context)
 
 def about(request):
-    context = {}
+    context = {
+        'about': 'active',
+    }
     return render(request, 'EdWebApp/about.html', context)
 
 def history(request):
@@ -52,7 +59,10 @@ def history(request):
 
 def event_view(request):
     events = event.objects.all()
-    context={'events':events}
+    context={
+        'events': events,
+        'event': 'active',
+    }
     return render(request, 'EdWebApp/events.html', context)
 
 def event_info_view(request, id):
@@ -71,11 +81,18 @@ def contact(request):
             name = form.cleaned_data['name']
             message = form.cleaned_data['message']
             email = form.cleaned_data['email']
-            #recipients = ['rajath642000@gmail.com']
-            #if cc_myself:
-            #    recipients.append(sender)
-            messages.add_message(request, messages.INFO, 'message sent')
-            #send_mail(sub, message, sender, recipients)
+
+            subject = 'Message from '+name
+            message = 'Name: '+name+'\nemail: '+email+'\nMessage:\n'+message
+            email_from = settings.EMAIL_HOST_USER
+            recipient_list = ['edboard.assist@gmail.com', ]
+            try:
+                send_mail( subject, message, email_from, recipient_list )
+                messages.add_message(request, messages.INFO, 'Thankyou for contacting us.. We will reply you soon.')
+            except:
+                messages.add_message(request, messages.INFO, 'There was some problem in sending message. Try again')
+        else:
+            messages.add_message(request, messages.INFO, 'The form fields are invalid.')
     else:
         form = ContactForm()
     context = {

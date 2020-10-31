@@ -35,7 +35,7 @@
         <div class="col-3">Text</div>
         <div class="col-9">
           <div class="progress my-1">
-            <div class="progress-bar bg-danger" style="width:{{member_details.stat1}}%"></div>
+            <div class="progress-bar red" style="width:{{member_details.stat1}}%"></div>
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@
         <div class="col-3">Text</div>
         <div class="col-9">
           <div class="progress my-1">
-            <div class="progress-bar bg-dark" style="width:{{member_details.stat2}}%"></div>
+            <div class="progress-bar maroon" style="width:{{member_details.stat2}}%"></div>
           </div>
         </div>
       </div>
@@ -53,7 +53,7 @@
         <div class="col-3">Text</div>
         <div class="col-9">
           <div class="progress my-1">
-            <div class="progress-bar bg-danger" style="width:{{member_details.stat3}}%"></div>
+            <div class="progress-bar red" style="width:{{member_details.stat3}}%"></div>
           </div>
         </div>
       </div>
@@ -62,7 +62,7 @@
         <div class="col-3">Text</div>
         <div class="col-9">
           <div class="progress my-1">
-            <div class="progress-bar bg-dark" style="width:{{member_details.stat4}}%"></div>
+            <div class="progress-bar maroon" style="width:{{member_details.stat4}}%"></div>
           </div>
         </div>
       </div>
@@ -71,7 +71,7 @@
         <div class="col-3">Text</div>
         <div class="col-9">
           <div class="progress my-1">
-            <div class="progress-bar bg-danger" style="width:{{member_details.stat5}}%"></div>
+            <div class="progress-bar red" style="width:{{member_details.stat5}}%"></div>
           </div>
         </div>
       </div>
@@ -80,13 +80,13 @@
   </div>
 </div>
 
-<div class="row d-flex justify-content-center"><h4 class="text-center">The Rest of the Crew</h4></div>
+<div><h4 class="text-center">The Rest of the Crew</h4></div>
 <div class="splide bottom-nav my-2 d-flex justify-content-center">
   <div class="splide__track">
     <ul class="splide__list">
       {% for slide_image in slide_images %}
       <li class="splide__slide" data-splide-hash="{{forloop.counter}}">
-        <a href="{% url 'EdWebApp:crew_info' slide_image.pk %}"><img class="headshot" src="/media/{{slide_image.thumbnail_image}}" alt="{{slide_image.name}}"></a>
+        <a href="{% url 'EdWebApp:crew_info' slide_image.pk %}"><img class="headshot" src="{{slide_image.profile_image.url}}" alt="{{slide_image.name}}"></a>
       </li>
       {% endfor %}
     </ul>

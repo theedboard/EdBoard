@@ -3,7 +3,11 @@ header {
   width: 100%;
   top: 0;
   left: 0;
+<<<<<<< HEAD
   z-index:2;
+=======
+  z-index: 100;
+>>>>>>> f86b8e2b21de3748c9c984bafe7114f3b4474c21
 }
 main {
   position: relative;
@@ -18,11 +22,12 @@ nav{
   align-items: center;
   justify-content: space-between;
   padding: 0 30px 0 20px;
-  flex-wrap: wrap;
 }
 nav ul{
   height: 10vh;
   display: flex;
+  margin: 0;
+  padding:0;
   align-items: center;
   flex-wrap: wrap;
   list-style: none;

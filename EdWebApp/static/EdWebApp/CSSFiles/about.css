@@ -1,8 +1,8 @@
 :root {
-    --bg-color-1: white;
-    --bg-color-2: gray;
-    --text-color-1: black;
-    --underline-color-1: black;
+    --bg-color-1: #1c1d1e;
+    --bg-color-2: #333;
+    --text-color-1: #fff;
+    --underline-color-1: #fff;
 }
 
 * {
@@ -18,9 +18,25 @@ html {
 
 body{
   background-color: var(--bg-color-1);
+  color: var(--text-color-1);
 }
 
+.jumbotron {
+  background-color: var(--bg-color-2);
+}
+
+.card {
+    background-color: #ec3132;
+    box-shadow: 5px 5px 8px #000;
+}
+hr {
+  border-color: var(--underline-color-1);
+}
 /*Edit if required*/
-.jumbotron img, .staff-row img, .about-container img, .more-event-container img, .card-img-top, .about-history img{
+.jumbotron img, .about-container img, .more-event-container img, .card-img-top, .about-history img{
   width:16rem;
+}
+
+.staff-row img{
+  max-width:16rem !important;
 }

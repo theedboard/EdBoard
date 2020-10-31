@@ -8,12 +8,12 @@
 {% block main %}
 <div class="about">
 <div class="jumbotron">
-  <div class="row px-5">
+  <div class="row px-3">
     <div class="col-md-8">
       <h1 class="display-4">About The Board</h1>
       <p class="lead">Pellentesque ut sodales nisl, at rhoncus ipsum. Integer vel enim sed ante aliquam suscipit. Praesent non eleifend dolor, a condimentum dolor. </p>
       <hr class="my-4">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pellentesque lorem vitae lorem sagittis iaculis. Morbi cursus vitae purus ut maximus. Proin sed dui et magna maximus pharetra at ut dui. Etiam cursus nibh vitae arcu interdum faucibus. Nullam arcu ipsum, feugiat et mi id, rhoncus dictum justo.</p>
+      <p>The Editorial Board is responsible for bringing out the annual college magazine- Jayzine and organising the annual literary fest of JSSSTU- ||SHABD||.</p>
     </div>
     <div class="col-md-4 d-flex justify-content-center">
       <img src="{% static 'EdWebApp/images/logo.svg' %}" class="img-responsive" alt="logo">
@@ -26,43 +26,22 @@
     <div class="col-md-5 d-flex justify-content-center py-3">
       <img src="{% static 'EdWebApp/images/logo.svg' %}" class="img-responsive" alt="logo">
     </div>
-    <div class="col-md-7">
-      <p>Nulla malesuada rhoncus viverra. Fusce elementum imperdiet neque, ac finibus enim vulputate at. Curabitur varius ante tellus. Nam sit amet urna placerat, tempor dui sit amet, ultricies felis. Vestibulum semper velit odio, nec iaculis nisi porta at. Sed tempor sapien at arcu tincidunt, et suscipit velit consequat.</p>
-      <p> Quisque sollicitudin ex sed rutrum porttitor. Duis nec ultricies nunc, sit amet mollis dui. Mauris hendrerit sollicitudin libero eget interdum. Pellentesque volutpat sagittis auctor. Proin massa tortor, consequat nec lacus ut, ornare rhoncus tortor.</p>
-      <p>Nulla malesuada rhoncus viverra. Fusce elementum imperdiet neque, ac finibus enim vulputate at. Curabitur varius ante tellus. Nam sit amet urna placerat, tempor dui sit amet, ultricies felis. Vestibulum semper velit odio, nec iaculis nisi porta at. Sed tempor sapien at arcu tincidunt, et suscipit velit consequat.</p>
-    </div>
-  </div>
-  <div class="row py-3">
-    <div class="col-md-7 order-12 order-md-1 py-3">
-      <p>Nulla malesuada rhoncus viverra. Fusce elementum imperdiet neque, ac finibus enim vulputate at. Curabitur varius ante tellus. Nam sit amet urna placerat, tempor dui sit amet, ultricies felis. Vestibulum semper velit odio, nec iaculis nisi porta at. Sed tempor sapien at arcu tincidunt, et suscipit velit consequat.</p>
-      <p> Quisque sollicitudin ex sed rutrum porttitor. Duis nec ultricies nunc, sit amet mollis dui. Mauris hendrerit sollicitudin libero eget interdum. Pellentesque volutpat sagittis auctor. Proin massa tortor, consequat nec lacus ut, ornare rhoncus tortor.</p>
-      <p>Nulla malesuada rhoncus viverra. Fusce elementum imperdiet neque, ac finibus enim vulputate at. Curabitur varius ante tellus. Nam sit amet urna placerat, tempor dui sit amet, ultricies felis. Vestibulum semper velit odio, nec iaculis nisi porta at. Sed tempor sapien at arcu tincidunt, et suscipit velit consequat.</p>
-    </div>
-    <div class="col-md-5 d-flex justify-content-center order-1 order-md-12">
-      <img src="{% static 'EdWebApp/images/logo.svg' %}" class="img-responsive" alt="logo">
+    <div class="col-md-6">
+      <p>The Editorial Board is a student literature club responsible for bringing out ‘Jayzine’, our college annual magazine. We take pride in organizing ||Shabd||, the only literary fest held by an engineering college in Karnataka. We are a small crew of about twenty-five people working under the guidance of Dr Vanishri. We celebrate Kannada Rajyotsava and conduct various other events like Mindspeak and Aralikatte. We firmly believe that it is vital for students to have a creative outlet to maintain a sense of balance in their lives. With this in mind, we have created a platform for them to hone their artistic capabilities.  <p>
     </div>
   </div>
 </div>
 
-<div class="bg-secondary">
+<div>
   <div class="container py-5 px-3">
-    <div class="row about-history">
-      <div class="col-md-12 text-center d-flex justify-content-center">
-        <div class="card mb-3 p-3" style="max-width: 760px;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="{% static 'EdWebApp/images/logo.svg' %}" class="card-img" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h3 class="card-title">HISTORY</h3>
-                <p class="card-text m-3">
-                  This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                  This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                </p>
-                <p class="card-text"> <a class="btn btn-secondary btn-lg mb-5" href="{% url 'EdWebApp:contact' %}">Contact Us</a></p>
-              </div>
-            </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-8">
+        <div class="card text-center">
+          <div class="card-body">
+            <h2 class="card-title">Our Journey</h2>
+            <hr class="my-4">
+            <p class="card-text">Quisque sollicitudin ex sed rutrum porttitor. Duis nec ultricies nunc, sit amet mollis dui. Mauris hendrerit sollicitudin libero eget interdum.</p>
+            <a href="{% url 'EdWebApp:history' %}" class="stretched-link"></a>
           </div>
         </div>
       </div>
@@ -70,52 +49,43 @@
   </div>
 </div>
 
-<div class="bg-light">
+<div>
   <div class="container py-5 px-3">
-    <div class="row ">
-      <div class="col-md-12 text-center">
-        <h4>Meet the Crew!</h4>
-        <p>Pellentesque ut sodales nisl, at rhoncus ipsum. Integer vel enim sed ante aliquam suscipit. Praesent non eleifend dolor, a condimentum dolor. </p>
-        <hr class="my-4">
-      </div>
-      <div class="col-md-12 d-flex justify-content-center">
-        <a class="btn btn-secondary btn-lg mb-5" href="{% url 'EdWebApp:crew' %}">Crew Page</a>
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-8">
+        <div class="card text-center">
+          <div class="card-body">
+            <h2 class="card-title">Events</h2>
+            <hr class="my-4">
+            <p class="card-text">Quisque sollicitudin ex sed rutrum porttitor. Duis nec ultricies nunc, sit amet mollis dui. Mauris hendrerit sollicitudin libero eget interdum.</p>
+            <a href="" class="stretched-link"></a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container-fluid bg-secondary py-5 px-3">
-  <div class="row px-5 d-flex justify-content-center">
-    <div class="col-md-8 text-center">
-      <h2>Our Staff Advisors</h2>
-      <p>Pellentesque ut sodales nisl, at rhoncus ipsum. Integer vel enim sed ante aliquam suscipit. Praesent non eleifend dolor, a condimentum dolor. </p>
-      <hr class="my-4">
-    </div>
-  </div>
-  <div class="row staff-row px-5 d-flex justify-content-center">
-    <div class="card col-xl-3 col-lg-4 col-md-5 m-lg-3 my-5">
-      <img class="card-img-top mx-auto" src="{% static 'EdWebApp/images/logo.svg' %}" alt="Card image cap">
-      <div class="card-body text-center">
-        <h5 class="card-title">Advisor Name</h5>
-        <p class="card-text">Nulla malesuada rhoncus viverra. Fusce elementum imperdiet neque, ac finibus enim vulputate at. Curabitur varius ante tellus. Nam sit amet urna placerat, tempor dui sit amet, ultricies felis. Vestibulum semper velit odio, nec iaculis nisi porta at. Sed tempor sapien at arcu tincidunt, et suscipit velit consequat.</p>
+<div>
+  <div class="container py-5 px-3">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-8">
+        <div class="card text-center">
+          <div class="card-body">
+            <h2 class="card-title">Meet the Crew</h2>
+            <hr class="my-4">
+            <p class="card-text">Quisque sollicitudin ex sed rutrum porttitor. Duis nec ultricies nunc, sit amet mollis dui. Mauris hendrerit sollicitudin libero eget interdum.</p>
+            <a href="{% url 'EdWebApp:crew' %}" class="stretched-link"></a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="card col-xl-3 col-lg-4 col-md-5 m-lg-3 my-5">
-      <img class="card-img-top mx-auto" src="{% static 'EdWebApp/images/logo.svg' %}" alt="Card image cap">
-      <div class="card-body text-center">
-        <h5 class="card-title">Advisor Name</h5>
-        <p class="card-text">Quisque sollicitudin ex sed rutrum porttitor. Duis nec ultricies nunc, sit amet mollis dui. Mauris hendrerit sollicitudin libero eget interdum. Pellentesque volutpat sagittis auctor. Proin massa tortor, consequat nec lacus ut, ornare rhoncus tortor.</p>
-      </div>
-    </div>
-
   </div>
-
 </div>
 
-<div class="bg-light">
+<div>
   <div class="container more-event-container py-5 px-5">
-    <div class="row px-5 d-flex justify-content-center">
+    <div class="row d-flex justify-content-center">
       <div class="col-md-8 text-center">
         <h2>What We Do</h2>
         <p>Pellentesque ut sodales nisl, at rhoncus ipsum. Integer vel enim sed ante aliquam suscipit. Praesent non eleifend dolor, a condimentum dolor. </p>
@@ -127,7 +97,7 @@
         <h2>||SHABD||</h2>
         <p>A totally cool tagline </p>
         <a href="{% url 'EdWebApp:shabd_info' %}">
-          <img src="{% static 'EdWebApp/images/logo.svg' %}" class="img-responsive" alt="logo">
+          <img src="{% static 'EdWebApp/images/logo.svg' %}" class="img-responsive" alt="shabd">
         </a>
       </div>
 
@@ -135,43 +105,62 @@
         <h2>Magazine</h2>
         <p>Our blood, sweat and tears</p>
         <a href="{% url 'EdWebApp:shabd_info' %}">
-          <img src="{% static 'EdWebApp/images/logo.svg' %}" class="img-responsive" alt="logo">
+          <img src="{% static 'EdWebApp/images/logo.svg' %}" class="img-responsive" alt="magazine">
         </a>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container-fluid bg-dark py-5 px-3">
-  <div class="row px-5 d-flex justify-content-center text-white">
+<div class="container-fluid py-5 px-3">
+  <div class="row d-flex justify-content-center">
     <div class="col-md-8 text-center">
-      <h2>Events</h2>
+      <h2>Our Staff Advisors</h2>
       <p>Pellentesque ut sodales nisl, at rhoncus ipsum. Integer vel enim sed ante aliquam suscipit. Praesent non eleifend dolor, a condimentum dolor. </p>
       <hr class="my-4">
     </div>
   </div>
-  <div class="row px-5 d-flex justify-content-center">
-    <a class="btn btn-light btn-lg mb-5" href="">More Events</a>
-    </div>
-  </div>
-</div>
+  <div class="row staff-row d-flex justify-content-center">
+    <div class="card col-xl-3 col-lg-4 col-md-5 m-lg-3 my-5 mx-3">
+      <img class="card-img-top mx-auto" src="{% static 'EdWebApp/images/logo.svg' %}" alt="Dr S. K. Prasad">
+      <div class="card-body text-center">
+        <h5 class="card-title">Dr S. K. Prasad</h5>
+        <p class="card-text">Generations of Eddies have passed under the guidance of this quick-witted, enthusiastic and overwhelmingly supportive professor. Dr S. K. Prasad was the Staff Coordinator of The Editorial Board for over a decade and played a huge role in helping us reach where we are today.</p>
 
+        <p class="card-text">Currently working as professor in VVCE, he is a former Professor in the Department of Civil Engineering, JSSSTU. He graduated from University of Mysuru (SJCE) and later obtained his Master’s Degree from IIT Kanpur and Doctoral Degree from University of Tokyo, Japan. His area of specialisation includes Earthquake and Geotechnical engineering.
+        </p>
+      </div>
+    </div>
+    <div class="card col-xl-3 col-lg-4 col-md-5 m-lg-3 my-5 mx-3">
+      <img class="card-img-top mx-auto" src="{% static 'EdWebApp/images/logo.svg' %}" alt="Dr. Vanishri Arun">
+      <div class="card-body text-center">
+        <h5 class="card-title">Dr. Vanishri Arun</h5>
+        <p class="card-text">Always calm and ready to guide and help, Dr Vanishri Arun is the current Staff Coordinator for The Editorial Board. She received her Bachelor of Engineering degree in Computer Science and Engineering and Master of Technology in Software Engineering from SJCE and PhD from VTU in the area of Biomedical Informatics.</p>
+
+        <p class="card-text">At present, she is working in the capacity of Assistant Professor in the Department of Information Science and Engineering at JSS Science and Technology University, Mysuru, India. Her research interests include Biomedical Informatics, Machine Learning, Deep Learning and Data Analytics using Statistical methods.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
 
 <div class="container py-5 px-3">
   <div class="row d-flex justify-content-center">
-    <h2>Link to Contact Page</h2>
-    <hr class="my-4">
-  </div>
-  <div class="row d-flex justify-content-center">
-    <div class="col-md-8 text-center">
-      <p>Quisque sollicitudin ex sed rutrum porttitor. Duis nec ultricies nunc, sit amet mollis dui. Mauris hendrerit sollicitudin libero eget interdum.</p>
+    <div class="col-md-8">
+      <div class="card text-center">
+        <div class="card-body">
+          <h2 class="card-title">Link to Contact Page</h2>
+          <hr class="my-4">
+          <p class="card-text">Quisque sollicitudin ex sed rutrum porttitor. Duis nec ultricies nunc, sit amet mollis dui. Mauris hendrerit sollicitudin libero eget interdum.</p>
+          <a href="{% url 'EdWebApp:contact' %}" class="stretched-link"></a>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="row d-flex justify-content-center">
-    <a class="btn btn-secondary btn-lg mb-5" href="{% url 'EdWebApp:contact' %}">Contact Us</a>
-  </div>
 </div>
-</div>
+
 {% endblock %}
 {% block scripts %}
 {% endblock %}

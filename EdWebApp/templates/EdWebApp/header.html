@@ -13,12 +13,12 @@
       </div>
     </label>
     <ul>
-      <li><a class="active" href="{% url 'EdWebApp:home' %}" onClick="ul(0)">Home</a></li>
-      <li><a href="" onClick="ul(1)">Jayzine</a></li>
-      <li><a href="{% url 'EdWebApp:shabd_info' %}" onClick="ul(2)">||SHABD||</a></li>
-      <li><a href="{% url 'EdWebApp:event_view' %}" onClick="ul(3)">Events</a></li>
-      <li><a href="{% url 'EdWebApp:about' %}" onClick="ul(4)">About Us</a></li>
-      <li><a href="{% url 'EdWebApp:crew' %}" onClick="ul(5)">Crew</a></li>
+      <li><a class="{{ home }}" href="{% url 'EdWebApp:home' %}">Home</a></li>
+      <li><a href="">Jayzine</a></li>
+      <li><a class="{{ shabd }}" href="{% url 'EdWebApp:shabd_info' %}">||SHABD||</a></li>
+      <li><a class="{{ event }}" href="{% url 'EdWebApp:event_view' %}">Events</a></li>
+      <li><a class="{{ about }}" href="{% url 'EdWebApp:about' %}">About Us</a></li>
+      <li><a class="{{ crew }}" href="{% url 'EdWebApp:crew' %}">Crew</a></li>
     </ul>
   </nav>
 </header>

@@ -7,11 +7,9 @@
 
 {% block main %}
     <h1 class="mt-5">Events</h1>
-
-
     <div class="container">
       {% for event in events %}
-        <div class="row">
+        <div class="row text-center">
             <div class="{% cycle 'order-2 first col-8 col-md-9' 'order-1 first col-8 col-md-9' %}">
                 <a href="{% url 'EdWebApp:event_info_view' event.pk %}">
                 {{event.title}}
@@ -19,7 +17,7 @@
             </div>
 
             <div class="{% cycle 'order-1 second col-4 col-md-3' 'order-2 first col-4 col-md-3' %}" onclick="change_order(this)">
-                <img src="{{event.preview_image.url}}">
+                <img src="{{event.preview_image.url}}" class="rounded-circle" width="70%">
             </div>
         </div>
       {% endfor %}
