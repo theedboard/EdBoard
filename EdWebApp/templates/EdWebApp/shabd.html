@@ -1,11 +1,20 @@
-{% extends 'EdWebApp/base.html' %}
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/EdWebApp/CSSFiles/header.css">
+  
+<link rel="stylesheet" href="/static/EdWebApp/CSSFiles/shabd.css">
 
-{% block stylesheets %}
-<link rel="stylesheet" href="{% static 'EdWebApp/CSSFiles/shabd.css' %}">
-{% endblock %}
-
-{% block main %}
+  <title>The Editorial Board</title>
+</head>
+<body>
+  <main>
+  
 
   <section class="header-masthead text-center text-white">
     <div class="masthead-content">
@@ -80,6 +89,7 @@
         <div class="col-lg-6">
           <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rd0jaKfRL90" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <style padding="50%"></style>
           </div>
         </div>
         <div class="col-lg-6">
@@ -91,4 +101,69 @@
       </div>
     </div>
   </section>
-{% endblock %}
+
+  </main>
+  
+<header>
+  <nav id="navbar">
+    <div class="logos">
+      <a href="/home/"><img src="/static/EdWebApp/images/logo_2.svg" style="height: 60px; width: 70px;"></a>
+    </div>
+    <input type="checkbox" id="click">
+    <label for="click" class="menu-btn">
+      <div onclick="myFunction(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    </label>
+    <ul>
+      <li><a class="active" href="/home/" onClick="ul(0)">Home</a></li>
+      <li><a href="" onClick="ul(1)">Jayzine</a></li>
+      <li><a href="/shabd/" onClick="ul(2)">||SHABD||</a></li>
+      <li><a href="/events/" onClick="ul(3)">Events</a></li>
+      <li><a href="/about/" onClick="ul(4)">About Us</a></li>
+      <li><a href="/crew/" onClick="ul(5)">Crew</a></li>
+    </ul>
+  </nav>
+</header>
+
+  
+<footer style="margin-top:50px;">
+	<a href="#one" id="top-taker" class="top" >
+		<img class="filter-white" src="/static/EdWebApp/images/logo_2.svg">
+	</a>
+	<p>Reach out to us:</p>
+
+	<a href="https://www.instagram.com/the.edboard/" target="_blank">
+		<i class="d-xs-inline d-md-none fab fa-instagram fa-lg" ></i>
+		<i class="d-none d-md-inline  fab fa-instagram fa-2x" ></i>
+	</a>
+	<a href="https://www.facebook.com/the.edboard" target="_blank">
+		<i class="d-xs-inline d-md-none fab fa-facebook fa-lg"></i>
+		<i class="d-none d-md-inline  fab fa-facebook fa-2x"></i>
+	</a>
+	<a href="https://www.facebook.com/the.edboard" target="_blank">
+		<i class="d-xs-inline d-md-none fas fa-envelope fa-lg"></i>
+		<i class="d-none d-md-inline  fas fa-envelope fa-2x"></i>
+	</a>
+</footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+  integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+  <script src="https://kit.fontawesome.com/2a9f8b145a.js" crossorigin="anonymous"></script>
+  <script>
+    function myFunction(x) {
+      x.classList.toggle("change");
+    }
+  </script>
+  
+  
+</body>
+</html>
+
