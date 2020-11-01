@@ -1,12 +1,17 @@
 {% extends 'EdWebApp/base.html' %}
 {% load static %}
+{% load cloudinary %}
+
+{% block title %}
+Events - JC Ed Board
+{% endblock %}
 
 {% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="{% static 'EdWebApp/CSSFiles/events.css' %}">
 {% endblock %}
 
 {% block main %}
-    <h1 class="mt-1">Events</h1>
+    <h1 class="mt-1" data-aos="fade-in">Events</h1>
     <div class="container">
       {% for event in events %}
         <div class="row text-center">
@@ -17,7 +22,7 @@
             </div>
 
             <div class="{% cycle 'order-1 second col-4 col-md-3' 'order-2 first col-4 col-md-3' %}" onclick="change_order(this)">
-                <img src="{{event.preview_image.url}}" class="rounded-circle" width="70%">
+                <img data-src="{{event.preview_image.url}}" class="rounded-circle lazy" width="70%" alt="{{event.title}}">
             </div>
         </div>
       {% endfor %}
@@ -39,5 +44,11 @@
         }
         arg.className=clname_new;
     }
+  </script>
+  <script>
+    AOS.init({duration: 1000,
+  		disable: window.orientation==90 || window.orientation==-90,
+  	});
+  	AOS.refresh();
   </script>
 {% endblock %}

@@ -60,7 +60,7 @@ class member(models.Model):
         ordering = ['year_of_recruitement','pk']
 
 class event(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=50)
     description = models.TextField()
     preview_image = CloudinaryField("Image", overwrite=True, resource_type="image", use_filename=True, unique_filename=True,
     transformation={"quality": 'auto:low', 'height': 400, 'crop': "scale"},

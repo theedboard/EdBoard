@@ -1,5 +1,10 @@
 {% extends 'EdWebApp/base.html' %}
 {% load static %}
+{% load cloudinary %}
+
+{% block title %}
+Home - JC Ed Board
+{% endblock %}
 
 {% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="{% static 'EdWebApp/CSSFiles/home.css' %}">
@@ -16,11 +21,11 @@
 			<div class="punct" style="top: 86%; left: 70%">!</div>
 			<div class="punct" style="top: 39.5%; left: 92%">.</div>
 		</div>
-		<img src="{% static 'EdWebApp/images/logo.svg' %}" alt="EdBoard logo" class="logo-img"/>
+		<img src="{% static 'EdWebApp/images/logo.svg' %}" alt="Jc EdBoard logo" class="logo-img"/>
 	</div>
 	<h1 data-aos="fade-up"
 	data-aos-anchor="#entry-section"
-	data-aos-anchor-placement="top-center" class="title">THE EDITORIAL BOARD</h1>
+	data-aos-anchor-placement="top-center" class="title">The Editorial Board</h1>
 </section>
 
 <section class="section about-us" id="about-us-section">
@@ -38,7 +43,7 @@
   	<h2 class="news-heading"
 		data-aos="zoom-in"
 		data-aos-anchor="#news-section"
-		data-aos-anchor-placement="top-bottom">NEWS SECTION</h2>
+		data-aos-anchor-placement="top-bottom">NEWSLETTER</h2>
   	<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false" data-touch="true"
 		data-aos="zoom-in"
 		data-aos-anchor="#news-section"
@@ -48,10 +53,11 @@
       	<div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">
   				<div class="row">
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 poster">
-  						<img class="img-fluid" src="{{news.poster.url}}" loading="lazy" alt="{{news.news_title}}">
+  						<img class="img-fluid lazy" data-src="{{news.poster.url}}" alt="{{news.news_title}}">
 						</div>
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 content">
   						<div class="card small-scroll">
+								<h3 class="text-center">{{news.news_title}}</h3>
     						<div class="card-body">{{news.description|linebreaks|urlize}}</div>
 							</div>
       			</div>
@@ -94,26 +100,26 @@
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-8 col-8 column2">
 				<div data-aos="zoom-in-right">
 					<div href="" class="img-link gallery-img img-left">
-						<img src="{% static 'EdWebApp/images/DSC_0202.jpg' %}" loading="lazy" alt="">
-						<div class="centered">||SHABD||</div>
+						<img class="lazy" data-src="{% static 'EdWebApp/images/gallery-1.jpg' %}" alt="">
+						<!--<div class="centered">||SHABD||</div>-->
 					</div>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-3 col-md-3 col-sm-2 col-2 column3">
-				<img src="{% static 'EdWebApp/images/DSC_0202.jpg' %}" loading="lazy" alt="" class="gallery-img"
+				<img data-src="{% static 'EdWebApp/images/gallery-2.jpg' %}" alt="" class="gallery-img lazy"
 					style="bottom:0; top:0;" data-aos="zoom-out">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-xl-3 col-lg-3 col-md-3 col-sm-2 col-2 column1">
-				<img src="{% static 'EdWebApp/images/DSC_0202.jpg' %}" loading="lazy" alt="" class="gallery-img"
+				<img data-src="{% static 'EdWebApp/images/shabd-1.jpg' %}" alt="" class="gallery-img lazy"
 					style="right: 0;" data-aos="zoom-out">
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-8 col-8 column2">
 				<div data-aos="zoom-in-left">
 					<div href="" class="img-link gallery-img img-right">
-					<img src="{% static 'EdWebApp/images/DSC_0202.jpg' %}" loading="lazy" alt="">
-					<div class="centered">center</div>
+					<img data-src="{% static 'EdWebApp/images/gallery-3.jpg' %}" class="lazy" alt="">
+					<!--<div class="centered">center</div>-->
 					</div>
 				</div>
 			</div>
@@ -126,26 +132,26 @@
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-8 col-8 column2">
 				<div data-aos="zoom-in-right">
 					<div href="" class="img-link gallery-img img-left">
-						<img src="{% static 'EdWebApp/images/DSC_0202.jpg' %}" loading="lazy" alt="">
-						<div class="centered">center</div>
+						<img data-src="{% static 'EdWebApp/images/shabd-2.jpg' %}" class="lazy" alt="">
+						<!--<div class="centered">center</div>-->
 					</div>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-3 col-md-3 col-sm-2 col-2 column3">
-				<img src="{% static 'EdWebApp/images/DSC_0202.jpg' %}" loading="lazy" alt="" class="gallery-img"
+				<img data-src="{% static 'EdWebApp/images/shabd-3.jpg' %}" alt="" class="gallery-img lazy"
 					style="bottom: 0;" data-aos="zoom-out">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-xl-3 col-lg-3 col-md-3 col-sm-2 col-2 column1">
-				<img src="{% static 'EdWebApp/images/DSC_0202.jpg' %}" loading="lazy" alt="" class="gallery-img"
+				<img data-src="{% static 'EdWebApp/images/gallery-7.jpg' %}" alt="" class="gallery-img lazy"
 					style="right: 0;" data-aos="zoom-out">
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-8 col-8 column2">
 				<div data-aos="zoom-in-left">
 					<div href="" class="img-link gallery-img img-right">
-						<img src="{% static 'EdWebApp/images/DSC_0202.jpg' %}" loading="lazy" alt="">
-						<div class="centered">center</div>
+						<img data-src="{% static 'EdWebApp/images/DSC_0203.jpg' %}" class="lazy" alt="">
+						<!--<div class="centered">center</div>-->
 					</div>
 				</div>
 			</div>
@@ -161,7 +167,7 @@
 		  <div class="card-body">
 				<h2>Contact Us</h2>
 				<hr class="my-4">
-				<p>Quisque sollicitudin ex sed rutrum porttitor. Duis nec ultricies nunc, sit amet mollis dui. Mauris hendrerit sollicitudin libero eget interdum.</p>
+				<p>Your feedback is valuable to us. We’d love to hear from you. If you have any questions or even a suggestion, we’re open to hearing them all. We’re not robots (sadly), but you should expect a response from us within a week tops.</p>
 				<a class="btn btn-lg mb-2 maroon" href="">Contact Us</a>
 				<a href="{% url 'EdWebApp:contact' %}" class="stretched-link"></a>
 		  </div>

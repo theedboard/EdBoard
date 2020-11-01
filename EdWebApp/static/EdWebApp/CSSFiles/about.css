@@ -14,13 +14,21 @@
 html {
   scroll-behavior: smooth;
   max-width: 100%;
+  overflow-x: hidden;
 }
-
+h1 {
+  font-family: 'Cinzel', serif;
+}
+p {
+  font-family: 'Roboto', sans-serif;
+}
 body{
   background-color: var(--bg-color-1);
   color: var(--text-color-1);
 }
-
+main {
+  font-size: 20px;
+}
 .jumbotron {
   background-color: var(--bg-color-2);
 }
@@ -29,6 +37,9 @@ body{
     background-color: #ec3132;
     box-shadow: 5px 5px 8px #000;
     color: #fff;
+}
+h2, h5 {
+  font-family: 'Crimson Text', serif;
 }
 hr {
   border-color: var(--underline-color-1);

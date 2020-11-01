@@ -85,6 +85,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+WHITENOISE_MAX_AGE = 604800
 WHITENOISE_USE_FINDERS = True######################
 
 # Password validation
@@ -139,7 +141,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')######################
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'EdWebApp/static/'),
-    os.path.join(BASE_DIR,'media/'),
 ]##########################
 
 MEDIA_ROOT = BASE_DIR / 'media/'

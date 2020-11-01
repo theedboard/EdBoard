@@ -3,10 +3,21 @@
   --bg-color-1: #1c1d1e;
   --text-color-1: #fff;
 }
-
+html {
+  scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 body {
   background-color: var(--bg-color-2);
   color: var(--text-color-1);
+  font-family: 'Roboto', sans-serif;
+}
+h2 {
+  font-family: 'Cinzel', serif;
+}
+h4, h6 {
+  font-family: 'Crimson Text', serif;
 }
 .crew-header{
   background-color: var(--bg-color-1);

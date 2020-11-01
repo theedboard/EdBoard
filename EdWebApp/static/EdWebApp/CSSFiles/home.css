@@ -8,12 +8,12 @@ html {
 	scroll-behavior: smooth;
 	overflow-x: hidden;
 }
+p {
+	font-family: 'Roboto', sans-serif;
+}
 body{
-	font-family: Georgia, serif;/******/
 	color: var(--text-color-1);/********/
-	font-size: 1.4rem;/************/
 	background-color: var(--bg-color-1); /******/
-	font-size: 14px;
 }
 .section {
 	min-height: 100vh;
@@ -105,7 +105,10 @@ body{
 .news-heading {
 	text-align: center;
 	cursor: default;
-	/*fonts*/
+	font-family: 'Crimson Text', serif;
+}
+.card-body {
+	font-family: 'Roboto', sans-serif;
 }
 .carousel {
 	width: 100%;
@@ -153,6 +156,7 @@ body{
 .gallery-heading {
 	text-align: center;
 	cursor: default;
+	font-family: 'Crimson Text', serif;
 	/*fonts*/
 }
 .glow {
@@ -308,7 +312,9 @@ body{
 	color:#fff;
 	min-height: 20vh !important;
 }
-
+h2, h3 {
+	font-family: 'Crimson Text', serif !important;
+}
 .maroon {
 	background-color: #9a2a29;
 	color: #fff;

@@ -2,6 +2,10 @@
 {% load static %}
 {% load cloudinary %}
 
+{% block title %}
+Crew - JC Ed Board
+{% endblock %}
+
 {% block stylesheets %}
 <link rel="stylesheet" href="{% static 'EdWebApp/CSSFiles/crew.css' %}">
 {% endblock %}
@@ -9,10 +13,10 @@
 {% block main %}
 <div class="container py-5">
   <div class="row">
-    <h2 class="mx-auto">Our Crew</h2><br>
+    <h1 class="mx-auto">Our Crew</h1><br>
   </div>
   <div class="row">
-    <h5 class="mx-auto text-uppercase">Awaiting illustrations</h5><br>
+    <h5 class="mx-auto text-uppercase">Sir Edit-A-Lot's underlings</h5><br>
   </div>
 </div>
 
@@ -21,10 +25,10 @@
   <div class="row my-3 justify-content-center">
 
     {% for editor_in_chief in editor_in_chiefs %}
-    <div class="col-md-4 crew-photo-div d-flex justify-content-center pt-3">
+    <div class="col-md-4 crew-photo-div d-flex justify-content-center pt-3" data-aos="fade-up">
       <a class="person" href="{% url 'EdWebApp:crew_info' editor_in_chief.pk %}" class="crew-photo">
         <div class="headshot-container">
-            <img class="headshot" loading="lazy" class="img-fluid" src="{{editor_in_chief.profile_image.url}}" alt="{{editor_in_chief.name}}">
+            <img class="headshot" class="img-fluid lazy" data-src="{{editor_in_chief.profile_image.url}}" alt="{{editor_in_chief.name}}">
         </div>
         <div class="name">{{editor_in_chief.name}}</div>
         <div class="job-title">{{editor_in_chief.title}}</div>
@@ -35,10 +39,10 @@
     {% endfor %}
 
     {% for section_chief in section_chiefs %}
-    <div class="col-md-4 crew-photo-div d-flex justify-content-center pt-3">
+    <div class="col-md-4 crew-photo-div d-flex justify-content-center pt-3" data-aos="fade-up">
       <a class="person" href="{% url 'EdWebApp:crew_info' section_chief.pk %}" class="crew-photo">
         <div class="headshot-container">
-            <img class="headshot" loading="lazy" class="img-fluid" src="{{section_chief.profile_image.url}}" alt="{{section_chief.name}}">
+            <img class="headshot" class="img-fluid lazy" data-src="{{section_chief.profile_image.url}}" alt="{{section_chief.name}}">
         </div>
         <div class="name">{{section_chief.name}}</div>
         <div class="job-title">{{section_chief.title}}</div>
@@ -50,12 +54,12 @@
 
   </div>
 
+  <div class="d-flex align-content-end flex-wrap justify-content-center" data-aos="fade-up">
   {% for editor in editors %}
-  <div class="d-flex align-content-end flex-wrap justify-content-center">
     <div class="col-md-4 crew-photo-div d-flex justify-content-center pt-3 ">
       <a class="person" href="{% url 'EdWebApp:crew_info' editor.pk %}" class="crew-photo">
         <div class="headshot-container">
-            <img class="headshot" loading="lazy" class="img-fluid" src="{{editor.profile_image.url}}" alt="{{editor.name}}">
+            <img class="headshot" class="img-fluid lazy" data-src="{{editor.profile_image.url}}" alt="{{editor.name}}">
         </div>
         <div class="name">{{editor.name}}</div>
         <div class="job-title">{{editor.title}}</div>
@@ -63,11 +67,17 @@
         <div>&nbsp;</div>
       </a>
     </div>
-  </div>
   {% endfor %}
+  </div>
 
 </div>
 {% endblock %}
 
 {% block scripts %}
+<script>
+  AOS.init({duration: 1000,
+		disable: window.orientation==90 || window.orientation==-90,
+	});
+	AOS.refresh();
+</script>
 {% endblock %}

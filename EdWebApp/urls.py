@@ -15,4 +15,4 @@ urlpatterns = [
     path('events/',views.event_view, name="event_view"),
     path('events/<int:id>/',views.event_info_view, name="event_info_view"),
     path('contact/',views.contact, name="contact"),
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

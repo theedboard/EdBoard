@@ -2,6 +2,10 @@
 {% load static %}
 {% load cloudinary %}
 
+{% block title %}
+{{member_details.name}} - JC Ed Board
+{% endblock %}
+
 {% block stylesheets %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.10/dist/css/splide.min.css">
 <link rel="stylesheet" href="{% static 'EdWebApp/CSSFiles/crew_info.css' %}">
@@ -10,7 +14,7 @@
 {% block main %}
 <div class="container-fluid pt-2">
   <div class="d-flex crew-header justify-content-center justify-content-md-end">
-    <img src="{{member_details.thumbnail_image.url}}" class="crew-head-img img-fluid" alt="{{member_details.name}}">
+    <img data-aos="zoom-in" src="{{member_details.thumbnail_image.url}}" class="crew-head-img img-fluid" alt="{{member_details.name}}">
   </div>
 </div>
 <div class="container mb-5 pt-0">
@@ -20,7 +24,7 @@
       <div class="crew-header-text px-5">
         <div class="d-flex justify-content-center justify-content-md-start"><h2>{{member_details.name}}</h2></div>
         <div class="d-flex justify-content-center justify-content-md-start"><h5>{{member_details.tagline}}</h5></div>
-        <div class="d-flex justify-content-center justify-content-md-start"><h6>{{member_details.information|linebreaks|urlize}}</h6></div>
+        <div class="d-flex justify-content-center justify-content-md-start">{{member_details.information|linebreaks|urlize}}</div>
       </div>
 
     </div>
@@ -32,11 +36,14 @@
     <div class="offset-md-1 col-md-3 pl-5">
 
       <h6 class="text-uppercase font-weight-bold pt-5">Character Stats </h6>
+      <div id="stats">
       <div class="row">
         <div class="col-3">Text</div>
         <div class="col-9">
           <div class="progress my-1">
-            <div class="progress-bar red" style="width:{{member_details.stat1}}%"></div>
+            <div data-aos="fade-right"
+            data-aos-anchor="#stats"
+            data-aos-anchor-placement="center-bottom" class="progress-bar red" style="width:{{member_details.stat1}}%"></div>
           </div>
         </div>
       </div>
@@ -45,7 +52,9 @@
         <div class="col-3">Text</div>
         <div class="col-9">
           <div class="progress my-1">
-            <div class="progress-bar maroon" style="width:{{member_details.stat2}}%"></div>
+            <div data-aos="fade-right"
+            data-aos-anchor="#stats"
+            data-aos-anchor-placement="center-bottom" class="progress-bar maroon" style="width:{{member_details.stat2}}%"></div>
           </div>
         </div>
       </div>
@@ -54,7 +63,9 @@
         <div class="col-3">Text</div>
         <div class="col-9">
           <div class="progress my-1">
-            <div class="progress-bar red" style="width:{{member_details.stat3}}%"></div>
+            <div data-aos="fade-right"
+            data-aos-anchor="#stats"
+            data-aos-anchor-placement="center-bottom" class="progress-bar red" style="width:{{member_details.stat3}}%"></div>
           </div>
         </div>
       </div>
@@ -63,7 +74,9 @@
         <div class="col-3">Text</div>
         <div class="col-9">
           <div class="progress my-1">
-            <div class="progress-bar maroon" style="width:{{member_details.stat4}}%"></div>
+            <div data-aos="fade-right"
+            data-aos-anchor="#stats"
+            data-aos-anchor-placement="center-bottom" class="progress-bar maroon" style="width:{{member_details.stat4}}%"></div>
           </div>
         </div>
       </div>
@@ -72,9 +85,12 @@
         <div class="col-3">Text</div>
         <div class="col-9">
           <div class="progress my-1">
-            <div class="progress-bar red" style="width:{{member_details.stat5}}%"></div>
+            <div data-aos="fade-right"
+            data-aos-anchor="#stats"
+            data-aos-anchor-placement="center-bottom" class="progress-bar red" style="width:{{member_details.stat5}}%"></div>
           </div>
         </div>
+      </div>
       </div>
 
     </div>
@@ -123,7 +139,12 @@
   } ).mount(window.splide.Extensions );
 } );
 </script>
-
+<script>
+  AOS.init({duration: 1000,
+		disable: window.orientation==90 || window.orientation==-90,
+	});
+	AOS.refresh();
+</script>
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.10/dist/js/splide.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-url-hash@0.1.5/dist/js/splide-extension-url-hash.min.js"></script>
 {% endblock %}

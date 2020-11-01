@@ -32,6 +32,7 @@ background-image: radial-gradient(var(--polkacolor) 2px, transparent 2px);
 background-size:20px 20px;
 background-attachment: fixed;
 color: var(--text-color);
+font-family: 'Roboto', sans-serif;
 }
 
 @media (min-width: 1200px) {
@@ -40,17 +41,11 @@ color: var(--text-color);
     }
 }
 
-
-
-
-.container{
-  font-family: monospace;
-}
 h2.contact-form-heading{
   text-align: center;
   text-transform: uppercase;
-  font-family: monospace;
   font-size: 30px;
+  font-family: 'Crimson Text', serif;
 }
 
 .contact-us-jumbotron{
@@ -78,7 +73,6 @@ hr.after-heading-border{
 }
 
 .contact-form-desc{
-  font-family:monospace;
   font-weight: 100;
 }
 

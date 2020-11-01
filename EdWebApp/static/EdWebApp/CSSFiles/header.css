@@ -1,13 +1,14 @@
+/*!
+ * Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
 header {
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-<<<<<<< HEAD
-  z-index:2;
-=======
   z-index: 100;
->>>>>>> f86b8e2b21de3748c9c984bafe7114f3b4474c21
+  font-family: 'Crimson Text', serif !important;
 }
 main {
   position: relative;
@@ -142,9 +143,9 @@ footer{
     background-color: #9a2a29;
     color:white;
     height: 15vh;
-    padding-left: 5%;
     position: relative;
     top: calc(30px + 5vh);
+    padding: 5px;
 }
 footer a, footer a:visited{
     text-decoration: none;
@@ -158,12 +159,6 @@ footer a:hover{
 }
 .filter-white{
     height: 100%;
-    float: right;
-    padding:15px;
-}
-footer a img{
-    padding-right: -5%;
-    /* position: static; */
 }
 footer a img:hover{
     opacity: 0.6;

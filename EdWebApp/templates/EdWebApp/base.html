@@ -8,6 +8,7 @@
   <meta name="theme-color" content="#000">
   <meta name="msapplication-navbutton-color" content="#000">
   <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+  <meta name="description" content="We're the official Editorial Board of JSSS&TU, Mysuru. We organise ||SHABD||, our annual literary fest, and bring out Jayzine, our yearly magazine!">
   <link rel="shortcut icon" href="{% static 'EdWebApp/images/favicon.ico' %}" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
   integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -15,10 +16,13 @@
   <link rel="stylesheet" href="{% static 'EdWebApp/CSSFiles/header.css' %}">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
    rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Crimson+Text:wght@600&family=Roboto&display=swap" rel="stylesheet">
   {% block stylesheets %}
   {% endblock %}
-  <title>The Editorial Board</title>
+  <title>
+    {% block title %}
+    {% endblock %}
+  </title>
 </head>
 <body>
   {% include 'EdWebApp/header.html' %}
@@ -39,6 +43,57 @@
       x.classList.toggle("change");
     }
   </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+  var lazyloadImages;
+
+  if ("IntersectionObserver" in window) {
+    lazyloadImages = document.querySelectorAll(".lazy");
+    var imageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var image = entry.target;
+          image.src = image.dataset.src;
+          image.classList.remove("lazy");
+          imageObserver.unobserve(image);
+        }
+      });
+    });
+
+    lazyloadImages.forEach(function(image) {
+      imageObserver.observe(image);
+    });
+  } else {
+    var lazyloadThrottleTimeout;
+    lazyloadImages = document.querySelectorAll(".lazy");
+
+    function lazyload () {
+      if(lazyloadThrottleTimeout) {
+        clearTimeout(lazyloadThrottleTimeout);
+      }
+
+      lazyloadThrottleTimeout = setTimeout(function() {
+        var scrollTop = window.pageYOffset;
+        lazyloadImages.forEach(function(img) {
+            if(img.offsetTop < (window.innerHeight + scrollTop)) {
+              img.src = img.dataset.src;
+              img.classList.remove('lazy');
+            }
+        });
+        if(lazyloadImages.length == 0) {
+          document.removeEventListener("scroll", lazyload);
+          window.removeEventListener("resize", lazyload);
+          window.removeEventListener("orientationChange", lazyload);
+        }
+      }, 20);
+    }
+
+    document.addEventListener("scroll", lazyload);
+    window.addEventListener("resize", lazyload);
+    window.addEventListener("orientationChange", lazyload);
+  }
+})
+</script>
   {% block scripts %}
   {% endblock %}
 </body>

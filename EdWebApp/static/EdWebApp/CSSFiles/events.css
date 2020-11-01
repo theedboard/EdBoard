@@ -2,15 +2,20 @@
   --bg-1: #333;
   --text-color: #fff;
 }
-
+html {
+  scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
+}
  body{
     background-color: var(--bg-1);
     color: var(--text-color);
 }
 h1{
-    font-size: 10vw;
+    font-size: 8vw;
     text-align: center;
     font-variant-caps: all-petite-caps;
+    font-family: 'Cinzel', serif;
 }
 .first a{
    text-decoration: none;
@@ -24,6 +29,7 @@ h1{
    padding-bottom: 2vh;
    border-top: 1px solid #ec3132;
    border-radius: 180vh;
+   font-family: 'Crimson Text', serif;
 }
 .first{
     padding-top: 1vh;

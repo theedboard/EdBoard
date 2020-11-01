@@ -1,6 +1,10 @@
 {% extends 'EdWebApp/base.html' %}
 {% load static %}
 
+{% block title %}
+Contact - JC Ed Board
+{% endblock %}
+
 {% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="{% static 'EdWebApp/CSSFiles/contact.css' %}">
 {% endblock %}
@@ -74,14 +78,14 @@
          <div class="col-6">
            <div class="contact-us-directly animate fadeInLeft four">
              <p class="contact-us-icons">&#9993</p>
-             <p class="contact-us-directly-text">You could also write to us directly at sjce.jayzine@gmail.com</p>
+             <p class="contact-us-directly-text">You could also write to us directly to <a href="mailto:sjce.jayzine@gmail.com" target="_blank" style="color: #fff">sjce.jayzine@gmail.com</a></p>
            </div>
          </div>
 
          <div class="col-6">
            <div class="contact-us-number animate fadeInRight four">
              <p class="contact-us-icons">&#9742</p>
-             <p class="contact-us-number-text">Hey, we just met you and this is crazy. But here's our number, so call us maybe: XXXXXXXXXX</p>
+             <p class="contact-us-number-text">Hey, we just met you and this is crazy. But here's our number, so call us maybe: <a href="tel:9036456691" target="_blank" style="color: #fff">9036456691</a></p>
            </div>
          </div>
        </div>
