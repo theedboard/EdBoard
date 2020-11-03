@@ -99,7 +99,7 @@ def auto_delete_file_on_change(sender, instance, **kwargs):
         old_files = sender.objects.get(pk=instance.pk).file_fields()
         new_files = instance.file_fields()
         for i in range(len(old_files)):
-            if not old_files[i] == new_files[i]:
+            if not str(old_files[i]) == str(new_files[i]):
                 cloudinary.uploader.destroy(old_files[i].public_id)
                 #if os.path.isfile(old_files[i].path):
                 #    os.remove(old_files[i].path)

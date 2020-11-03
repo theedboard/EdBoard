@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = "UBvFpnvALbi<vUa*ePgit&nWHN&6h^ZFPYr_A4Qx+~|<i$)22>"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False  #########################
+DEBUG = True  #########################
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
@@ -81,8 +81,14 @@ WSGI_APPLICATION = 'EdWebsite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'danm6dbmn9p3d8',
+        'USER': 'vuqiullbxbzmrd',
+        'PASSWORD': '7ae012a50b487a6155d79edc821346995f343379abbddb7f70efb290759decb0',
+        'HOST': 'ec2-52-2-82-109.compute-1.amazonaws.com',
+        'PORT': '5432',
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
