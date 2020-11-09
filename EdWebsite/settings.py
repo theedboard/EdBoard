@@ -82,10 +82,10 @@ WSGI_APPLICATION = 'EdWebsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'danm6dbmn9p3d8',
-        'USER': 'vuqiullbxbzmrd',
-        'PASSWORD': '7ae012a50b487a6155d79edc821346995f343379abbddb7f70efb290759decb0',
-        'HOST': 'ec2-52-2-82-109.compute-1.amazonaws.com',
+        'NAME': 'dbldo80e0r7pt0',
+        'USER': 'gmfdsobtyxbocx',
+        'PASSWORD': 'b4cd2fda1c8dcccbdc1ed4acb0d58608a2833cd640d861dd023e6d5277e2babf',
+        'HOST': 'ec2-54-247-103-43.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': BASE_DIR / 'db.sqlite3',
