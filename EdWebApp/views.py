@@ -21,9 +21,9 @@ def home(request):
     return render(request, 'EdWebApp/home.html', context)
 
 def crew(request):
-    editor_in_chiefs = member.objects.filter(position='editor-in-chief')
-    section_chiefs = member.objects.filter(position='section-chief')
-    editors = member.objects.filter(position='editor')
+    editor_in_chiefs = member.objects.only('profile_image','name','title','tagline').filter(position='editor-in-chief')
+    section_chiefs = member.objects.only('profile_image','name','title','tagline').filter(position='section-chief')
+    editors = member.objects.only('profile_image','name','title','tagline').filter(position='editor')
     context={
         'editor_in_chiefs': editor_in_chiefs,
         'section_chiefs': section_chiefs,
@@ -58,7 +58,7 @@ def history(request):
     return render(request, 'EdWebApp/history.html', context)
 
 def event_view(request):
-    events = event.objects.all()
+    events = event.objects.only('pk','title','preview_image').all()
     context={
         'events': events,
         'event': 'active',

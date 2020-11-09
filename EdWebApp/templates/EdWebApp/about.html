@@ -20,7 +20,7 @@ AboutUs - JC Ed Board
       <p></p>
     </div>
     <div class="col-md-4 d-flex justify-content-center" data-aos="zoom-in">
-      <img src="{% static 'EdWebApp/images/logo.svg' %}" class="img-responsive" alt="logo">
+      <img src="{% static 'EdWebApp/images/logo.svg' %}" class="img-responsive" alt="edboard logo">
     </div>
   </div>
 </div>
@@ -28,7 +28,7 @@ AboutUs - JC Ed Board
 <div class="container about-container my-5 px-3">
   <div class="row py-3">
     <div class="col-md-5 d-flex justify-content-center py-3" data-aos="zoom-in">
-      <img data-src="{% static 'EdWebApp/images/gallery-1.jpg' %}" class="img-responsive lazy" alt="logo">
+      <img data-src="{% static 'EdWebApp/images/gallery-1.jpg' %}" class="img-responsive lazy" alt="the editorial board">
     </div>
     <div class="col-md-6">
       <p>The Editorial Board is a student literature club responsible for bringing out ‘Jayzine’, our college annual magazine. We take pride in organizing ||Shabd||, the only literary fest held by an engineering college in Karnataka. We are a small crew of about twenty-five people working under the guidance of Dr Vanishri. We celebrate Kannada Rajyotsava and conduct various other events like Mindspeak and Aralikatte. We firmly believe that it is vital for students to have a creative outlet to maintain a sense of balance in their lives. With this in mind, we have created a platform for them to hone their artistic capabilities.  <p>
@@ -104,7 +104,7 @@ AboutUs - JC Ed Board
         <h2>||SHABD||</h2>
         <p>Lit. Art. Ent</p>
         <a href="{% url 'EdWebApp:shabd_info' %}">
-          <img data-src="{% static 'EdWebApp/images/shabd-1.jpg' %}" class="img-responsive lazy" style="height: 300px;" alt="shabd">
+          <img data-src="{% static 'EdWebApp/images/shabd-1.jpg' %}" class="img-responsive lazy" style="max-height: 300px;" alt="JSSSTU/SJCE shabd Mysore">
         </a>
       </div>
 
@@ -112,7 +112,7 @@ AboutUs - JC Ed Board
         <h2>Magazine</h2>
         <p>Our blood, sweat and tears</p>
         <a href="{% url 'EdWebApp:shabd_info' %}">
-          <img data-src="{% static 'EdWebApp/images/gallery-2.jpg' %}" class="img-responsive lazy" alt="magazine" style="height: 300px;">
+          <img data-src="{% static 'EdWebApp/images/Jayzine_JSSSTU_Official_magazine.jpg' %}" class="img-responsive lazy" alt="Jayzine / JSSSTU official magazine" style="max-height: 300px;">
         </a>
       </div>
     </div>
@@ -127,24 +127,25 @@ AboutUs - JC Ed Board
       <hr class="my-4">
     </div>
   </div>
+
   <div class="row staff-row d-flex justify-content-center">
     <div class="card col-xl-3 col-lg-4 col-md-5 m-lg-3 my-5 mx-3"  data-aos="fade-right">
-      <img class="card-img-top mx-auto lazy" data-src="{% static 'EdWebApp/images/logo.svg' %}" alt="Dr S. K. Prasad">
-      <div class="card-body text-center">
-        <h5 class="card-title">Dr S. K. Prasad</h5>
-        <p class="card-text">Generations of Eddies have passed under the guidance of this quick-witted, enthusiastic and overwhelmingly supportive professor. Dr S. K. Prasad was the Staff Coordinator of The Editorial Board for over a decade and played a huge role in helping us reach where we are today.</p>
-
-        <p class="card-text">Currently working as professor in VVCE, he is a former Professor in the Department of Civil Engineering, JSSSTU. He graduated from University of Mysuru (SJCE) and later obtained his Master’s Degree from IIT Kanpur and Doctoral Degree from University of Tokyo, Japan. His area of specialisation includes Earthquake and Geotechnical engineering.
-        </p>
-      </div>
-    </div>
-    <div class="card col-xl-3 col-lg-4 col-md-5 m-lg-3 my-5 mx-3"  data-aos="fade-left">
-      <img class="card-img-top mx-auto lazy" data-src="{% static 'EdWebApp/images/logo.svg' %}" alt="Dr. Vanishri Arun">
+      <img class="card-img-top mx-auto lazy mt-2" data-src="{% static 'EdWebApp/images/Dr.VanishriArun.jpg' %}" alt="Dr. Vanishri Arun" style="max-height:350px;">
       <div class="card-body text-center">
         <h5 class="card-title">Dr. Vanishri Arun</h5>
         <p class="card-text">Always calm and ready to guide and help, Dr Vanishri Arun is the current Staff Coordinator for The Editorial Board. She received her Bachelor of Engineering degree in Computer Science and Engineering and Master of Technology in Software Engineering from SJCE and PhD from VTU in the area of Biomedical Informatics.</p>
 
         <p class="card-text">At present, she is working in the capacity of Assistant Professor in the Department of Information Science and Engineering at JSS Science and Technology University, Mysuru, India. Her research interests include Biomedical Informatics, Machine Learning, Deep Learning and Data Analytics using Statistical methods.
+        </p>
+      </div>
+    </div>
+    <div class="card col-xl-3 col-lg-4 col-md-5 m-lg-3 my-5 mx-3"  data-aos="fade-left">
+      <img class="card-img-top mx-auto lazy mt-2" data-src="{% static 'EdWebApp/images/DrS.K.Prasad.jpg' %}" alt="Dr S. K. Prasad" style="max-height:350px;">
+      <div class="card-body text-center">
+        <h5 class="card-title">Dr S. K. Prasad</h5>
+        <p class="card-text">Generations of Eddies have passed under the guidance of this quick-witted, enthusiastic and overwhelmingly supportive professor. Dr S. K. Prasad was the Staff Coordinator of The Editorial Board for over a decade and played a huge role in helping us reach where we are today.</p>
+
+        <p class="card-text">Currently working as professor in VVCE, he is a former Professor in the Department of Civil Engineering, JSSSTU. He graduated from University of Mysuru (SJCE) and later obtained his Master’s Degree from IIT Kanpur and Doctoral Degree from University of Tokyo, Japan. His area of specialisation includes Earthquake and Geotechnical engineering.
         </p>
       </div>
     </div>

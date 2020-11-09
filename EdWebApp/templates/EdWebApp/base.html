@@ -8,7 +8,26 @@
   <meta name="theme-color" content="#000">
   <meta name="msapplication-navbutton-color" content="#000">
   <meta name="apple-mobile-web-app-status-bar-style" content="#000">
-  <meta name="description" content="We're the official Editorial Board of JSSS&TU, Mysuru. We organise ||SHABD||, our annual literary fest, and bring out Jayzine, our yearly magazine!">
+
+  <meta name="description" content="The Editorial Board is a literary club in JSSSTU(SJCE) responsible for Shabd and official annual magazine Jayzine. It has Kannada, English and Art sections.">
+  <meta name="keywords" content="The Editorial Board, Shabd, Jayzine, literary event, Kannada, English, Art, JSS Science and Technology University(JSSSTU), Sri Jayacharajendra College of Engineering(SJCE), Kannada Rajyotsava, mindspeak, aralikatte, flashmobs, crossword, jagarane, pictionary, jumble the good word(jtgw), open mics, recruitment, debate, creative writing, love letter writing, poster making, photography, bamboozled, Just A Minute(JAM), Shabd volunteers, Pilot episode, Kahale, Sir Edit-A-Lot, Jayciana, art installations, articles, event management, publicity, ed board, jc ed, yampa, frappe, paper mâché, books, paints, Manasagangotri, Mysuru">
+  <meta name="geo.region" content="IN-KA">
+  <meta name="geo.placename" content="Mysuru">
+  <meta name="geo.position" content="12.3132317;76.6134333">
+  <meta name="ICBM" content="12.3132317, 76.6134333">
+
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SJCE Editorial Board">
+  <meta property="og:title" content="JC ED - The SJCE Editorial Board">
+  <meta property="og:description" content="The Editorial Board is a literary club in JSSSTU(SJCE) responsible for Shabd and official annual magazine Jayzine. It has Kannada, English and Art sections.">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:site" content="@jcedboard">
+  <meta property="twitter:title" content="JC ED - The SJCE Editorial Board">
+  <meta property="twitter:description" content="The Editorial Board is a literary club in JSSSTU(SJCE) responsible for Shabd and official annual magazine Jayzine. It has Kannada, English and Art sections.">
+
   <link rel="shortcut icon" href="{% static 'EdWebApp/images/favicon.ico' %}" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
   integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -42,6 +61,23 @@
     function myFunction(x) {
       x.classList.toggle("change");
     }
+    //const checkbox = document.getElementById("checkbox-small");
+    $('body').toggleClass(localStorage.toggled);
+
+function darkLight() {
+  if (localStorage.toggled != 'light-mode') {
+    $('body').toggleClass('light-mode', true);
+    localStorage.toggled = "light-mode";
+  } else {
+    $('body').toggleClass('light-mode', false);
+    localStorage.toggled = "";
+  }
+}
+if ($('body').hasClass('light-mode')) {
+   $( '#checkbox-small' ).prop( "checked", true )
+} else {
+  $( '#checkbox-small' ).prop( "checked", false )
+}
   </script>
   <script>
   document.addEventListener("DOMContentLoaded", function() {

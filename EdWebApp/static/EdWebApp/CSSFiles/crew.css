@@ -1,6 +1,11 @@
-:root {
+body {
   --bg-color-2: #333;
   --text-color-1: #fff;
+  --red: #ec3132;
+}
+.light-mode {
+  --bg-color-2: #fff;
+  --text-color-1: #000;
   --red: #ec3132;
 }
 * {

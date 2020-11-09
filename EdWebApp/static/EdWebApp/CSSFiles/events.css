@@ -1,6 +1,10 @@
-:root {
+body {
   --bg-1: #333;
   --text-color: #fff;
+}
+.light-mode {
+  --bg-1: #fff;
+  --text-color: #000;
 }
 html {
   scroll-behavior: smooth;

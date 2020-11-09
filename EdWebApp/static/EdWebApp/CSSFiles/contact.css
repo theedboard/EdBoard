@@ -1,4 +1,4 @@
-:root {
+body {
 --polkacolor: #666;
 --bgcolor: #333;
 --mainpink: #9a2a29; /*main pink color of form and jumbotron*/
@@ -12,7 +12,7 @@
 --fadecolor: #1c1d1e;
 --form-bg: #1c1d1e;
 }
-.light {
+.light-mode {
   --polkacolor: #FFC6B6;
   --bgcolor: white;
   --mainpink: #FFD9CE; /*main pink color of form and jumbotron*/
@@ -23,6 +23,9 @@
   --colorShadeE: #FFEAE6; /*darkest pink*/
   --dashcolor: red; /*color of the dashes*/
   --colorshadow: #FA8072; /*color of the shadows*/
+  --text-color: #000;
+  --form-bg: #FFD9CE;
+  --fadecolor: #fff;
 }
 body {
 padding:0;

@@ -19,6 +19,16 @@
       <li><a class="{{ shabd }}" href="{% url 'EdWebApp:shabd_info' %}">||SHABD||</a></li>
       <li><a class="{{ event }}" href="{% url 'EdWebApp:event_view' %}">Events</a></li>
       <li><a class="{{ crew }}" href="{% url 'EdWebApp:crew' %}">Crew</a></li>
+      <li>
+        <div class="mode-small">
+           <input type="checkbox" class="checkbox" id="checkbox-small" class="check" onclick="darkLight()">
+           <label for="checkbox-small" class="label">
+              <i class="fa fa-moon-o"></i>
+              <i class="fa fa-sun-o"></i>
+              <div class="ball"></div>
+           </label>
+          </div>
+          </li>
     </ul>
   </nav>
 </header>

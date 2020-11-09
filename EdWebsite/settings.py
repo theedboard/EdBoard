@@ -92,6 +92,9 @@ DATABASES = {
     }
 }
 
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
+
 WHITENOISE_MAX_AGE = 604800
 WHITENOISE_USE_FINDERS = True######################
 

@@ -1,8 +1,13 @@
 /*fonts need to be updated*/
-:root {
+body {
 	--text-color-1: #fff;
 	--bg-color-1: #000;
 	--bg-color-2: #333;
+}
+ .light-mode {
+	--text-color-1: #1c1d1e;
+	--bg-color-1: #fff;
+	--bg-color-2: #fff;
 }
 html {
 	scroll-behavior: smooth;

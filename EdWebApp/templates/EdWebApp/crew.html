@@ -54,9 +54,9 @@ Crew - JC Ed Board
 
   </div>
 
-  <div class="d-flex align-content-end flex-wrap justify-content-center" data-aos="fade-up">
+  <div class="d-flex align-content-end flex-wrap justify-content-center">
   {% for editor in editors %}
-    <div class="col-md-4 crew-photo-div d-flex justify-content-center pt-3 ">
+    <div class="col-md-4 crew-photo-div d-flex justify-content-center pt-3 " data-aos="fade-up">
       <a class="person" href="{% url 'EdWebApp:crew_info' editor.pk %}" class="crew-photo">
         <div class="headshot-container">
             <img class="headshot img-fluid lazy" data-src="{{editor.profile_image.url}}" alt="{{editor.name}}">

@@ -3,7 +3,7 @@
  * Copyright 2013-2020 Start Bootstrap
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-one-page-wonder/blob/master/LICENSE)
  */
-:root {
+body {
   --bg-1: #9a2a29;
   --bg-2: #1c1d1e;
   --circle-1: #9a2a29;
@@ -11,11 +11,13 @@
   --bg: #1c1d1e;
   --text-color: #fff;
 }
-.light {
+.light-mode {
   --circle-1: #ee0979;
   --circle-2: #ff6a00;
   --bg-1: #ee0979;
   --bg-2: #ff6a00;
+  --bg: #fff;
+  --text-color: #000;
 }
 html {
   scroll-behavior: smooth;
