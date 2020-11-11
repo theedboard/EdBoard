@@ -57,6 +57,12 @@ def history(request):
     context = {}
     return render(request, 'EdWebApp/history.html', context)
 
+def jayzine(request):
+    context = {
+        'jayzine': 'active'
+    }
+    return render(request, 'EdWebApp/jayzine.html', context)
+
 def event_view(request):
     events = event.objects.only('pk','title','preview_image').all()
     context={

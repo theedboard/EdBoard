@@ -2,11 +2,13 @@ body {
   --bg-color-1: #333;
   --text-color-1:#fff;
   --text-color-2: rgba(255,255,255,0.7);
+  --text-color-3: #fff;
 }
 .light-mode {
-  --bg-color-1: #fff;
+  --bg-color-1: #f0f0f0;
   --text-color-1:#000;
   --text-color-2: #000;
+  --text-color-3: #fff;
 }
 h1 {
   font-family: 'Cinzel', serif;
@@ -35,7 +37,12 @@ body {
   transition: .4s;
   padding: 0 10px;
   box-sizing: border-box;
-  color: var(--text-color-1);
+  color: var(--text-color-3);
+  text-shadow:
+   -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
 }
 .timeline__content-desc {
   margin: 0;

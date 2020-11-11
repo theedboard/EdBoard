@@ -7,7 +7,7 @@ Home - JC Ed Board
 {% endblock %}
 
 {% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="{% static 'EdWebApp/CSSFiles/home.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'EdWebApp/CSSFiles/home.min.css' %}">
 {% endblock %}
 
 {% block main %}
@@ -38,6 +38,7 @@ Home - JC Ed Board
 	</p>
 </section>
 
+{% if latest_news %}
 <section class="section news" id="news-section">
 	<div>
   	<h2 class="news-heading"
@@ -74,7 +75,7 @@ Home - JC Ed Board
   	</div>
 	</div>
 </section>
-
+{% endif %}
 <section class="section gallery">
 	<div class="holder">
 		<h2 class="gallery-heading" >

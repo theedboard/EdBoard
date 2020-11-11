@@ -1,0 +1,95 @@
+{% extends 'EdWebApp/base.html' %}
+{% load static %}
+
+{% block title %}
+Shabd - JC Ed Board
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'EdWebApp/CSSFiles/jayzine.min.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="jumbotron">
+  <div class="row px-3">
+    <div class="col-md-6 col-sm-12 start">
+      <h1 class="display-4">JAYZINE</h1>
+      <br>
+      <h2>This is our
+        <span class="txt-rotate" data-period="2000" data-rotate='[ "sweat.", "pride.", "lovvu.", "Jayzine.", "Ashte Ashte!" ]'></span>
+      </h2>
+      <br>
+      <p>The yearly arrival of ||SHABD|| ushers in a new era with the release of a new edition of Jayzine, our official college magazine. With the occasion being a premiere of sorts, you'll find members of The Editorial Board scurrying around in excitement, anticipating the arrival of our new bundle of joy. Lady Luck smiles upon the fortunate few who get the first look, while the rest of us are frantically using our ultimate weapon, grubby fingers, to inch closer to those alluringly glossy, freshly-pressed pages. Once we're all done feasting our eyes on the new arrival, we take a trip down memory lane, reminiscing all the work we put in.
+</p>
+      <p>Jayzine features works of art, literature, and photography representative of the dreams and aspirations of every student's heyday. We pull out on all stops to ensure that the magazine is at its finest. Our last remaining brain cells churn out original content filled with pop-culture references and obligatory sarcasm for the magazine's exotic color pages, synchronous with the latest fads- all indicative of us being hip and cool. To answer your question, yes, we keep up with the Kardashians. We'd be lying if we said the pages weren't laced with subliminal messages to make our readers come back for more. Apart from being a refuge of sorts to budding artists, the magazine never fails to entertain and inspire. From evocative pieces and quirky illustrations to hilarious footers, Jayzine has it all.</p>
+      <p>Jayzine has come a long way, from being 'Jaya Prabha' in the days of yore to being known by 'SJCE Magazine' for quite some time, all the while winning an occasional award. The 2019 edition placed first among many magazines published by other sister institutions. Today, it's well-known and read with affection by the students of the university, as well as its alumni. To put it shortly, Jayzine is university life in all its glory- a paragon of youth.
+</p>
+    </div>
+    <div class="col-md-6 col-sm-12 d-flex justify-content-center align-items-center flex-column">
+      <img data-src="{% static 'EdWebApp/images/Jayzine_SJCE_Official_magazine.jpg' %}" class="lazy border border-light mb-3 img-fluid" alt="Jayzine- JSSSTU Official magazine">
+      <h3 class="display-5 text-center">JAYZINE 2020 Edition is coming soon!!! <br> Stay tuned!!!</h3>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+    var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+  document.body.appendChild(css);
+};
+// typewriter end
+</script>
+{% endblock %}

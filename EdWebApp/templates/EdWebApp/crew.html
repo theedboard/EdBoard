@@ -7,7 +7,7 @@ Crew - JC Ed Board
 {% endblock %}
 
 {% block stylesheets %}
-<link rel="stylesheet" href="{% static 'EdWebApp/CSSFiles/crew.css' %}">
+<link rel="stylesheet" href="{% static 'EdWebApp/CSSFiles/crew.min.css' %}">
 {% endblock %}
 
 {% block main %}
@@ -30,7 +30,7 @@ Crew - JC Ed Board
         <div class="headshot-container">
             <img class="headshot img-fluid lazy" data-src="{{editor_in_chief.profile_image.url}}" alt="{{editor_in_chief.name}}">
         </div>
-        <div class="name">{{editor_in_chief.name}}</div>
+        <div class="name">{{editor_in_chief.name}} <span class="arrow text-center">&#8811;</span></div>
         <div class="job-title">{{editor_in_chief.title}}</div>
         <div class="theme-title">{{editor_in_chief.tagline}}</div>
         <div>&nbsp;</div>
@@ -44,7 +44,7 @@ Crew - JC Ed Board
         <div class="headshot-container">
             <img class="headshot img-fluid lazy" data-src="{{section_chief.profile_image.url}}" alt="{{section_chief.name}}">
         </div>
-        <div class="name">{{section_chief.name}}</div>
+        <div class="name">{{section_chief.name}} <span class="arrow text-center">&#8811;</span></div>
         <div class="job-title">{{section_chief.title}}</div>
         <div class="theme-title">{{section_chief.tagline}}</div>
         <div>&nbsp;</div>
@@ -61,7 +61,7 @@ Crew - JC Ed Board
         <div class="headshot-container">
             <img class="headshot img-fluid lazy" data-src="{{editor.profile_image.url}}" alt="{{editor.name}}">
         </div>
-        <div class="name">{{editor.name}}</div>
+        <div class="name">{{editor.name}} <span class="arrow text-center">&#8811;</span></div>
         <div class="job-title">{{editor.title}}</div>
         <div class="theme-title">{{editor.tagline}}</div>
         <div>&nbsp;</div>

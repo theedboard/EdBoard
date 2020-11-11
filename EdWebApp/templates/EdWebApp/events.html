@@ -7,7 +7,7 @@ Events - JC Ed Board
 {% endblock %}
 
 {% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="{% static 'EdWebApp/CSSFiles/events.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'EdWebApp/CSSFiles/events.min.css' %}">
 {% endblock %}
 
 {% block main %}
@@ -15,7 +15,7 @@ Events - JC Ed Board
     <div class="container">
       {% for event in events %}
         <div class="row text-center">
-            <div class="{% cycle 'order-2 first col-8 col-md-9' 'order-1 first col-8 col-md-9' %}">
+            <div class="{% cycle 'order-2 first col-8 col-md-9' 'order-2 first col-8 col-md-9' %}">
                 <a href="{% url 'EdWebApp:event_info_view' event.pk %}">
                 {{event.title}}
             </a>
@@ -37,7 +37,7 @@ Events - JC Ed Board
     function change_order(arg){
         var clname=arg.className;
         if(clname[6]=="1"){
-            clname_new=clname.replace("1","2")
+            clname_new=clname.replace("1","2");
         }
         else{
             clname_new=clname.replace("2","1");

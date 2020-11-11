@@ -2,12 +2,14 @@ body {
     --bg-color-1: #1c1d1e;
     --bg-color-2: #333;
     --text-color-1: #fff;
-    --underline-color-1: #fff;
+    --text-color-2: rgba(255,255,255,0.8);
+    --underline-color-1: rgba(255,255,255,0.6);
 }
 .light-mode {
-    --bg-color-1: #fff;
-    --bg-color-2: #fff;
+    --bg-color-1: #f0f0f0;
+    --bg-color-2: #f0f0f0;
     --text-color-1: #1c1d1e;
+    --text-color-2: #000;
     --underline-color-1: #1c1d1e;
 }
 * {
@@ -24,12 +26,13 @@ html {
 h1 {
   font-family: 'Cinzel', serif;
 }
-p {
-  font-family: 'Roboto', sans-serif;
-}
 body{
   background-color: var(--bg-color-1);
   color: var(--text-color-1);
+  color: var(--text-color-2);
+}
+p {
+  font-family: 'Roboto', sans-serif;
 }
 main {
   font-size: 20px;
@@ -39,7 +42,7 @@ main {
 }
 
 .card {
-    background-color: #ec3132;
+    background-color: rgba(236,49,50,0.8);
     box-shadow: 5px 5px 8px #000;
     color: #fff;
 }

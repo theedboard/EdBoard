@@ -51,13 +51,14 @@ class member(models.Model):
     stat4 = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100)])
     stat5 = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100)])
     year_of_recruitement = models.IntegerField(validators=[MinValueValidator(2000), MaxValueValidator(2050)])
+    current_sem = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(8)])
     position = models.CharField(max_length = 20, choices = CHOICES, default = 'editor')
     def file_fields(self):
         return [self.profile_image, self.thumbnail_image]
     def __str__(self):
         return self.name
     class Meta:
-        ordering = ['year_of_recruitement','pk']
+        ordering = ['year_of_recruitement','-current_sem']
 
 class event(models.Model):
     title = models.CharField(max_length=50)
