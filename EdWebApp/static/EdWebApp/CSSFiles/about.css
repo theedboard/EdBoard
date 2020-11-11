@@ -65,3 +65,7 @@ hr {
   background-color: #9a2a29;
   color: #fff;
 }
+.staffs {
+  background-color:var(--bg-2);
+  color:var(--text-color-1);
+}
