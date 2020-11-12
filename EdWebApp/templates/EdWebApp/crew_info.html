@@ -8,10 +8,11 @@
 
 {% block stylesheets %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.10/dist/css/splide.min.css">
-<link rel="stylesheet" href="{% static 'EdWebApp/CSSFiles/crew_info.min.css' %}">
+<link rel="stylesheet" href="{% static 'EdWebApp/CSSFiles/crew_info.min.css' %}?1">
 {% endblock %}
 
 {% block main %}
+<a href="{% url 'EdWebApp:crew' %}" class="btn btn-secondary previous">&#171;</a>
 <div class="container-fluid pt-2">
   <div class="d-flex crew-header justify-content-center justify-content-md-end">
     <img data-aos="zoom-in" src="{{member_details.thumbnail_image.url}}" class="crew-head-img img-fluid" alt="{{member_details.name}}">
@@ -22,7 +23,7 @@
     <div class="col-md-12">
 
       <div class="crew-header-text px-5">
-        <div class="d-flex justify-content-center justify-content-md-start"><h2>{{member_details.name}}</h2></div>
+        <div class="d-flex justify-content-center justify-content-md-start text-center"><h2>{{member_details.name}}</h2></div>
         <div class="d-flex justify-content-center justify-content-md-start"><h5>{{member_details.tagline}}</h5></div>
         <div class="d-flex justify-content-center justify-content-md-start">{{member_details.information|linebreaks|urlize}}</div>
       </div>

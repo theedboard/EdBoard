@@ -94,9 +94,9 @@ def contact(request):
             recipient_list = ['edboard.assist@gmail.com', ]
             try:
                 send_mail( subject, message, email_from, recipient_list )
-                messages.add_message(request, messages.INFO, 'Thankyou for contacting us.. We will reply you soon.')
+                messages.add_message(request, messages.INFO, 'Thank you for contacting us. We will reply soon:)')
             except:
-                messages.add_message(request, messages.INFO, 'There was some problem in sending message. Try again')
+                messages.add_message(request, messages.INFO, 'There was some problem in sending the message. Please try again.')
         else:
             messages.add_message(request, messages.INFO, 'The form fields are invalid.')
     else:
