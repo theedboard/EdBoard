@@ -10,6 +10,10 @@ body {
   --text-color-2: #000;
   --text-color-3: #fff;
 }
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
 h1 {
   font-family: 'Cinzel', serif;
 }

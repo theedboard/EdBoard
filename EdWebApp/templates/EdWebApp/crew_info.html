@@ -8,7 +8,7 @@
 
 {% block stylesheets %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.10/dist/css/splide.min.css">
-<link rel="stylesheet" href="{% static 'EdWebApp/CSSFiles/crew_info.min.css' %}?1">
+<link rel="stylesheet" href="{% static 'EdWebApp/CSSFiles/crew_info.min.css' %}?2">
 {% endblock %}
 
 {% block main %}
@@ -34,65 +34,63 @@
     <div class="col-md-7 pl-5">
       {{member_details.belt|linebreaks}}
     </div><hr>
-    <div class="offset-md-1 col-md-3 pl-5">
+    <div class="col-lg-4 col-md-4 pl-2">
 
-      <!--<h6 class="text-uppercase font-weight-bold pt-5">Character Stats </h6>
+  <h6 class="text-uppercase font-weight-bold pt-5">Character Stats </h6>
       <div id="stats">
       <div class="row">
-        <div class="col-3">Humour</div>
-        <div class="col-9">
+        <div class="col-4">Geek meter</div>
+        <div class="col-8">
           <div class="progress my-1">
             <div data-aos="fade-right"
             data-aos-anchor="#stats"
-            data-aos-anchor-placement="center-bottom" class="progress-bar red" style="width:{{member_details.stat1}}%"></div>
+            data-aos-anchor-placement="center-bottom" class="progress-bar red" style="width:{{member_details.geek_meter}}%"></div>
           </div>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-3">Seriousness</div>
-        <div class="col-9">
+        <div class="col-4">Introversion</div>
+        <div class="col-8">
           <div class="progress my-1">
             <div data-aos="fade-right"
             data-aos-anchor="#stats"
-            data-aos-anchor-placement="center-bottom" class="progress-bar maroon" style="width:{{member_details.stat2}}%"></div>
+            data-aos-anchor-placement="center-bottom" class="progress-bar maroon" style="width:{{member_details.introversion}}%"></div>
           </div>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-3">Extroversion</div>
-        <div class="col-9">
+        <div class="col-4">Peching</div>
+        <div class="col-8">
           <div class="progress my-1">
             <div data-aos="fade-right"
             data-aos-anchor="#stats"
-            data-aos-anchor-placement="center-bottom" class="progress-bar red" style="width:{{member_details.stat3}}%"></div>
+            data-aos-anchor-placement="center-bottom" class="progress-bar red" style="width:{{member_details.peching}}%"></div>
           </div>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-3">Text</div>
-        <div class="col-9">
+        <div class="col-4">Paapa meter</div>
+        <div class="col-8">
           <div class="progress my-1">
             <div data-aos="fade-right"
             data-aos-anchor="#stats"
-            data-aos-anchor-placement="center-bottom" class="progress-bar maroon" style="width:{{member_details.stat4}}%"></div>
+            data-aos-anchor-placement="center-bottom" class="progress-bar maroon" style="width:{{member_details.paapa_meter}}%"></div>
           </div>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-3">Text</div>
-        <div class="col-9">
-          <div class="progress my-1">
+        <div class="col-4">Superpower</div>
+        <div class="col-8">
             <div data-aos="fade-right"
             data-aos-anchor="#stats"
-            data-aos-anchor-placement="center-bottom" class="progress-bar red" style="width:{{member_details.stat5}}%"></div>
-          </div>
+            data-aos-anchor-placement="center-bottom">{{member_details.ability}}</div>
         </div>
       </div>
-      </div>-->
+      </div>
 
     </div>
   </div>

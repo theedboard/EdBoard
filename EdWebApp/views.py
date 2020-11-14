@@ -103,5 +103,6 @@ def contact(request):
         form = ContactForm()
     context = {
         'form': form,
+        'contact': 'active',
     }
     return render(request, 'EdWebApp/contact.html', context)

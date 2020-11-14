@@ -27,6 +27,10 @@ body {
   --form-bg: #FFD9CE;
   --fadecolor: #fff;
 }
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
 body {
 padding:0;
 margin:0;
