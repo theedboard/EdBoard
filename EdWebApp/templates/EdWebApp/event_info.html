@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="{% static 'EdWebApp/CSSFiles/event_info.min.css' %}?2">
+<link rel="stylesheet" type="text/css" href="{% static 'EdWebApp/CSSFiles/event_info.min.css' %}?4">
 {% endblock %}
 
 {% block main %}
@@ -47,7 +47,7 @@
 </div>
 <div>
 	<div class="container">
-		<h2 class="text-center" data-aos="fade-in">{{events.title}}</h2>
+		<h2 class="text-center" data-aos="fade-in">{{events.title|upper}}</h2>
 		<div class="card ml-3 mr-3 p-4 content_card text-justify">
 			{{events.description|linebreaks|urlize}}
 		</div>

@@ -19,8 +19,8 @@ body{
     color: var(--text-color);
 }
 h2 {
-  font-family: 'Cinzel', serif;
-  font-size: 5vw;
+  font-family: 'Catamaran', sans-serif;
+  font-size: 6vw;
 }
 .carousel_row{
    padding-left: 5vw;

@@ -6,7 +6,7 @@ About Us - JC Ed Board
 {% endblock %}
 
 {% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="{% static 'EdWebApp/CSSFiles/about.min.css' %}?2">
+<link rel="stylesheet" type="text/css" href="{% static 'EdWebApp/CSSFiles/about.min.css' %}?3">
 {% endblock %}
 
 {% block main %}
@@ -14,7 +14,7 @@ About Us - JC Ed Board
 <div class="jumbotron">
   <div class="row px-3">
     <div class="col-md-8">
-      <h1 class="display-4">About Us</h1>
+      <h1 class="display-4">ABOUT US</h1>
       <p class="lead">The Editorial Board of JSS Science and Technology University, Mysore.</p>
       <hr class="my-4">
       <p></p>
@@ -111,7 +111,7 @@ About Us - JC Ed Board
       <div class="col-md-5 col-lg-4 text-center pt-5" data-aos="fade-left">
         <h2>Magazine</h2>
         <p>Our blood, sweat and tears</p>
-        <a href="{% url 'EdWebApp:shabd_info' %}">
+        <a href="{% url 'EdWebApp:jayzine' %}">
           <img data-src="{% static 'EdWebApp/images/Jayzine_JSSSTU_Official_magazine.jpg' %}?1" class="img-responsive lazy" alt="Jayzine / JSSSTU official magazine" style="max-height: 300px;">
         </a>
       </div>
@@ -128,24 +128,26 @@ About Us - JC Ed Board
     </div>
   </div>
 
-  <div class="row staff-row d-flex align-items-center flex-column" style="max-width: 100%">
-    <div class="card col-xl-9 col-lg-9 col-md-5 m-lg-3 my-5 mx-3 staffs row flex-row"  data-aos="fade-right">
-      <div class="mt-3 mb-2 col-xl-4 col-lg-4 align-self-center">
-        <img class="card-img-top mx-auto lazy mb-2" data-src="{% static 'EdWebApp/images/Dr.VanishriArun.jpg' %}?1" alt="Dr. Vanishri Arun" style="max-height:350px;">
-        <h4 class="card-title text-center">Dr. Vanishri Arun</h4>
-      </div>
-      <div class="card-body text-justify col-xl-8 col-lg-8 align-self-center">
-        <p class="card-text ">Always calm and ready to guide and help, Dr. Vanishri Arun is the current Staff Coordinator for The Editorial Board. She received her Bachelor of Engineering degree in Computer Science and Engineering and Master of Technology in Software Engineering from SJCE and PhD from VTU in the area of Biomedical Informatics.</p>
+  <div class="row staff-row d-flex justify-content-center">
+    <div class="card col-xl-3 col-lg-4 col-md-5 m-lg-3 my-5 mx-3 staffs"  data-aos="fade-right">
+      <img class="card-img-top mx-auto lazy mt-2" data-src="{% static 'EdWebApp/images/Dr.VanishriArun.jpg' %}" alt="Dr. Vanishri Arun" style="max-height:350px;">
+      <div class="card-body text-center">
+        <h4 class="card-title">Dr. Vanishri Arun</h4>
+        <p class="card-text small">Always calm and ready to guide and help, Dr. Vanishri Arun is the current Staff Coordinator for The Editorial Board. She received her Bachelor of Engineering degree in Computer Science and Engineering and Master of Technology in Software Engineering from SJCE and PhD from VTU in the area of Biomedical Informatics.</p>
 
-        <p class="card-text ">At present, she is working in the capacity of Assistant Professor in the Department of Information Science and Engineering at JSS Science and Technology University, Mysuru, India. Her research interests include Biomedical Informatics, Machine Learning, Deep Learning and Data Analytics using Statistical methods.
+        <p class="card-text small">At present, she is working in the capacity of Assistant Professor in the Department of Information Science and Engineering at JSS Science and Technology University, Mysuru, India. Her research interests include Biomedical Informatics, Machine Learning, Deep Learning and Data Analytics using Statistical methods.
         </p>
       </div>
     </div>
     <div class="card col-xl-3 col-lg-4 col-md-5 m-lg-3 my-5 mx-3 staffs"  data-aos="fade-left">
-      <img class="card-img-top mx-auto lazy mt-2" data-src="{% static 'EdWebApp/images/DrS.K.Prasad.jpg' %}?1" alt="Dr S. K. Prasad" style="max-height:350px;">
+      <img class="card-img-top mx-auto lazy mt-2" data-src="{% static 'EdWebApp/images/DrS.K.Prasad.jpg' %}" alt="Dr S. K. Prasad" style="max-height:350px;">
       <div class="card-body text-center">
         <h4 class="card-title ">Dr S. K. Prasad</h4>
         <p>Ex-Coordinator</p>
+        <p class="card-text small">Generations of Eddies have passed under the guidance of this quick-witted, enthusiastic and overwhelmingly supportive professor. Dr. S. K. Prasad was the Staff Coordinator of The Editorial Board for over a decade and played a huge role in helping us reach where we are today.</p>
+
+        <p class="card-text small">Currently working as professor in VVCE, he is a former Professor in the Department of Civil Engineering, JSSSTU. He graduated from University of Mysuru (SJCE) and later obtained his Master’s Degree from IIT Kanpur and Doctoral Degree from University of Tokyo, Japan. His area of specialisation includes Earthquake and Geotechnical engineering.
+        </p>
       </div>
     </div>
 
