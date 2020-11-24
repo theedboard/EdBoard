@@ -202,7 +202,7 @@ body{
 .column1, .column2, .column3 {
 	border: 10px solid;
   border-image-slice: 1;
-	border-image-source: linear-gradient(to left, #00C853, #B2FF59, #00C853);
+	border-image-source: linear-gradient(to left, #8B0001, #f00, #8B0001);
 	/***/
 	border-left: none;
 	border-top: none;
@@ -286,8 +286,16 @@ body{
 	}
 }
 @media screen and (max-width: 991px) {
+	.column1, .column2, .column3 {
+		border: 5px solid;
+		border-image-slice: 1;
+		border-image-source: linear-gradient(to left, #8B0001, #f00, #8B0001);
+		border-left: none;
+		border-top: none;
+		border-bottom: none;
+	}
 	.column2 img {
-		max-width: 65vw;
+		max-width: 80vw;
 	}
 	.column1 img, .column3 img {
 		display: none;
