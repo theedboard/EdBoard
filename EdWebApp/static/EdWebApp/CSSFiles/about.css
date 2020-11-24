@@ -23,13 +23,13 @@ html {
   max-width: 100%;
   overflow-x: hidden;
 }
-h1 {
-  font-family: 'Cinzel', serif;
-}
 body{
   background-color: var(--bg-color-1);
-  color: var(--text-color-1);
   color: var(--text-color-2);
+}
+h1 {
+  font-family: 'Cinzel', serif;
+  color: var(--text-color-1);
 }
 p {
   font-family: 'Roboto', sans-serif;
