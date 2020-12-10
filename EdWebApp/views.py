@@ -38,12 +38,13 @@ def crew_info(request, id):
     context={
         'member_details': member_details,
         'slide_images': slide_images,
+        'crew': 'active',
     }
     return render(request, 'EdWebApp/crew_info.html', context)
 
 def shabd_info(request):
     context = {
-        'shabd': 'active'
+        'shabd': 'active',
     }
     return render(request, 'EdWebApp/shabd.html', context)
 
@@ -54,12 +55,14 @@ def about(request):
     return render(request, 'EdWebApp/about.html', context)
 
 def history(request):
-    context = {}
+    context = {
+        'about': 'active',
+    }
     return render(request, 'EdWebApp/history.html', context)
 
 def jayzine(request):
     context = {
-        'jayzine': 'active'
+        'jayzine': 'active',
     }
     return render(request, 'EdWebApp/jayzine.html', context)
 
@@ -76,7 +79,8 @@ def event_info_view(request, id):
     photos = eventimage.objects.filter(event=events)
     context= {
         'events':events,
-        'photos':photos
+        'photos':photos,
+        'event': 'active',
     }
     return render(request, 'EdWebApp/event_info.html', context)
 
