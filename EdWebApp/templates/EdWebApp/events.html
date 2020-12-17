@@ -16,13 +16,15 @@ Events - JC Ed Board
       {% for event in events %}
         <div class="row text-center">
             <div class="{% cycle 'order-2 first col-8 col-md-9' 'order-2 first col-8 col-md-9' %}">
-                <a href="{% url 'EdWebApp:event_info_view' event.pk %}">
+              <a href="{% url 'EdWebApp:event_info_view' event.pk %}">
                 {{event.title}}
-            </a>
+              </a>
             </div>
 
             <div class="{% cycle 'order-1 second col-4 col-md-3' 'order-2 first col-4 col-md-3' %}" onclick="change_order(this)">
+              <a href="{% url 'EdWebApp:event_info_view' event.pk %}">
                 <img data-src="{{event.preview_image.url}}" class="rounded-circle lazy" width="70%" alt="{{event.title}}">
+              </a>
             </div>
         </div>
       {% endfor %}
@@ -33,7 +35,7 @@ Events - JC Ed Board
 
 
 {% block scripts %}
-  <script>
+  <!--<script>
     function change_order(arg){
         var clname=arg.className;
         if(clname[6]=="1"){
@@ -44,7 +46,7 @@ Events - JC Ed Board
         }
         arg.className=clname_new;
     }
-  </script>
+  </script>-->
   <script>
     AOS.init({duration: 1000,
   		disable: window.orientation==90 || window.orientation==-90,
