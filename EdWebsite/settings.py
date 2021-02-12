@@ -145,7 +145,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'edboard.assist@gmail.com'
-EMAIL_HOST_PASSWORD = 'Binod(69)'
+EMAIL_HOST_PASSWORD = 'cpmajrufboqzzljg'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')######################
 STATIC_URL = '/static/'
