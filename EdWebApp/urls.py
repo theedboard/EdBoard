@@ -16,4 +16,5 @@ urlpatterns = [
     path('events/<int:id>/',views.event_info_view, name="event_info_view"),
     path('contact/',views.contact, name="contact"),
     path('jayzine/',views.jayzine, name="jayzine"),
+    path('shabdevents/',views.shabdevents, name="shabdevents"),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

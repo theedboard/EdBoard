@@ -111,3 +111,9 @@ def contact(request):
         'contact': 'active',
     }
     return render(request, 'EdWebApp/contact.html', context)
+
+def shabdevents(request):
+    context = {
+        'shabd': 'active',
+    }
+    return render(request, 'EdWebApp/shabdevents.html', context)
