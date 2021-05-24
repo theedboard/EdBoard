@@ -52,7 +52,7 @@ h2, h5 {
 hr {
   border-color: var(--underline-color-1);
 }
-/*Edit if required*/
+/*Edit if require*/
 .jumbotron img, .about-container img, .more-event-container img, .card-img-top, .about-history img{
   max-width:100%;
 }
@@ -66,6 +66,6 @@ hr {
   color: #fff;
 }
 .staffs {
-  background-color:var(--bg-2);
+  background-color:var(--bg-color-2);
   color:var(--text-color-1);
 }

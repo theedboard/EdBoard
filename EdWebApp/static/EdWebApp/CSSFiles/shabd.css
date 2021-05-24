@@ -108,3 +108,7 @@ p {
     padding-bottom: 10rem;
   }
 }
+.maroon {
+  background-color: #9a2a29;
+  color: #fff;
+}
