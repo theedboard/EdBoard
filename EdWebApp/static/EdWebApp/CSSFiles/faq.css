@@ -1,0 +1,31 @@
+body {
+    --bg-color-1: #1c1d1e;
+    --text-color-2: rgba(255,255,255,0.8);
+}
+.light-mode {
+    --bg-color-1: #f0f0f0;
+    --text-color-2: #000;
+
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+body{
+  background-color: var(--bg-color-1);
+  color: var(--text-color-2);
+  font-family: 'Roboto', sans-serif;
+}
+main {
+  font-size: 20px;
+}
+.maroon {
+  background-color: #333;
+  color: rgba(255,255,255,0.8);
+}

@@ -83,6 +83,26 @@ class eventimage(models.Model):
     def __str__(self):
         return self.event.title
 
+class registration(models.Model):
+    event_name = models.CharField(max_length=50)
+    time = models.CharField(max_length=10)
+    date = models.CharField(max_length=10)
+    type = models.CharField(max_length=20, choices=(('Kannada','Kannada'),('English','English'),('Art','Art')), default = 'Kannada')
+    event_head = models.CharField(max_length=50)
+    phone_number = models.CharField(max_length=15)
+    reg_form = models.CharField(max_length=100)
+    def __str__(self):
+        return self.event_name
+    class Meta:
+        ordering = ['date','time']
+
+class faq(models.Model):
+    question = models.TextField()
+    answer = models.TextField()
+    topics = models.CharField(max_length=50)
+    def __str__(self):
+        return self.question
+
 @receiver(post_delete)
 def submission_delete(sender, instance, **kwargs):
     try:

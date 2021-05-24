@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.files.storage import Storage
 # Create your views here.
-from .models import news, member, event, eventimage
+from .models import news, member, event, eventimage, registration, faq
 from django import forms
 from django.conf import settings
 from django.core.mail import send_mail
@@ -113,7 +113,21 @@ def contact(request):
     return render(request, 'EdWebApp/contact.html', context)
 
 def shabdevents(request):
+    kannada_events = registration.objects.filter(type='Kannada')
+    english_events = registration.objects.filter(type='English')
+    art_events = registration.objects.filter(type='Art')
     context = {
         'shabd': 'active',
+        'kannada_events':kannada_events,
+        'english_events':english_events,
+        'art_events':art_events,
     }
     return render(request, 'EdWebApp/shabdevents.html', context)
+
+def faqs(request):
+    qas = faq.objects.all()
+    context = {
+        'shabd': 'active',
+        'qas':qas,
+    }
+    return render(request, 'EdWebApp/faq.html', context)

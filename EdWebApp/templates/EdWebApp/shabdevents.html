@@ -7,115 +7,52 @@ SHABD events - JC Ed Board
 {% endblock %}
 
 {% block stylesheets %}
-<link rel="stylesheet" href="{% static 'EdWebApp/CSSFiles/shabdevents.min.css' %}">
+<link rel="stylesheet" href="{% static 'EdWebApp/CSSFiles/shabdevents.min.css' %}?2">
 {% endblock %}
 
 {% block main %}
 <div class="container-fluid jumbotron">
-    <div class="row p-3 d-flex justify-content-center">
+    <div class="row p-1 d-flex justify-content-center">
         <div class="col-md-8 text-center">
-            <h1 class="text-center font-weight-bold">Shabd 2021 is here!</h1>
+            <h1 class="text-center font-weight-bold">||Shabd|| 2021 is finally here!</h1>
             <hr/>
             <p>
-                Can we interest in our wide variety of fun and engaging events lined up?
-                The registration links for the events are given below.
-                Feel free to enter your details and sign up to be the part of Shabd!
-                Literature and art enthusiasts, we got your back!
+                The much awaited literature fest is here and we have a plethora of events lined up for you that'll tickle your fancy.
+                Come, immerse yourself in the world of literature and art and win exciting prizes!
+                Register for the events you're interested in below.
             </p>
+            <div class="">
+              <a class="btn btn-xl btn-danger large" href="{% url 'EdWebApp:faq' %}">Frequently Asked Questions</a>
+            </div>
         </div>
     </div>
 </div>
 
 <div class="container">
-    <div class="row pt-3">
+    <div class="row pt-2">
         <div class="col-md-12">
             <h3 class="text-center font-weight-bold">KANNADA</h3>
             <hr/>
         </div>
     </div>
     <div class="row mb-5 d-flex justify-content-center">
-
+      {% for event in kannada_events %}
       <div class="col-lg-4 col-md-6 px-5 py-3">
           <div class="card">
-            <div class="card-body">
-              <h5 class="card-title font-weight-bold">Debate</h5>
-              <p class="card-text">
-                  <strong>Date:&nbsp;&nbsp;&nbsp;</strong>5th June<br/>
-                  <strong>Time:&nbsp;&nbsp;&nbsp;</strong>2:30 pm
+            <div class="card-body text-center">
+              <h3 class="card-title font-weight-bold">{{event.event_name}}</h3>
+              <p class="card-text small">
+                  <strong>Date:&nbsp;&nbsp;&nbsp;</strong>{{event.date}}<br/>
+                  <strong>Time:&nbsp;&nbsp;&nbsp;</strong>{{event.time}}
               </p>
-              <a href="https://forms.gle/e981psU3nxAv2vhdA" class="btn maroon" target="_blank">Register Now</a>
+              <a href="{{event.reg_form}}" class="btn maroon" target="_blank">Register Now</a>
             </div>
           </div>
       </div>
-
-        <div class="col-lg-4 col-md-6 px-5 py-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bold">Poetry</h5>
-                <p class="card-text">
-                    <strong>Date:&nbsp;&nbsp;&nbsp;</strong>5th June<br/>
-                    <strong>Time:&nbsp;&nbsp;&nbsp;</strong>5:30 pm
-                </p>
-                <a href="https://forms.gle/4qFZ1DvW5HxMRoQb8" class="btn maroon" target="_blank">Register Now</a>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 px-5 py-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bold">Pick and Speak</h5>
-                <p class="card-text">
-                    <strong>Date:&nbsp;&nbsp;&nbsp;</strong>5th June<br/>
-                    <strong>Time:&nbsp;&nbsp;&nbsp;</strong>6:30 pm
-                </p>
-                <a href="https://forms.gle/DCDHA3KDu5Mw4LZz6" class="btn maroon" target="_blank">Register Now</a>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 px-5 py-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bold">Picture Connect</h5>
-                <p class="card-text">
-                    <strong>Date:&nbsp;&nbsp;&nbsp;</strong>6th June<br/>
-                    <strong>Time:&nbsp;&nbsp;&nbsp;</strong>10:30 am
-                </p>
-                <a href="https://forms.gle/GuAV8dHqvQWfR8WP7" class="btn maroon" target="_blank">Register Now</a>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 px-5 py-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bold">Creative Writing</h5>
-                <p class="card-text">
-                    <strong>Date:&nbsp;&nbsp;&nbsp;</strong>6th June<br/>
-                    <strong>Time:&nbsp;&nbsp;&nbsp;</strong>11:00 am
-                </p>
-                <a href="https://forms.gle/L8huE3yiB27Jsm968" class="btn maroon" target="_blank">Register Now</a>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 px-5 py-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bold">Love Letter Writing</h5>
-                <p class="card-text">
-                    <strong>Date:&nbsp;&nbsp;&nbsp;</strong>6th June<br/>
-                    <strong>Time:&nbsp;&nbsp;&nbsp;</strong>2:30 pm
-                </p>
-                <a href="https://forms.gle/aEvzYGRYt6kEzD9c8" class="btn maroon" target="_blank">Register Now</a>
-              </div>
-            </div>
-        </div>
-
+      {% endfor %}
     </div>
 
-    <div class="row pt-3">
+    <div class="row pt-2">
         <div class="col-md-12">
             <h3 class="text-center font-weight-bold">ENGLISH</h3>
             <hr/>
@@ -124,88 +61,24 @@ SHABD events - JC Ed Board
 
     <div class="row mb-5 d-flex justify-content-center">
 
+      {% for event in english_events %}
       <div class="col-lg-4 col-md-6 px-5 py-3">
           <div class="card">
-            <div class="card-body">
-              <h5 class="card-title font-weight-bold">Bamboozled</h5>
-              <p class="card-text">
-                  <strong>Date:&nbsp;&nbsp;&nbsp;</strong>5th June<br/>
-                  <strong>Time:&nbsp;&nbsp;&nbsp;</strong>2:30 pm
+            <div class="card-body text-center">
+              <h3 class="card-title font-weight-bold">{{event.event_name}}</h3>
+              <p class="card-text small">
+                  <strong>Date:&nbsp;&nbsp;&nbsp;</strong>{{event.date}}<br/>
+                  <strong>Time:&nbsp;&nbsp;&nbsp;</strong>{{event.time}}
               </p>
-              <a href="https://forms.gle/W5wXjTqTc7Hd1Y9T9" class="btn maroon" target="_blank">Register Now</a>
+              <a href="{{event.reg_form}}" class="btn maroon" target="_blank">Register Now</a>
             </div>
           </div>
       </div>
-
-        <div class="col-lg-4 col-md-6 px-5 py-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bold">Poetry</h5>
-                <p class="card-text">
-                    <strong>Date:&nbsp;&nbsp;&nbsp;</strong>5th June<br/>
-                    <strong>Time:&nbsp;&nbsp;&nbsp;</strong>2:30 pm
-                </p>
-                <a href="https://forms.gle/DUhGaDfMVmsmKvQh9" class="btn maroon" target="_blank">Register Now</a>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 px-5 py-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bold">Creative Writing</h5>
-                <p class="card-text">
-                    <strong>Date:&nbsp;&nbsp;&nbsp;</strong>5th June<br/>
-                    <strong>Time:&nbsp;&nbsp;&nbsp;</strong>4:30 pm
-                </p>
-                <a href="https://forms.gle/jtce7javZ49FbG2AA" class="btn maroon" target="_blank">Register Now</a>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 px-5 py-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bold">Build Your Character</h5>
-                <p class="card-text">
-                    <strong>Date:&nbsp;&nbsp;&nbsp;</strong>6th June<br/>
-                    <strong>Time:&nbsp;&nbsp;&nbsp;</strong>11:00 am
-                </p>
-                <a href="https://forms.gle/HF7uLnvsoAxdeP828" class="btn maroon" target="_blank">Register Now</a>
-              </div>
-            </div>
-        </div>
-
-
-        <div class="col-lg-4 col-md-6 px-5 py-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bold">Debate</h5>
-                <p class="card-text">
-                    <strong>Date:&nbsp;&nbsp;&nbsp;</strong>6th June<br/>
-                    <strong>Time:&nbsp;&nbsp;&nbsp;</strong>2:30 pm
-                </p>
-                <a href="https://forms.gle/1VtpWZDFgTU3Vao59" class="btn maroon" target="_blank">Register Now</a>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 px-5 py-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bold">Quiz</h5>
-                <p class="card-text">
-                    <strong>Date:&nbsp;&nbsp;&nbsp;</strong>6th June<br/>
-                    <strong>Time:&nbsp;&nbsp;&nbsp;</strong>4:30 pm
-                </p>
-                <a href="https://forms.gle/5ESQbPo1Qzeb2xei8" class="btn maroon" target="_blank">Register Now</a>
-              </div>
-            </div>
-        </div>
+      {% endfor %}
 
     </div>
 
-    <div class="row pt-3">
+    <div class="row pt-2">
         <div class="col-md-12">
             <h3 class="text-center font-weight-bold">ART</h3>
             <hr/>
@@ -213,70 +86,20 @@ SHABD events - JC Ed Board
     </div>
 
     <div class="row mb-5 d-flex justify-content-center">
-        <div class="col-lg-4 col-md-6 px-5 py-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bold">Spot Painting</h5>
-                <p class="card-text">
-                    <strong>Date:&nbsp;&nbsp;&nbsp;</strong>2nd June<br/>
-                    <strong>Time:&nbsp;&nbsp;&nbsp;</strong>2:30 pm
-                </p>
-                <a href="https://forms.gle/qePbsThNmyCpzTG88" target="_blank" class="btn maroon">Register Now</a>
-              </div>
+      {% for event in art_events %}
+      <div class="col-lg-4 col-md-6 px-5 py-3">
+          <div class="card">
+            <div class="card-body text-center">
+              <h3 class="card-title font-weight-bold">{{event.event_name}}</h3>
+              <p class="card-text small">
+                  <strong>Date:&nbsp;&nbsp;&nbsp;</strong>{{event.date}}<br/>
+                  <strong>Time:&nbsp;&nbsp;&nbsp;</strong>{{event.time}}
+              </p>
+              <a href="{{event.reg_form}}" class="btn maroon" target="_blank">Register Now</a>
             </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 px-5 py-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bold">Painting</h5>
-                <p class="card-text">
-                    <strong>Date:&nbsp;&nbsp;&nbsp;</strong>5th June<br/>
-                    <strong>Time:&nbsp;&nbsp;&nbsp;</strong>2:30 pm
-                </p>
-                <a href="https://forms.gle/n7GmtucJTQkonbxP8" class="btn maroon" target="_blank">Register Now</a>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 px-5 py-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bold">Photography</h5>
-                <p class="card-text">
-                    <strong>Date:&nbsp;&nbsp;&nbsp;</strong>5th June<br/>
-                    <strong>Time:&nbsp;&nbsp;&nbsp;</strong>5:30 pm
-                </p>
-                <a href="https://forms.gle/T4aSRBx1jFGfetXcA" class="btn maroon" target="_blank">Register Now</a>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 px-5 py-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bold">Pencil Sketching</h5>
-                <p class="card-text">
-                    <strong>Date:&nbsp;&nbsp;&nbsp;</strong>6th June<br/>
-                    <strong>Time:&nbsp;&nbsp;&nbsp;</strong>11:00 am
-                </p>
-                <a href="https://forms.gle/f7t6H8N88K9LCHcJ8" class="btn maroon" target="_blank">Register Now</a>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 px-5 py-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bold">Photobashing</h5>
-                <p class="card-text">
-                    <strong>Date:&nbsp;&nbsp;&nbsp;</strong>6th June<br/>
-                    <strong>Time:&nbsp;&nbsp;&nbsp;</strong>11:00 pm
-                </p>
-                <a href="https://forms.gle/jjh4mELofgNC5ryn8" class="btn maroon" target="_blank">Register Now</a>
-              </div>
-            </div>
-        </div>
+          </div>
+      </div>
+      {% endfor %}
 
     </div>
 </div>
