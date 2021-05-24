@@ -97,11 +97,14 @@ class registration(models.Model):
         ordering = ['date','time']
 
 class faq(models.Model):
+    ord = models.IntegerField(default='0')
     question = models.TextField()
     answer = models.TextField()
     topics = models.CharField(max_length=50)
     def __str__(self):
         return self.question
+    class Meta:
+        ordering = ['ord']
 
 @receiver(post_delete)
 def submission_delete(sender, instance, **kwargs):

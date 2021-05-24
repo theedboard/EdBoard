@@ -7,7 +7,7 @@ SHABD events - JC Ed Board
 {% endblock %}
 
 {% block stylesheets %}
-<link rel="stylesheet" href="{% static 'EdWebApp/CSSFiles/faq.min.css' %}">
+<link rel="stylesheet" href="{% static 'EdWebApp/CSSFiles/faq.min.css' %}?1">
 {% endblock %}
 
 {% block main %}
@@ -27,12 +27,13 @@ SHABD events - JC Ed Board
           </a>
           <div id="collapse{{qa.id}}" class="panel-collapse collapse in">
             <div class="panel-body px-3 pb-4">
-              {{qa.answer}}
+              {{qa.answer|linebreaks|urlize}}
             </div>
           </div>
         </div>
         {% endfor %}
         {% endfor %}
     </div>
+    Note: This page will be updated with more Q&As during the course of the fest.
 </div>
 {% endblock %}

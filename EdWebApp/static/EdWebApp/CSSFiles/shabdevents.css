@@ -47,7 +47,7 @@ hr {
     box-shadow: 5px 5px 8px #000;
     color: #fff;
 }
-h2, h5 {
+h2, h5,h3,h4 {
   font-family: 'Crimson Text', serif;
 }
 .maroon {
