@@ -15,8 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.http import HttpResponse
+
+def read_file(request):
+    file_content ='''D0579034E71B64EE99F7C3402ACE73C8B814E65B85A2253357F280A0F0014EE7
+comodoca.com
+1073a2388cbdcdc'''
+    return HttpResponse(file_content, content_type="text/plain")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(('EdWebApp.urls','EdWebApp'), namespace='EdWebApp')),
+    path('.well-known/pki-validation/77A6E7A5FD08652FE1A237DE0C63C9DD.txt', read_file),
 ]
