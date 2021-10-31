@@ -23,20 +23,20 @@ html {
 body {
   background-color: var(--bg-color-2);
   color: var(--text-color-1);
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 h1 {
-  font-family: 'Catamaran', sans-serif;
+  font-family: "Catamaran", sans-serif;
 }
-.crew img{
+.crew img {
   height: 300px;
   width: 300px;
   border-radius: 50%;
   border: 3px solid #fff;
 }
 
-.crew a{
-  text-decoration:none;
+.crew a {
+  text-decoration: none;
   color: var(--text-color-1);
   position: relative;
 }
@@ -46,29 +46,35 @@ h1 {
   transform: scaleX(1);
 }
 
-.crew .name{
-  text-align:center;
-  font-weight:bold;
-  text-transform:uppercase;
-  font-family: 'Cinzel', serif;
+.crew .name {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Cinzel", serif;
   font-size: 20px;
 }
 
 .crew .job-title {
-  text-align:center;
-  font-weight:bold;
+  text-align: center;
+  font-weight: bold;
 }
 
 .crew .theme-title {
-  text-align:center;
+  text-align: center;
 }
 
-.crew .headshot{
-  align:center;
+.crew .headshot {
+  align: center;
+}
+
+.card {
+  background-color: rgba(236, 49, 50, 0.8);
+  box-shadow: 5px 5px 8px #000;
+  color: #fff;
 }
 
 @media only screen and (min-width: 770px) {
-  .crew-photo-div:before{
+  .crew-photo-div:before {
     content: "";
     position: absolute;
     width: 80%;
@@ -84,12 +90,12 @@ h1 {
 }
 
 @media only screen and (min-width: 770px) {
-  .crew .headshot{
-    opacity:0.9;
+  .crew .headshot {
+    opacity: 0.9;
   }
 
-  .crew .headshot:hover{
-    opacity:1;
+  .crew .headshot:hover {
+    opacity: 1;
   }
 }
 .arrow {
@@ -99,7 +105,13 @@ h1 {
   position: relative;
 }
 @keyframes arrow {
-  0% {left: 0px;}
-  50% {left: 6px;}
-  100% {left: 0px;}
+  0% {
+    left: 0px;
+  }
+  50% {
+    left: 6px;
+  }
+  100% {
+    left: 0px;
+  }
 }
