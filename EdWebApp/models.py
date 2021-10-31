@@ -87,7 +87,7 @@ class alumni(models.Model):
     def __str__(self):
         return self.name
     class Meta:
-        ordering = ['year_of_graduation','-year_of_recruitment']
+        ordering = ['year_of_graduation','year_of_recruitment']
 
 
 class event(models.Model):
