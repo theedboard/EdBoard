@@ -1,0 +1,84 @@
+{% extends 'EdWebApp/base.html' %}
+{% load static %}
+{% load cloudinary %}
+
+{% block title %}
+Alumni - JC Ed Board
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'EdWebApp/CSSFiles/crew.min.css' %}?3">
+{% endblock %}
+
+{% block main %}
+<div class="container py-5">
+  <div class="row">
+    <h1 class="mx-auto">OUR ALUMNI</h1><br>
+  </div>
+  <div class="row">
+    <h5 class="mx-auto text-uppercase">Sir Edit-A-Lot's former underlings</h5><br>
+  </div>
+  
+</div>
+
+<!--Picture Container-->
+<div class="container crew pb-5">
+  <div class="row my-3 justify-content-center">
+
+    {% for editor_in_chief in editor_in_chiefs %}
+    <div class="col-md-4 crew-photo-div d-flex justify-content-center pt-3" data-aos="fade-up">
+      <a class="person" href="{% url 'EdWebApp:alumni_info' editor_in_chief.pk %}" class="crew-photo">
+        <div class="headshot-container">
+            <img class="headshot img-fluid lazy" data-src="{{editor_in_chief.profile_image.url}}" alt="{{editor_in_chief.name}}">
+        </div>
+        <div class="name">{{editor_in_chief.name}} <span class="arrow text-center">&#8811;</span></div>
+        <div class="job-title">{{editor_in_chief.title}}</div>
+        <div class="theme-title">{{editor_in_chief.tagline}}</div>
+        <div>&nbsp;</div>
+      </a>
+    </div>
+    {% endfor %}
+
+    {% for section_chief in section_chiefs %}
+    <div class="col-md-4 crew-photo-div d-flex justify-content-center pt-3" data-aos="fade-up">
+      <a class="person" href="{% url 'EdWebApp:alumni_info' section_chief.pk %}" class="crew-photo">
+        <div class="headshot-container">
+            <img class="headshot img-fluid lazy" data-src="{{section_chief.profile_image.url}}" alt="{{section_chief.name}}">
+        </div>
+        <div class="name">{{section_chief.name}} <span class="arrow text-center">&#8811;</span></div>
+        <div class="job-title">{{section_chief.title}}</div>
+        <div class="theme-title">{{section_chief.tagline}}</div>
+        <div>&nbsp;</div>
+      </a>
+    </div>
+    {% endfor %}
+
+  </div>
+
+  <div class="d-flex align-content-end flex-wrap justify-content-center">
+  {% for editor in editors %}
+    <div class="col-md-4 crew-photo-div d-flex justify-content-center pt-3 " data-aos="fade-up">
+      <a class="person" href="{% url 'EdWebApp:alumni_info' editor.pk %}" class="crew-photo">
+        <div class="headshot-container">
+            <img class="headshot img-fluid lazy" data-src="{{editor.profile_image.url}}" alt="{{editor.name}}">
+        </div>
+        <div class="name">{{editor.name}} <span class="arrow text-center">&#8811;</span></div>
+        <div class="job-title">{{editor.title}}</div>
+        <div class="theme-title">{{editor.tagline}}</div>
+        <div>&nbsp;</div>
+      </a>
+    </div>
+  {% endfor %}
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  AOS.init({duration: 1000,
+		disable: window.orientation==90 || window.orientation==-90,
+	});
+	AOS.refresh();
+</script>
+{% endblock %}

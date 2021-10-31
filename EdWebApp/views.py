@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.files.storage import Storage
 # Create your views here.
-from .models import news, member, event, eventimage, registration, faq
+from .models import news, member, event, eventimage, registration, faq, alumni
 from django import forms
 from django.conf import settings
 from django.core.mail import send_mail
@@ -41,6 +41,28 @@ def crew_info(request, id):
         'crew': 'active',
     }
     return render(request, 'EdWebApp/crew_info.html', context)
+
+def alumni_main(request):
+    editor_in_chiefs = alumni.objects.only('profile_image','name','title','tagline').filter(position='editor-in-chief')
+    section_chiefs = alumni.objects.only('profile_image','name','title','tagline').filter(position='section-chief')
+    editors = alumni.objects.only('profile_image','name','title','tagline').filter(position='editor')
+    context={
+        'editor_in_chiefs': editor_in_chiefs,
+        'section_chiefs': section_chiefs,
+        'editors': editors,
+        'crew': 'active',
+    }
+    return render(request, 'EdWebApp/alumni.html', context)
+
+def alumni_info(request, id):
+    member_details = get_object_or_404(alumni, pk=id)
+    slide_images = alumni.objects.only('pk','name','profile_image')
+    context={
+        'member_details': member_details,
+        'slide_images': slide_images,
+        'crew': 'active',
+    }
+    return render(request, 'EdWebApp/alumni_info.html', context)
 
 def shabd_info(request):
     context = {

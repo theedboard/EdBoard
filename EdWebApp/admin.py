@@ -2,12 +2,13 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import  news, member, event, eventimage,registration, faq
+from .models import  news, member, event, eventimage,registration, faq, alumni
 
 admin.site.register(news)
 admin.site.register(member)
 admin.site.register(registration)
 admin.site.register(faq)
+admin.site.register(alumni)
 
 class EventImageAdmin(admin.StackedInline):
     model = eventimage

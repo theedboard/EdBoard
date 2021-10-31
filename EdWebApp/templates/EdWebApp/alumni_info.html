@@ -1,0 +1,149 @@
+{% extends 'EdWebApp/base.html' %}
+{% load static %}
+{% load cloudinary %}
+
+{% block title %}
+{{member_details.name}} - JC Ed Board
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.10/dist/css/splide.min.css">
+<link rel="stylesheet" href="{% static 'EdWebApp/CSSFiles/crew_info.min.css' %}?3">
+{% endblock %}
+
+{% block main %}
+<a href="{% url 'EdWebApp:alumni' %}" class="btn btn-secondary previous">&#171;</a>
+<div class="container-fluid pt-2">
+  <div class="d-flex crew-header justify-content-center justify-content-md-end">
+    <img data-aos="zoom-in" src="{{member_details.thumbnail_image.url}}" class="crew-head-img img-fluid" alt="{{member_details.name}}">
+  </div>
+</div>
+<div class="container mb-5 pt-0">
+  <div class="row crew-head py-2">
+    <div class="col-md-12">
+
+      <div class="crew-header-text px-5">
+        <div class="d-flex justify-content-center justify-content-md-start text-center"><h2>{{member_details.name}}</h2></div>
+        <div class="d-flex justify-content-center justify-content-md-start"><h5>{{member_details.tagline}}</h5></div>
+        <div class="d-flex justify-content-center justify-content-md-start">{{member_details.information|linebreaks|urlize}}</div>
+      </div>
+
+    </div>
+  </div>
+  <div class="row crew-belt">
+    <div class="col-md-7 p-5">
+      {{member_details.belt|linebreaks}}
+    </div><hr>
+    <div class="col-lg-4 col-md-4 pl-2">
+
+  <h6 class="text-uppercase font-weight-bold pt-5">Character Stats </h6>
+      <div id="stats">
+      <div class="row">
+        <div class="col-4 font-weight-bold">Geekiness</div>
+        <div class="col-8">
+          <div class="progress my-1">
+            <div data-aos="fade-right"
+            data-aos-anchor="#stats"
+            data-aos-anchor-placement="center-bottom" class="progress-bar red" style="width:{{member_details.geek_meter}}%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4 font-weight-bold">Introversion</div>
+        <div class="col-8">
+          <div class="progress my-1">
+            <div data-aos="fade-right"
+            data-aos-anchor="#stats"
+            data-aos-anchor-placement="center-bottom" class="progress-bar maroon" style="width:{{member_details.introversion}}%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4 font-weight-bold">Peching</div>
+        <div class="col-8">
+          <div class="progress my-1">
+            <div data-aos="fade-right"
+            data-aos-anchor="#stats"
+            data-aos-anchor-placement="center-bottom" class="progress-bar red" style="width:{{member_details.peching}}%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4 font-weight-bold">Paapaness</div>
+        <div class="col-8">
+          <div class="progress my-1">
+            <div data-aos="fade-right"
+            data-aos-anchor="#stats"
+            data-aos-anchor-placement="center-bottom" class="progress-bar maroon" style="width:{{member_details.paapa_meter}}%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4 font-weight-bold">Speciality</div>
+        <div class="col-8">
+            <div data-aos="fade-right"
+            data-aos-anchor="#stats"
+            data-aos-anchor-placement="center-bottom">{{member_details.ability}}</div>
+        </div>
+      </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div><h4 class="text-center">The Rest of the Crew</h4></div>
+<div class="splide bottom-nav my-2 d-flex justify-content-center">
+  <div class="splide__track">
+    <ul class="splide__list">
+      {% for slide_image in slide_images %}
+      <li class="splide__slide" data-splide-hash="{{forloop.counter}}">
+        <a href="{% url 'EdWebApp:alumni_info' slide_image.pk %}"><img class="headshot" src="{{slide_image.profile_image.url}}" alt="{{slide_image.name}}"></a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.addEventListener( 'DOMContentLoaded', function () {
+  new Splide( '.splide', {
+    perPage: 6,
+    perMove: 1,
+    rewind : true,
+    focus  : 'center',
+    height : '13rem',
+    lazyLoad: 'nearby',
+    cover  : true,
+    breakpoints: {
+      '1030': {
+  			perPage: 5,
+  			gap    : '1rem',
+  		},
+  		'770': {
+  			perPage: 3,
+  			gap    : '1rem',
+  		},
+  		'480': {
+  			perPage: 2,
+  			gap    : '1rem',
+  		},
+	}
+  } ).mount(window.splide.Extensions );
+} );
+</script>
+<script>
+  AOS.init({duration: 1000,
+		disable: window.orientation==90 || window.orientation==-90,
+	});
+	AOS.refresh();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.10/dist/js/splide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-url-hash@0.1.5/dist/js/splide-extension-url-hash.min.js"></script>
+{% endblock %}

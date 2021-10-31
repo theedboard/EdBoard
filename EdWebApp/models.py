@@ -60,6 +60,36 @@ class member(models.Model):
     class Meta:
         ordering = ['year_of_recruitement','-current_sem']
 
+
+class alumni(models.Model):
+    profile_image = CloudinaryField("Image", overwrite=True, resource_type="image", use_filename=True, unique_filename=True,
+    transformation={"quality": 'auto:low', 'width':300, 'height': 300, 'crop': "scale", 'effect': "grayscale"},
+    format="jpeg",)
+    thumbnail_image = CloudinaryField("Image", overwrite=True, resource_type="image", use_filename=True, unique_filename=True,
+    transformation={"quality": 'auto:low', 'height': 400, 'crop': "scale"},
+    format="jpeg",)
+    name = models.CharField(max_length=40)
+    title = models.CharField(max_length=20, default='Editor')
+    sections = models.CharField(max_length=25)
+    tagline = models.CharField(max_length=100)
+    information = models.TextField(default="social media info or any quotes")
+    belt = models.TextField()
+    geek_meter = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100)])
+    introversion = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100)])
+    peching = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100)])
+    paapa_meter = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100)])
+    ability = models.CharField(max_length=100)
+    year_of_recruitment = models.IntegerField(validators=[MinValueValidator(2000), MaxValueValidator(2050)])
+    year_of_graduation = models.IntegerField(validators=[MinValueValidator(2000), MaxValueValidator(2050)])
+    position = models.CharField(max_length = 20, choices = CHOICES, default = 'editor')
+    def file_fields(self):
+        return [self.profile_image, self.thumbnail_image]
+    def __str__(self):
+        return self.name
+    class Meta:
+        ordering = ['year_of_graduation','year_of_recruitment']
+
+
 class event(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField()
