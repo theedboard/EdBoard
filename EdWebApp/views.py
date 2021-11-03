@@ -157,7 +157,7 @@ def faqs(request):
 def krevents(request):
     kr_events = kr_registration.objects.all()
     context = {
-        'kr': 'active',
-        'kr_events':kr_events,
+        'event': 'active',
+        'kr_events': kr_events,
     }
     return render(request, 'EdWebApp/krevents.html', context)
