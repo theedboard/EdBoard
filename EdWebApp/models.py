@@ -136,6 +136,19 @@ class faq(models.Model):
     class Meta:
         ordering = ['ord']
 
+class kr_registration(models.Model):
+    event_name = models.CharField(max_length=50)
+    time = models.CharField(max_length=10)
+    date = models.CharField(max_length=10)
+    #type = models.CharField(max_length=20, choices=(('Kannada','Kannada'),('English','English'),('Art','Art')), default = 'Kannada')
+    #event_head = models.CharField(max_length=50)
+    phone_number = models.CharField(max_length=15)
+    reg_form = models.CharField(max_length=100)
+    def __str__(self):
+        return self.event_name
+    class Meta:
+        ordering = ['date','time']
+
 @receiver(post_delete)
 def submission_delete(sender, instance, **kwargs):
     try:
