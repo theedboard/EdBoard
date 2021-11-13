@@ -138,8 +138,8 @@ class faq(models.Model):
 
 class kr_registration(models.Model):
     event_name = models.CharField(max_length=50)
-    time = models.CharField(max_length=10)
-    date = models.CharField(max_length=10)
+    time = models.CharField(max_length=50, blank=True)
+    date = models.CharField(max_length=50, blank=True)
     #type = models.CharField(max_length=20, choices=(('Kannada','Kannada'),('English','English'),('Art','Art')), default = 'Kannada')
     #event_head = models.CharField(max_length=50)
     phone_number = models.CharField(max_length=15)

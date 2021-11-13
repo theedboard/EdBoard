@@ -38,8 +38,12 @@ KR Events - JC Ed Board
             <div class="card-body text-center">
               <h3 class="card-title font-weight-bold">{{event.event_name}}</h3>
               <p class="card-text small">
+                  {% if event.date %}
                   <strong>Date:&nbsp;&nbsp;&nbsp;</strong>{{event.date}}<br/>
-                  <strong>Time:&nbsp;&nbsp;&nbsp;</strong>{{event.time}}
+                  {% endif %}
+                  {% if event.time %}
+                    <strong>Time:&nbsp;&nbsp;&nbsp;</strong>{{event.time}}
+                  {% endif %}
               </p>
               <a href="{{event.reg_form}}" class="btn maroon" target="_blank">Register Now</a>
             </div>
