@@ -46,7 +46,7 @@ def alumni_main(request):
     editor_in_chiefs = alumni.objects.only('profile_image','name','title','tagline').filter(position='editor-in-chief')
     section_chiefs = alumni.objects.only('profile_image','name','title','tagline').filter(position='section-chief')
     editors = alumni.objects.only('profile_image','name','title','tagline').filter(position='editor')
-    batches = (list(alumni.objects.order_by().values_list('year_of_graduation', flat=True).distinct()))
+    batches = reversed(list(alumni.objects.order_by().values_list('year_of_graduation', flat=True).distinct()))
     context={
         'editor_in_chiefs': editor_in_chiefs,
         'section_chiefs': section_chiefs,
