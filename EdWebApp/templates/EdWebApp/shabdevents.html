@@ -9,21 +9,21 @@ SHABD events - JC Ed Board
 {% block stylesheets %}
 <link rel="stylesheet" href="{% static 'EdWebApp/CSSFiles/shabdevents.min.css' %}?3">
 {% endblock %}
-<!--<a class="btn btn-xl btn-danger mt-3 p-3" href="{% url 'EdWebApp:shabdevents' %}">Be a Part of Shabd 2021</a>-->
+<!--<a class="btn btn-xl btn-danger mt-3 p-3" href="{% url 'EdWebApp:shabdevents' %}">Be a Part of Shabd 2022</a>-->
 {% block main %}
 <div class="container-fluid jumbotron">
     <div class="row p-1 d-flex justify-content-center">
         <div class="col-md-8 text-center">
-            <h1 class="text-center font-weight-bold">||Shabd|| 2021 is finally here!</h1>
+            <h1 class="text-center font-weight-bold">||Shabd|| 2022 is finally here!</h1>
             <hr/>
             <p>
                 The much awaited literature fest is here and we have a plethora of events lined up for you that'll tickle your fancy.
                 Come, immerse yourself in the world of literature and art and win exciting prizes!
                 Register for the events you're interested in below.
             </p>
-            <div class="">
-              <a class="btn btn-xl btn-danger large" href="{% url 'EdWebApp:faq' %}">Frequently Asked Questions</a>
-            </div>
+            <!-- <div class="">
+              <a class="btn btn-xl btn-danger large">Frequently Asked Questions</a>
+            </div> -->
         </div>
     </div>
 </div>
@@ -43,6 +43,7 @@ SHABD events - JC Ed Board
               <h3 class="card-title font-weight-bold">{{event.event_name}}</h3>
               <p class="card-text small">
                   <strong>Date:&nbsp;&nbsp;&nbsp;</strong>{{event.date}}<br/>
+                  <strong>Venue:&nbsp;&nbsp;&nbsp;</strong>{{event.venue}}<br/>
                   <strong>Time:&nbsp;&nbsp;&nbsp;</strong>{{event.time}}
               </p>
               <a href="{{event.reg_form}}" class="btn maroon" target="_blank">Register Now</a>
@@ -68,6 +69,7 @@ SHABD events - JC Ed Board
               <h3 class="card-title font-weight-bold">{{event.event_name}}</h3>
               <p class="card-text small">
                   <strong>Date:&nbsp;&nbsp;&nbsp;</strong>{{event.date}}<br/>
+                  <strong>Venue:&nbsp;&nbsp;&nbsp;</strong>{{event.venue}}<br/>
                   <strong>Time:&nbsp;&nbsp;&nbsp;</strong>{{event.time}}
               </p>
               <a href="{{event.reg_form}}" class="btn maroon" target="_blank">Register Now</a>
@@ -93,6 +95,7 @@ SHABD events - JC Ed Board
               <h3 class="card-title font-weight-bold">{{event.event_name}}</h3>
               <p class="card-text small">
                   <strong>Date:&nbsp;&nbsp;&nbsp;</strong>{{event.date}}<br/>
+                  <strong>Venue:&nbsp;&nbsp;&nbsp;</strong>{{event.venue}}<br/>
                   <strong>Time:&nbsp;&nbsp;&nbsp;</strong>{{event.time}}
               </p>
               <a href="{{event.reg_form}}" class="btn maroon" target="_blank">Register Now</a>

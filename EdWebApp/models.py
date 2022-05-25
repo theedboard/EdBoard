@@ -117,6 +117,7 @@ class registration(models.Model):
     event_name = models.CharField(max_length=50)
     time = models.CharField(max_length=10)
     date = models.CharField(max_length=10)
+    venue = models.CharField(max_length=30, default="IS Sem Hall")
     type = models.CharField(max_length=20, choices=(('Kannada','Kannada'),('English','English'),('Art','Art')), default = 'Kannada')
     event_head = models.CharField(max_length=50)
     phone_number = models.CharField(max_length=15)
