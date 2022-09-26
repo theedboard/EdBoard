@@ -27,15 +27,21 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = "UBvFpnvALbi<vUa*ePgit&nWHN&6h^ZFPYr_A4Qx+~><i$)22>"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False #########################
+# DEBUG = True
+DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com','.edboardjssstu.in', 'localhost']
+
+ALLOWED_HOSTS = ['127.0.0.1',
+                 '.edboardjssstu.in', 'localhost']
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'whitenoise.runserver_nostatic', ################
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,7 +54,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',###################3
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # 3
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -80,24 +86,49 @@ WSGI_APPLICATION = 'EdWebsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# HEROKU RIP
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'dbldo80e0r7pt0',
+#         'USER': 'gmfdsobtyxbocx',
+#         'PASSWORD': 'b4cd2fda1c8dcccbdc1ed4acb0d58608a2833cd640d861dd023e6d5277e2babf',
+#         'HOST': 'ec2-54-247-103-43.eu-west-1.compute.amazonaws.com',
+#         'PORT': '5432',
+#         #'ENGINE': 'django.db.backends.sqlite3',
+#         #'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+#
+# LOCAL
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'edboard',
+#         'USER': 'postgres',
+#         'PASSWORD': 'postgres',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dbldo80e0r7pt0',
-        'USER': 'gmfdsobtyxbocx',
-        'PASSWORD': 'b4cd2fda1c8dcccbdc1ed4acb0d58608a2833cd640d861dd023e6d5277e2babf',
-        'HOST': 'ec2-54-247-103-43.eu-west-1.compute.amazonaws.com',
-        'PORT': '5432',
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'fqiunfci',
+        'USER': 'fqiunfci',
+        'PASSWORD': 'nfo50LCNiOXoivqQr5Q8Cs98pQWzOVFD',
+        'HOST': 'john.db.elephantsql.com',
+        'PORT': 5432
     }
 }
+
 
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
 
 WHITENOISE_MAX_AGE = 604800
-WHITENOISE_USE_FINDERS = True######################
+WHITENOISE_USE_FINDERS = True
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -135,9 +166,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 cloudinary.config(
-    cloud_name = 'edboard',
-    api_key = '789386227872941',
-    api_secret = 'qghVHqyL4KPESBJkWD_KQsVsSUg'
+    cloud_name='edboard',
+    api_key='789386227872941',
+    api_secret='qghVHqyL4KPESBJkWD_KQsVsSUg'
 )
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -147,13 +178,13 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'edboard.assist@gmail.com'
 EMAIL_HOST_PASSWORD = 'pzkbntoggckpsrke'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')######################
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'EdWebApp/static/'),
-]##########################
+    os.path.join(BASE_DIR, 'EdWebApp/static/'),
+]
 
 MEDIA_ROOT = BASE_DIR / 'media/'
 MEDIA_URL = '/media/'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'##################
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
