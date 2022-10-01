@@ -7,24 +7,30 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.contrib import messages
 
+
 class ContactForm(forms.Form):
     name = forms.CharField(max_length=50)
     message = forms.CharField(min_length=2)
     email = forms.EmailField()
 
+
 def home(request):
     latest_news = news.objects.filter(display=True)
-    context={
+    context = {
         'latest_news': latest_news,
         'home': 'active',
     }
     return render(request, 'EdWebApp/home.html', context)
 
+
 def crew(request):
-    editor_in_chiefs = member.objects.only('profile_image','name','title','tagline').filter(position='editor-in-chief')
-    section_chiefs = member.objects.only('profile_image','name','title','tagline').filter(position='section-chief')
-    editors = member.objects.only('profile_image','name','title','tagline').filter(position='editor')
-    context={
+    editor_in_chiefs = member.objects.only(
+        'profile_image', 'name', 'title', 'tagline').filter(position='editor-in-chief')
+    section_chiefs = member.objects.only(
+        'profile_image', 'name', 'title', 'tagline').filter(position='section-chief')
+    editors = member.objects.only(
+        'profile_image', 'name', 'title', 'tagline').filter(position='editor')
+    context = {
         'editor_in_chiefs': editor_in_chiefs,
         'section_chiefs': section_chiefs,
         'editors': editors,
@@ -32,40 +38,48 @@ def crew(request):
     }
     return render(request, 'EdWebApp/crew.html', context)
 
+
 def crew_info(request, id):
     member_details = get_object_or_404(member, pk=id)
-    slide_images = member.objects.only('pk','name','profile_image')
-    context={
+    slide_images = member.objects.only('pk', 'name', 'profile_image')
+    context = {
         'member_details': member_details,
         'slide_images': slide_images,
         'crew': 'active',
     }
     return render(request, 'EdWebApp/crew_info.html', context)
 
+
 def alumni_main(request):
-    editor_in_chiefs = alumni.objects.only('profile_image','name','title','tagline').filter(position='editor-in-chief')
-    section_chiefs = alumni.objects.only('profile_image','name','title','tagline').filter(position='section-chief')
-    editors = alumni.objects.only('profile_image','name','title','tagline').filter(position='editor')
-    batches = reversed(list(alumni.objects.order_by().values_list('year_of_graduation', flat=True).distinct()))
-    context={
+    editor_in_chiefs = alumni.objects.only(
+        'profile_image', 'name', 'title', 'tagline').filter(position='editor-in-chief')
+    section_chiefs = alumni.objects.only(
+        'profile_image', 'name', 'title', 'tagline').filter(position='section-chief')
+    editors = alumni.objects.only(
+        'profile_image', 'name', 'title', 'tagline').filter(position='editor')
+    batches = list(alumni.objects.order_by().values_list(
+        'year_of_graduation', flat=True).distinct())
+    context = {
         'editor_in_chiefs': editor_in_chiefs,
         'section_chiefs': section_chiefs,
         'editors': editors,
         'crew': 'active',
         'batches': batches
     }
-   
+
     return render(request, 'EdWebApp/alumni.html', context)
+
 
 def alumni_info(request, id):
     member_details = get_object_or_404(alumni, pk=id)
-    slide_images = alumni.objects.only('pk','name','profile_image')
-    context={
+    slide_images = alumni.objects.only('pk', 'name', 'profile_image')
+    context = {
         'member_details': member_details,
         'slide_images': slide_images,
         'crew': 'active',
     }
     return render(request, 'EdWebApp/alumni_info.html', context)
+
 
 def shabd_info(request):
     context = {
@@ -73,11 +87,13 @@ def shabd_info(request):
     }
     return render(request, 'EdWebApp/shabd.html', context)
 
+
 def about(request):
     context = {
         'about': 'active',
     }
     return render(request, 'EdWebApp/about.html', context)
+
 
 def history(request):
     context = {
@@ -85,29 +101,33 @@ def history(request):
     }
     return render(request, 'EdWebApp/history.html', context)
 
+
 def jayzine(request):
     context = {
         'jayzine': 'active',
     }
     return render(request, 'EdWebApp/jayzine.html', context)
 
+
 def event_view(request):
-    events = event.objects.only('pk','title','preview_image').all()
-    context={
+    events = event.objects.only('pk', 'title', 'preview_image').all()
+    context = {
         'events': events,
         'event': 'active',
     }
     return render(request, 'EdWebApp/events.html', context)
 
+
 def event_info_view(request, id):
     events = get_object_or_404(event, pk=id)
     photos = eventimage.objects.filter(event=events)
-    context= {
-        'events':events,
-        'photos':photos,
+    context = {
+        'events': events,
+        'photos': photos,
         'event': 'active',
     }
     return render(request, 'EdWebApp/event_info.html', context)
+
 
 def contact(request):
     if request.method == 'POST':
@@ -122,13 +142,16 @@ def contact(request):
             email_from = settings.EMAIL_HOST_USER
             recipient_list = ['edboard.assist@gmail.com', ]
             try:
-                send_mail( subject, message, email_from, recipient_list )
-                messages.add_message(request, messages.INFO, 'Thank you for contacting us. We will reply soon:)')
+                send_mail(subject, message, email_from, recipient_list)
+                messages.add_message(
+                    request, messages.INFO, 'Thank you for contacting us. We will reply soon:)')
             except Exception as error:
-                messages.add_message(request, messages.INFO, 'There was some problem in sending the message. Please try again.')
+                messages.add_message(
+                    request, messages.INFO, 'There was some problem in sending the message. Please try again.')
                 print(error)
         else:
-            messages.add_message(request, messages.INFO, 'The form fields are invalid.')
+            messages.add_message(request, messages.INFO,
+                                 'The form fields are invalid.')
     else:
         form = ContactForm()
     context = {
@@ -137,25 +160,28 @@ def contact(request):
     }
     return render(request, 'EdWebApp/contact.html', context)
 
+
 def shabdevents(request):
     kannada_events = registration.objects.filter(type='Kannada')
     english_events = registration.objects.filter(type='English')
     art_events = registration.objects.filter(type='Art')
     context = {
         'shabd': 'active',
-        'kannada_events':kannada_events,
-        'english_events':english_events,
-        'art_events':art_events,
+        'kannada_events': kannada_events,
+        'english_events': english_events,
+        'art_events': art_events,
     }
     return render(request, 'EdWebApp/shabdevents.html', context)
+
 
 def faqs(request):
     qas = faq.objects.all()
     context = {
         'shabd': 'active',
-        'qas':qas,
+        'qas': qas,
     }
     return render(request, 'EdWebApp/faq.html', context)
+
 
 def krevents(request):
     kr_events = kr_registration.objects.all()
