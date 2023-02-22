@@ -1,32 +1,82 @@
-{% extends 'EdWebApp/base.html' %}
-{% load static %}
-
-{% block title %}
-Jayzine - JC Ed Board
-{% endblock %}
-
-{% block stylesheets %}
-<link rel="stylesheet" href="{% static 'EdWebApp/CSSFiles/jayzine.min.css' %}?4">
-{% endblock %}
-
-{% block main %}
+{% extends 'EdWebApp/base.html' %} {% load static %} {% block title %} Jayzine -
+JC Ed Board {% endblock %} {% block stylesheets %}
+<link
+  rel="stylesheet"
+  href="{% static 'EdWebApp/CSSFiles/jayzine.min.css' %}?4"
+/>
+<style>
+  .cover {
+    box-shadow: 0 0 5px -1px black, inset -1px 1px 2px rgba(255, 255, 255, 0.5);
+    margin: auto;
+    border-radius: 5px;
+    height: 375px;
+    width: 250px;
+  }
+</style>
+{% endblock %} {% block main %}
 <div class="jumbotron">
-
   <div class="px-3 mb-5">
-  <h1 class="display-4">JAYZINE</h1>
-  <br>
-  <h2>This is our
-    <span class="txt-rotate" data-period="2000" data-rotate='[ "sweat.", "pride.", "lovvu.", "Jayzine." ]'></span>
-  </h2>
+    <h1 class="display-4">JAYZINE</h1>
+    <br />
+    <h2>
+      This is our
+      <span
+        class="txt-rotate"
+        data-period="2000"
+        data-rotate='[ "sweat.", "pride.", "lovvu.", "Jayzine." ]'
+      ></span>
+    </h2>
+  </div>
+
+  <div class="row px-2 py-3 my-5 bg-dark">
+    <div class="col-md-12 text-center py-2">
+      <h4 class="text-white font-weight-bold">Read them here!</h4>
+      <hr style="border-top: 1px solid #bbb" />
+    </div>
+    <div class="col-md-4 d-flex justify-content-center py-2">
+      <a href="https://online.fliphtml5.com/gqvlx/zocl/#p=1" target="_blank">
+        <img
+          class="img-fluid cover"
+          src="{% static 'EdWebApp/images/jayzine-22.png' %}"
+          alt="jayzine 22"
+        />
+      </a>
+    </div>
+
+    <div class="col-md-4 d-flex justify-content-center py-2">
+      <a href="https://online.fliphtml5.com/qbecg/yzef/#p=1" target="_blank">
+        <img
+          class="img-fluid cover"
+          src="{% static 'EdWebApp/images/jayzine-21.png' %}"
+          alt="jayzine 21"
+        />
+      </a>
+    </div>
+
+    <div class="col-md-4 d-flex justify-content-center py-2">
+      <a href="https://online.fliphtml5.com/qbecg/yzef/#p=1" target="_blank">
+        <img
+          class="img-fluid cover"
+          src="{% static 'EdWebApp/images/jayzine-20.jpg' %}"
+          alt="jayzine 20"
+        />
+      </a>
+    </div>
   </div>
 
   <div class="row px-2">
+    <div
+      class="col-md-6 col-sm-12 d-flex align-items-center flex-column order-lg-2 pb-2"
+    >
+      <p class="text-center">Behold the Jayzine 2022 cover!</p>
+      <img
+        class="img-fluid lazy"
+        data-src="{% static 'EdWebApp/images/jayzine22cover.png' %}?1"
+        alt="Jayzine 22 cover"
+        style="max-height: 90vh"
+      />
 
-    <div class="col-md-6 col-sm-12 d-flex align-items-center flex-column order-lg-2 pb-2">
-        <p class="text-center">Behold the Jayzine 2022 cover!</p>
-        <img class="img-fluid lazy" data-src="{% static 'EdWebApp/images/jayzine22cover.png' %}?1" alt="Jayzine 22 cover" style="max-height:90vh">
-        
-<!-- 
+      <!-- 
       <div class="embed-responsive embed-responsive-4by3">
         <iframe
   src="https://player.cloudinary.com/embed/?public_id=Jayzine2021&cloud_name=edboard&player%5Bfluid%5D=true&player%5Bcontrols%5D=true&player%5Bhide_context_menu%5D=true&player%5Bfloating_when_not_visible%5D=false&player%5Bshow_jump_controls%5D=true&player%5Blogo_onclick_url%5D=https%3A%2F%2Fwww.instagram.com%2Ftv%2FCPckob1h1VM&player%5Blogo_image_url%5D=https%3A%2F%2Fres.cloudinary.com%2Fedboard%2Fimage%2Fupload%2Fv1605033767%2Flogo_ibjccc.svg&player%5Bposter_options%5D%5Btransformation%5D%5Bstart_offset%5D=51&player%5Bloop%5D=true&source%5Binfo%5D%5Btitle%5D=JAYZINE%20%2721&source%5Binfo%5D%5Bsubtitle%5D=The%20Editorial%20Board"
@@ -37,74 +87,106 @@ Jayzine - JC Ed Board
     </div>
 
     <div class="col-md-6 col-sm-12 start">
-      <p class="text-justify">The yearly arrival of ||SHABD|| ushers in a new era with the release of a new edition of Jayzine, our official college magazine. With the occasion being a premiere of sorts, you'll find members of The Editorial Board scurrying around in excitement, anticipating the arrival of our new bundle of joy. Lady Luck smiles upon the fortunate few who get the first look, while the rest of us are frantically using our ultimate weapon, grubby fingers, to inch closer to those alluringly glossy, freshly-pressed pages. Once we're all done feasting our eyes on the new arrival, we take a trip down memory lane, reminiscing all the work we put in.
-</p>
-      <p class="text-justify">Jayzine features works of art, literature, and photography representative of the dreams and aspirations of every student's heyday. We pull out on all stops to ensure that the magazine is at its finest. Our last remaining brain cells churn out original content filled with pop-culture references and obligatory sarcasm for the magazine's exotic color pages, synchronous with the latest fads- all indicative of us being hip and cool. To answer your question, yes, we keep up with the Kardashians. We'd be lying if we said the pages weren't laced with subliminal messages to make our readers come back for more. Apart from being a refuge of sorts to budding artists, the magazine never fails to entertain and inspire. From evocative pieces and quirky illustrations to hilarious footers, Jayzine has it all.</p>
-      <p class="text-justify">Jayzine has come a long way, from being 'Jaya Prabha' in the days of yore to being known by 'SJCE Magazine' for quite some time, all the while winning an occasional award. The 2019 and 2020 edition placed first, and the 2021 edition placed second among many magazines published by other sister institutions. We Today, it's well-known and read with affection by the students of the university, as well as its alumni. To put it shortly, Jayzine is university life in all its glory- a paragon of youth.
-</p>
+      <p class="text-justify">
+        The yearly arrival of ||SHABD|| ushers in a new era with the release of
+        a new edition of Jayzine, our official college magazine. With the
+        occasion being a premiere of sorts, you'll find members of The Editorial
+        Board scurrying around in excitement, anticipating the arrival of our
+        new bundle of joy. Lady Luck smiles upon the fortunate few who get the
+        first look, while the rest of us are frantically using our ultimate
+        weapon, grubby fingers, to inch closer to those alluringly glossy,
+        freshly-pressed pages. Once we're all done feasting our eyes on the new
+        arrival, we take a trip down memory lane, reminiscing all the work we
+        put in.
+      </p>
+      <p class="text-justify">
+        Jayzine features works of art, literature, and photography
+        representative of the dreams and aspirations of every student's heyday.
+        We pull out on all stops to ensure that the magazine is at its finest.
+        Our last remaining brain cells churn out original content filled with
+        pop-culture references and obligatory sarcasm for the magazine's exotic
+        color pages, synchronous with the latest fads- all indicative of us
+        being hip and cool. To answer your question, yes, we keep up with the
+        Kardashians. We'd be lying if we said the pages weren't laced with
+        subliminal messages to make our readers come back for more. Apart from
+        being a refuge of sorts to budding artists, the magazine never fails to
+        entertain and inspire. From evocative pieces and quirky illustrations to
+        hilarious footers, Jayzine has it all.
+      </p>
+      <p class="text-justify">
+        Jayzine has come a long way, from being 'Jaya Prabha' in the days of
+        yore to being known by 'SJCE Magazine' for quite some time, all the
+        while winning an occasional award. The 2019 and 2020 edition placed
+        first, and the 2021 edition placed second among many magazines published
+        by other sister institutions. We Today, it's well-known and read with
+        affection by the students of the university, as well as its alumni. To
+        put it shortly, Jayzine is university life in all its glory- a paragon
+        of youth.
+      </p>
     </div>
-
   </div>
 </div>
 {% endblock %}
 <!--<img data-src="{% static 'EdWebApp/images/Jayzine_SJCE_Official_magazine.jpg' %}?1" class="lazy border border-light mb-3 img-fluid" alt="Jayzine- JSSSTU Official magazine">-->
 {% block scripts %}
 <script type="text/javascript">
-    var TxtRotate = function(el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2000;
-  this.txt = '';
-  this.tick();
-  this.isDeleting = false;
-};
-
-TxtRotate.prototype.tick = function() {
-  var i = this.loopNum % this.toRotate.length;
-  var fullTxt = this.toRotate[i];
-
-  if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
-  }
-
-  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-  var that = this;
-  var delta = 300 - Math.random() * 100;
-
-  if (this.isDeleting) { delta /= 2; }
-
-  if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === '') {
+  var TxtRotate = function (el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = "";
+    this.tick();
     this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
-  }
+  };
 
-  setTimeout(function() {
-    that.tick();
-  }, delta);
-};
+  TxtRotate.prototype.tick = function () {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
 
-window.onload = function() {
-  var elements = document.getElementsByClassName('txt-rotate');
-  for (var i=0; i<elements.length; i++) {
-    var toRotate = elements[i].getAttribute('data-rotate');
-    var period = elements[i].getAttribute('data-period');
-    if (toRotate) {
-      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
     }
-  }
-  var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
-  document.body.appendChild(css);
-};
-// typewriter end
+
+    this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
+
+    var that = this;
+    var delta = 300 - Math.random() * 100;
+
+    if (this.isDeleting) {
+      delta /= 2;
+    }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === "") {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 500;
+    }
+
+    setTimeout(function () {
+      that.tick();
+    }, delta);
+  };
+
+  window.onload = function () {
+    var elements = document.getElementsByClassName("txt-rotate");
+    for (var i = 0; i < elements.length; i++) {
+      var toRotate = elements[i].getAttribute("data-rotate");
+      var period = elements[i].getAttribute("data-period");
+      if (toRotate) {
+        new TxtRotate(elements[i], JSON.parse(toRotate), period);
+      }
+    }
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+    document.body.appendChild(css);
+  };
+  // typewriter end
 </script>
 {% endblock %}
