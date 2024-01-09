@@ -59,6 +59,7 @@ def alumni_main(request):
         'profile_image', 'name', 'title', 'tagline').filter(position='editor')
     batches = list(alumni.objects.order_by().values_list(
         'year_of_graduation', flat=True).distinct())
+    batches.sort(reverse=True)
     context = {
         'editor_in_chiefs': editor_in_chiefs,
         'section_chiefs': section_chiefs,
