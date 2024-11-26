@@ -1,9 +1,6 @@
 {% extends 'EdWebApp/base.html' %} {% load static %} {% block title %} Shabd -
 JC Ed Board {% endblock %} {% block stylesheets %}
-<link
-  rel="stylesheet"
-  href="{% static 'EdWebApp/CSSFiles/shabd.min.css' %}?6"
-/>
+<link rel="stylesheet" href="{% static 'EdWebApp/CSSFiles/shabd.min.css' %}?6" />
 {% endblock %} {% block main %}
 
 <section class="header-masthead text-center text-white">
@@ -11,12 +8,12 @@ JC Ed Board {% endblock %} {% block stylesheets %}
     <div class="container" data-aos="zoom-in">
       <h1 class="masthead-heading mb-0">||SHABD||</h1>
       <h2 class="masthead-subheading mb-0">Lit. Art. Ent</h2>
-      <a
+      <!-- <a
         class="btn btn-xl btn-dark shabd-2021 mt-3 p-3"
         href="{% url 'EdWebApp:shabdevents' %}"
       >
         <h3 class="font-weight-bold">Be a Part of Shabd 2024!</h3>
-      </a> 
+      </a>  -->
     </div>
   </div>
   <div class="bg-circle-1 bg-circle"></div>
@@ -30,12 +27,8 @@ JC Ed Board {% endblock %} {% block stylesheets %}
     <div class="row align-items-center">
       <div class="col-lg-6 order-lg-2">
         <div class="p-3" data-aos="fade-left">
-          <img
-            class="img-fluid lazy"
-            data-src="{% static 'EdWebApp/images/shabdbanners.jpg' %}?1"
-            style="max-height: 300px"
-            alt="shabd banners"
-          />
+          <img class="img-fluid lazy" data-src="{% static 'EdWebApp/images/shabdbanners.jpg' %}?1"
+            style="max-height: 300px" alt="shabd banners" />
         </div>
       </div>
       <div class="col-lg-6 order-lg-1">
@@ -65,12 +58,8 @@ JC Ed Board {% endblock %} {% block stylesheets %}
     <div class="row align-items-center">
       <div class="col-lg-6">
         <div class="p-3" data-aos="fade-right">
-          <img
-            class="img-fluid lazy"
-            data-src="{% static 'EdWebApp/images/shabdevents.jpg' %}?1"
-            style="max-height: 300px"
-            alt="shabd events"
-          />
+          <img class="img-fluid lazy" data-src="{% static 'EdWebApp/images/shabdevents.jpg' %}?1"
+            style="max-height: 300px" alt="shabd events" />
         </div>
       </div>
       <div class="col-lg-6">
@@ -100,12 +89,8 @@ JC Ed Board {% endblock %} {% block stylesheets %}
     <div class="row align-items-center">
       <div class="col-lg-6 order-lg-2">
         <div class="p-3" data-aos="fade-left">
-          <img
-            class="img-fluid lazy"
-            data-src="{% static 'EdWebApp/images/shabd-3.jpg' %}?1"
-            style="max-height: 300px"
-            alt="shabd handprinting"
-          />
+          <img class="img-fluid lazy" data-src="{% static 'EdWebApp/images/shabd-3.jpg' %}?1" style="max-height: 300px"
+            alt="shabd handprinting" />
         </div>
       </div>
       <div class="col-lg-6 order-lg-1">
@@ -131,19 +116,9 @@ JC Ed Board {% endblock %} {% block stylesheets %}
       <div class="col-lg-6">
         <div class="p-3" data-aos="fade-right">
           <div class="container justify-content-center slideshow">
-            <div
-              id="myCarousel"
-              class="carousel slide"
-              data-ride="carousel"
-              data-touch="true"
-              style="max-width: 300px"
-            >
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-touch="true" style="max-width: 300px">
               <ol class="carousel-indicators">
-                <li
-                  data-target="#myCarousel"
-                  data-slide-to="0"
-                  class="active"
-                ></li>
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
                 <li data-target="#myCarousel" data-slide-to="2"></li>
                 <li data-target="#myCarousel" data-slide-to="3"></li>
@@ -153,25 +128,14 @@ JC Ed Board {% endblock %} {% block stylesheets %}
 
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img
-                    class="img-fluid lazy"
-                    data-src="{% static 'EdWebApp/images/shabd_thermocol.jpg' %}?1"
-                    alt="Shabd"
-                    style="max-height: 300px"
-                  />
+                  <img class="img-fluid lazy" data-src="{% static 'EdWebApp/images/shabd_thermocol.jpg' %}?1"
+                    alt="Shabd" style="max-height: 300px" />
                 </div>
 
                 <div class="carousel-item">
-                  <img
-                    class="img-fluid lazy"
-                    data-src="{% static 'EdWebApp/images/shabd_mike.JPG' %}?1"
-                    alt="Mike Wazowski"
-                    style="max-height: 300px"
-                  />
-                  <div
-                    class="carousel-caption"
-                    style="background-color: rgba(0, 0, 0, 0.6); padding: 0"
-                  >
+                  <img class="img-fluid lazy" data-src="{% static 'EdWebApp/images/shabd_mike.JPG' %}?1"
+                    alt="Mike Wazowski" style="max-height: 300px" />
+                  <div class="carousel-caption" style="background-color: rgba(0, 0, 0, 0.6); padding: 0">
                     <h4>Mike Wazowski</h4>
                     <p class="text-light">
                       Can't figure out if I blink or wink
@@ -180,48 +144,27 @@ JC Ed Board {% endblock %} {% block stylesheets %}
                 </div>
 
                 <div class="carousel-item">
-                  <img
-                    class="img-fluid lazy"
-                    data-src="{% static 'EdWebApp/images/shabd_spidey.jpg' %}?1"
-                    alt="Spiderman"
-                    style="max-height: 300px"
-                  />
-                  <div
-                    class="carousel-caption"
-                    style="background-color: rgba(0, 0, 0, 0.6); padding: 0"
-                  >
+                  <img class="img-fluid lazy" data-src="{% static 'EdWebApp/images/shabd_spidey.jpg' %}?1"
+                    alt="Spiderman" style="max-height: 300px" />
+                  <div class="carousel-caption" style="background-color: rgba(0, 0, 0, 0.6); padding: 0">
                     <h4>Spiderman</h4>
                     <p class="text-light">Web design is my passion</p>
                   </div>
                 </div>
 
                 <div class="carousel-item">
-                  <img
-                    class="img-fluid lazy"
-                    data-src="{% static 'EdWebApp/images/shabd_baby-yoda.jpg' %}?1"
-                    alt="Baby Yoda"
-                    style="max-height: 300px"
-                  />
-                  <div
-                    class="carousel-caption"
-                    style="background-color: rgba(0, 0, 0, 0.6); padding: 0"
-                  >
+                  <img class="img-fluid lazy" data-src="{% static 'EdWebApp/images/shabd_baby-yoda.jpg' %}?1"
+                    alt="Baby Yoda" style="max-height: 300px" />
+                  <div class="carousel-caption" style="background-color: rgba(0, 0, 0, 0.6); padding: 0">
                     <h4>Baby Yoda</h4>
                     <p class="text-light">The UwU is strong with this one</p>
                   </div>
                 </div>
 
                 <div class="carousel-item">
-                  <img
-                    class="img-fluid lazy"
-                    data-src="{% static 'EdWebApp/images/shabd_throne.jpg' %}?1"
-                    alt="The iron throne"
-                    style="max-height: 300px"
-                  />
-                  <div
-                    class="carousel-caption"
-                    style="background-color: rgba(0, 0, 0, 0.6); padding: 0"
-                  >
+                  <img class="img-fluid lazy" data-src="{% static 'EdWebApp/images/shabd_throne.jpg' %}?1"
+                    alt="The iron throne" style="max-height: 300px" />
+                  <div class="carousel-caption" style="background-color: rgba(0, 0, 0, 0.6); padding: 0">
                     <h4>The Iron Throne</h4>
                     <p class="text-light">
                       The Iron Throne, but it's papier-mâché
@@ -229,34 +172,19 @@ JC Ed Board {% endblock %} {% block stylesheets %}
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img
-                    class="img-fluid lazy"
-                    data-src="{% static 'EdWebApp/images/shabd_demogorgon.jpg' %}?1"
-                    alt="Demogorgon"
-                    style="max-height: 300px"
-                  />
-                  <div
-                    class="carousel-caption"
-                    style="background-color: rgba(0, 0, 0, 0.6); padding: 0"
-                  >
+                  <img class="img-fluid lazy" data-src="{% static 'EdWebApp/images/shabd_demogorgon.jpg' %}?1"
+                    alt="Demogorgon" style="max-height: 300px" />
+                  <div class="carousel-caption" style="background-color: rgba(0, 0, 0, 0.6); padding: 0">
                     <h4>Demogorgon</h4>
                     <p class="text-light">I love 'Barb'eque</p>
                   </div>
                 </div>
               </div>
 
-              <a
-                class="carousel-control-prev"
-                href="#myCarousel"
-                data-slide="prev"
-              >
+              <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
               </a>
-              <a
-                class="carousel-control-next"
-                href="#myCarousel"
-                data-slide="next"
-              >
+              <a class="carousel-control-next" href="#myCarousel" data-slide="next">
                 <span class="carousel-control-next-icon"></span>
               </a>
             </div>
@@ -281,18 +209,12 @@ JC Ed Board {% endblock %} {% block stylesheets %}
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6 order-lg-2">
-        <div
-          class="embed-responsive embed-responsive-16by9"
-          data-aos="fade-left"
-        >
+        <div class="embed-responsive embed-responsive-16by9" data-aos="fade-left">
           <!-- <iframe width="880" height="495" src="https://www.youtube.com/embed/ROCZ7U0re7Q" title="Lights, Shabd, Action! | ||SHABD|| 2022" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
           <iframe
             src="https://player.cloudinary.com/embed/?public_id=Lights_Shabd_Action_____SHABD___2022_ndmnpd&cloud_name=edboard&player%5Bfluid%5D=true&player%5Bcontrols%5D=true&player%5Blogo_onclick_url%5D=https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCdkOkvTDsl_zQruC5Dx1QYw&player%5Blogo_image_url%5D=https%3A%2F%2Fres.cloudinary.com%2Fedboard%2Fimage%2Fupload%2Fv1605033767%2Flogo_ibjccc.svg&player%5Bshow_jump_controls%5D=true&player%5Bhide_context_menu%5D=true&player%5Bposter_options%5D%5Btransformation%5D%5Bstart_offset%5D=146&player%5Bloop%5D=true&source%5Binfo%5D%5Btitle%5D=Lights%2c%20Shabd%2c%20Action%20%2d%20SHABD%202022&source%5Binfo%5D%5Bsubtitle%5D=The%20Editorial%20Board"
-            class="embed-responsive-item"
-            allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-            allowfullscreen
-            frameborder="0"
-          ></iframe>
+            class="embed-responsive-item" allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+            allowfullscreen frameborder="0"></iframe>
         </div>
       </div>
       <div class="col-lg-6">
@@ -300,11 +222,7 @@ JC Ed Board {% endblock %} {% block stylesheets %}
           <h2>Lights, Shabd, Action!</h2>
           <p class="text-justify">
             Over the years, we've birthed many gems. Check out our
-            <a
-              href="https://www.youtube.com/channel/UCdkOkvTDsl_zQruC5Dx1QYw"
-              target="_blank"
-              >Youtube channel</a
-            >
+            <a href="https://www.youtube.com/channel/UCdkOkvTDsl_zQruC5Dx1QYw" target="_blank">Youtube channel</a>
             for more!
           </p>
         </div>
