@@ -114,11 +114,11 @@ WSGI_APPLICATION = 'EdWebsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fqiunfci',
-        'USER': 'fqiunfci',
-        'PASSWORD': 'nfo50LCNiOXoivqQr5Q8Cs98pQWzOVFD',
-        'HOST': 'john.db.elephantsql.com',
-        'PORT': 5432
+        'NAME': 'defaultdb',
+        'USER': 'avnadmin',
+        'PASSWORD': 'AVNS_KJc3MxbefSS17xGHA48',
+        'HOST': 'pg-f5b3d50-edboard.k.aivencloud.com',
+        'PORT': 22636
     }
 }
 
