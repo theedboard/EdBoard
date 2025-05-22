@@ -15,6 +15,11 @@ from pathlib import Path
 import os
 import cloudinary
 import dj_database_url
+from dotenv import load_dotenv
+
+# Get env variables for DB connection
+load_dotenv()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -112,13 +117,15 @@ WSGI_APPLICATION = 'EdWebsite.wsgi.application'
 # }
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'defaultdb',
-        'USER': 'avnadmin',
-        'PASSWORD': 'AVNS_AA2A7zzQcEa51Hgibqx',
-        'HOST': 'pg-5ae4b30-editorial-board.h.aivencloud.com',
-        'PORT': 27486
+
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": os.getenv("DB_NAME"),
+        "USER": os.getenv("DB_USER"),
+        "PASSWORD": os.getenv("DB_PASSWORD"),
+        "HOST": os.getenv("DB_HOST"),
+        "PORT": os.getenv("DB_PORT", "5432"),
+
     }
 }
 
