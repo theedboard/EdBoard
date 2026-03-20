@@ -191,3 +191,9 @@ def krevents(request):
         'kr_events': kr_events,
     }
     return render(request, 'EdWebApp/krevents.html', context)
+
+
+from django.http import JsonResponse
+
+def health_check(request):
+    return JsonResponse({"status": "ok"})

@@ -21,4 +21,5 @@ urlpatterns = [
     path('events/kr2024/', views.krevents, name="krevents"),
     path('shabd/2025/', views.shabdevents, name="shabdevents"),
     path('shabd/2025/faq',views.faqs, name="faq"),
+    path('health/', views.health_check, name="health_check"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
